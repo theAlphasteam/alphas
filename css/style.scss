@@ -48,8 +48,15 @@
         position: fixed;
         top: 0;
         right: 0;
-        background: #344052;
         
+        .inner{
+            width: 100%;
+            height: 100%;
+            background: #344052;
+            clip-path: circle(15% at 100% 0%);
+        }
+    
+    
         ul{
             width: 100%;
             padding: 1em;
@@ -119,6 +126,14 @@
             float: left;
             mix-blend-mode: difference;
 
+            .inner{
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                clip-path: circle(100% at 50% 50%);
+            }
+    
+
             ul{
                 top: 0;
                 transform: translateY(0);
@@ -145,10 +160,11 @@
     }
     .nav-button-cont{
         position: absolute;
-        top: 50%;
-        right: 10%;
-        width: 60px;
-        height: 60px;
+        top: 2.5%;
+        left: calc(86%  + 2px);
+        width: 40px;
+        height: 40px;
+        // display: block;
 
         div{
             height: 4px;
@@ -157,15 +173,22 @@
             background: #dee9f7;
 
             &:nth-of-type(1){
-                transform: translate(0px, 15px) rotateZ(-45deg);
+                transform: translate(0px, 0px) rotateZ(-45deg);
                 width: 100%;
             }
             &:nth-of-type(2){
-                transform: translate(0px, -5px) rotateZ(45deg);
+                transform: translate(0px, -20px) rotateZ(45deg);
             }
         }
+
     }
 
+}
+
+@media screen and (min-width: 700px){
+    .nav-button-cont{
+        display: none;
+    }
 }
 
 

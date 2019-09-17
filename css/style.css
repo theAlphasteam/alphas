@@ -45,7 +45,14 @@
   position: fixed;
   top: 0;
   right: 0;
+}
+
+#menu nav .inner {
+  width: 100%;
+  height: 100%;
   background: #344052;
+  -webkit-clip-path: circle(15% at 100% 0%);
+          clip-path: circle(15% at 100% 0%);
 }
 
 #menu nav ul {
@@ -123,6 +130,13 @@
     float: left;
     mix-blend-mode: difference;
   }
+  #menu nav .inner {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    -webkit-clip-path: circle(100% at 50% 50%);
+            clip-path: circle(100% at 50% 50%);
+  }
   #menu nav ul {
     top: 0;
     -webkit-transform: translateY(0);
@@ -139,10 +153,10 @@
 
 #menu .nav-button-cont {
   position: absolute;
-  top: 50%;
-  right: 10%;
-  width: 60px;
-  height: 60px;
+  top: 2.5%;
+  left: calc(86%  + 2px);
+  width: 40px;
+  height: 40px;
 }
 
 #menu .nav-button-cont div {
@@ -153,14 +167,20 @@
 }
 
 #menu .nav-button-cont div:nth-of-type(1) {
-  -webkit-transform: translate(0px, 15px) rotateZ(-45deg);
-          transform: translate(0px, 15px) rotateZ(-45deg);
+  -webkit-transform: translate(0px, 0px) rotateZ(-45deg);
+          transform: translate(0px, 0px) rotateZ(-45deg);
   width: 100%;
 }
 
 #menu .nav-button-cont div:nth-of-type(2) {
-  -webkit-transform: translate(0px, -5px) rotateZ(45deg);
-          transform: translate(0px, -5px) rotateZ(45deg);
+  -webkit-transform: translate(0px, -20px) rotateZ(45deg);
+          transform: translate(0px, -20px) rotateZ(45deg);
+}
+
+@media screen and (min-width: 700px) {
+  .nav-button-cont {
+    display: none;
+  }
 }
 
 .sect {

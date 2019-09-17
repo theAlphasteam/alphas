@@ -1,3 +1,10 @@
+var navBtn = document.querySelector(".nav-button-cont"),
+    navBar = document.querySelector("#menu");
+
+function toggleNav(){
+    
+}
+
 var texts = document.querySelectorAll(".codes p"),
     code = [],
     count = texts.length,
