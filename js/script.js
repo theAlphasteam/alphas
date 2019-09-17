@@ -3,6 +3,9 @@ var navBtn = document.querySelector(".nav-button-cont"),
 
 function toggleNav(){
     mobileNavBar.classList.toggle("shownav");
+    for(i = 0; i < navBtn.children.length; i++){
+        navBtn.children[i].classList.toggle("animatebars");
+    }
 }
 
 var texts = document.querySelectorAll(".codes p"),

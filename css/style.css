@@ -161,8 +161,8 @@
   position: absolute;
   top: 6px;
   left: calc(100%);
-  -webkit-transform: translate(-100%, 0%);
-          transform: translate(-100%, 0%);
+  -webkit-transform: translate(-110%, 0%);
+          transform: translate(-110%, 0%);
   width: 40px;
   height: 40px;
   pointer-events: all;
@@ -170,10 +170,12 @@
 }
 
 #menu .nav-button-cont div {
-  height: 4px;
-  margin: 15px 0;
+  height: 2px;
+  margin: 17px 0;
   width: 100%;
   background: #dee9f7;
+  -webkit-transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 #menu .nav-button-cont div:nth-of-type(1) {
@@ -185,6 +187,19 @@
 #menu .nav-button-cont div:nth-of-type(2) {
   -webkit-transform: translate(0px, -20px) rotateZ(45deg);
           transform: translate(0px, -20px) rotateZ(45deg);
+}
+
+.animatebars:nth-of-type(1) {
+  -webkit-transform: translate(-5px, 0px) rotateZ(0deg) !important;
+          transform: translate(-5px, 0px) rotateZ(0deg) !important;
+  width: 70% !important;
+  margin: 6px 0 !important;
+}
+
+.animatebars:nth-of-type(2) {
+  -webkit-transform: translate(-5px, 8px) rotateZ(0deg) !important;
+          transform: translate(-5px, 8px) rotateZ(0deg) !important;
+  margin: 6px 0 !important;
 }
 
 .shownav {
