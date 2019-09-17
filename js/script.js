@@ -1,5 +1,5 @@
 var texts = document.querySelectorAll(".codes p"),
-    code = []
+    code = [],
     count = texts.length,
     index = 0,
     currentText = "",

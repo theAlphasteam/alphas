@@ -137,6 +137,32 @@
   }
 }
 
+#menu .nav-button-cont {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  width: 60px;
+  height: 60px;
+}
+
+#menu .nav-button-cont div {
+  height: 4px;
+  margin: 15px 0;
+  width: 100%;
+  background: #dee9f7;
+}
+
+#menu .nav-button-cont div:nth-of-type(1) {
+  -webkit-transform: translate(0px, 15px) rotateZ(-45deg);
+          transform: translate(0px, 15px) rotateZ(-45deg);
+  width: 100%;
+}
+
+#menu .nav-button-cont div:nth-of-type(2) {
+  -webkit-transform: translate(0px, -5px) rotateZ(45deg);
+          transform: translate(0px, -5px) rotateZ(45deg);
+}
+
 .sect {
   width: 100%;
   height: 100vh;
@@ -492,6 +518,16 @@
           transform: translateY(50%);
   background: #21252b;
   border-radius: 6px;
+}
+
+.sect.services .sect-content .container .section.head .section-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.sect.services .sect-content .container .section.head .section-bg.design-bg {
+  background: url(../img/baze.png);
 }
 
 .sect.services .sect-content .container .section.head h1 {
