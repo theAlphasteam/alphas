@@ -1,8 +1,8 @@
 var navBtn = document.querySelector(".nav-button-cont"),
-    navBar = document.querySelector("#menu");
+    mobileNavBar = document.querySelector(".inner");
 
 function toggleNav(){
-    
+    mobileNavBar.style.clipPath = "circle(100% at 50% 50%)";
 }
 
 var texts = document.querySelectorAll(".codes p"),
@@ -70,3 +70,5 @@ function positionSlider(e){
         slider.style.opacity = 1;
     }
 }
+
+navBtn.addEventListener("click", toggleNav);

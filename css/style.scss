@@ -54,6 +54,7 @@
             height: 100%;
             background: #344052;
             clip-path: circle(15% at 100% 0%);
+            pointer-events: none;
         }
     
     
@@ -125,6 +126,7 @@
             background-color: transparent;
             float: left;
             mix-blend-mode: difference;
+            pointer-events: all;
 
             .inner{
                 width: 100%;
