@@ -24,7 +24,7 @@
 #menu .logo-cont {
   width: 30%;
   position: relative;
-  height: 50px;
+  height: 74px;
   float: left;
   color: #344052;
 }
@@ -54,6 +54,8 @@
   -webkit-clip-path: circle(15% at 100% 0%);
           clip-path: circle(15% at 100% 0%);
   pointer-events: none;
+  -webkit-transition: 0.86s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.86s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 #menu nav ul {
@@ -130,7 +132,6 @@
     background-color: transparent;
     float: left;
     mix-blend-mode: difference;
-    pointer-events: all;
   }
   #menu nav .inner {
     width: 100%;
@@ -138,6 +139,7 @@
     background: transparent;
     -webkit-clip-path: circle(100% at 50% 50%);
             clip-path: circle(100% at 50% 50%);
+    pointer-events: all;
   }
   #menu nav ul {
     top: 0;
@@ -155,10 +157,14 @@
 
 #menu .nav-button-cont {
   position: absolute;
-  top: 2.5%;
-  left: calc(86%  + 2px);
+  top: 6px;
+  left: calc(100%);
+  -webkit-transform: translate(-100%, 0%);
+          transform: translate(-100%, 0%);
   width: 40px;
   height: 40px;
+  pointer-events: all;
+  z-index: 999;
 }
 
 #menu .nav-button-cont div {
@@ -177,6 +183,12 @@
 #menu .nav-button-cont div:nth-of-type(2) {
   -webkit-transform: translate(0px, -20px) rotateZ(45deg);
           transform: translate(0px, -20px) rotateZ(45deg);
+}
+
+.shownav {
+  -webkit-clip-path: circle(100% at 50% 50%) !important;
+          clip-path: circle(100% at 50% 50%) !important;
+  pointer-events: all !important;
 }
 
 @media screen and (min-width: 700px) {
@@ -417,7 +429,7 @@
 }
 
 .intro-sect .main .main-header {
-  width: 40%;
+  width: 70%;
   height: 50%;
   position: absolute;
   display: -webkit-box;
@@ -435,9 +447,23 @@
 
 .intro-sect .main .main-header h1 {
   font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 4em;
+  font-size: 2.8em;
   color: #21252b;
   font-weight: 400;
+}
+
+@media screen and (min-width: 700px) {
+  .intro-sect .main .main-header {
+    width: 40%;
+    -webkit-transform: translate(-20%, -50%);
+            transform: translate(-20%, -50%);
+  }
+  .intro-sect .main .main-header h1 {
+    font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 4em;
+    color: #21252b;
+    font-weight: 400;
+  }
 }
 
 .sect.services {

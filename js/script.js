@@ -2,7 +2,7 @@ var navBtn = document.querySelector(".nav-button-cont"),
     mobileNavBar = document.querySelector(".inner");
 
 function toggleNav(){
-    mobileNavBar.style.clipPath = "circle(100% at 50% 50%)";
+    mobileNavBar.classList.toggle("shownav");
 }
 
 var texts = document.querySelectorAll(".codes p"),

@@ -24,7 +24,7 @@
     .logo-cont{
         width: 30%;
         position: relative;
-        height: 50px;
+        height: 74px;
         // display: flex;
         // justify-content: center;
         // align-items: center;
@@ -55,6 +55,8 @@
             background: #344052;
             clip-path: circle(15% at 100% 0%);
             pointer-events: none;
+            transition: 0.86s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
         }
     
     
@@ -126,13 +128,14 @@
             background-color: transparent;
             float: left;
             mix-blend-mode: difference;
-            pointer-events: all;
 
             .inner{
                 width: 100%;
                 height: 100%;
                 background: transparent;
                 clip-path: circle(100% at 50% 50%);
+                pointer-events: all;
+
             }
     
 
@@ -162,12 +165,14 @@
     }
     .nav-button-cont{
         position: absolute;
-        top: 2.5%;
-        left: calc(86%  + 2px);
+        top: 6px;
+        left: calc(100%);
+        transform: translate(-100%, 0%);
         width: 40px;
         height: 40px;
-        // display: block;
-
+        pointer-events: all;
+        z-index: 999;
+        
         div{
             height: 4px;
             margin: 15px 0;
@@ -185,6 +190,11 @@
 
     }
 
+}
+
+.shownav{
+    clip-path: circle(100% at 50% 50%)!important;
+    pointer-events: all!important;
 }
 
 @media screen and (min-width: 700px){
@@ -411,7 +421,7 @@
     position: relative;
 
     .main-header{
-        width: 40%;
+        width: 70%;
         height: 50%;
         position: absolute;
         display: flex;
@@ -423,7 +433,7 @@
 
         h1{
             font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 4em;
+            font-size: 2.8em;
             color: #21252b;     
             font-weight: 400;
 
@@ -435,7 +445,29 @@
         }
     }
 }
-
+@media screen and (min-width: 700px){
+    .intro-sect .main{
+    
+        .main-header{
+            width: 40%;
+            transform: translate(-20%, -50%);
+    
+            h1{
+                font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 4em;
+                color: #21252b;     
+                font-weight: 400;
+    
+                // span{
+                //     background: #abb2bf;
+                //     color: #344052;
+                //     padding: 8px 12px;
+                // }
+            }
+        }
+    }
+    
+}
 .sect.services{
     position: relative;
     background: #21252b;
