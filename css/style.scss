@@ -48,6 +48,7 @@
         position: fixed;
         top: 0;
         right: 0;
+        pointer-events: none;
         
         .inner{
             width: 100%;
@@ -128,6 +129,7 @@
             background-color: transparent;
             float: left;
             mix-blend-mode: difference;
+            pointer-events: all;
 
             .inner{
                 width: 100%;
@@ -172,7 +174,7 @@
         height: 40px;
         pointer-events: all;
         z-index: 999;
-        
+
         div{
             height: 4px;
             margin: 15px 0;

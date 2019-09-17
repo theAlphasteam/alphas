@@ -45,6 +45,7 @@
   position: fixed;
   top: 0;
   right: 0;
+  pointer-events: none;
 }
 
 #menu nav .inner {
@@ -132,6 +133,7 @@
     background-color: transparent;
     float: left;
     mix-blend-mode: difference;
+    pointer-events: all;
   }
   #menu nav .inner {
     width: 100%;
