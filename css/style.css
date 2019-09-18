@@ -13,6 +13,128 @@
   color: #838a97;
 }
 
+#loader-cont {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  background: #f8fafc;
+  -webkit-transition: 0.82s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: 0.82s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#loader-cont .effect-element {
+  position: absolute;
+  width: 2000px;
+  height: 2000px;
+  background: #f8fafc;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: scale(1) translate(-50%, -50%);
+          transform: scale(1) translate(-50%, -50%);
+}
+
+#loader-cont .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#loader-cont .center .box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: perspective(500px) rotate(30deg) skew(-30deg);
+          transform: perspective(500px) rotate(30deg) skew(-30deg);
+  -webkit-box-shadow: 50px 45px 15px rgba(0, 0, 0, 0.14);
+          box-shadow: 50px 45px 15px rgba(0, 0, 0, 0.14);
+  background: #eef3f7 url(../img/alphas.png);
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  -webkit-transition: 0.62s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.62s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #344052;
+  animation: float 0.5s ease-in-out infinite alternate-reverse;
+}
+
+#loader-cont .center .box:hover {
+  -webkit-transform: perspective(500px) rotate(30deg) skew(-30deg) translate(-30px, -30px);
+          transform: perspective(500px) rotate(30deg) skew(-30deg) translate(-30px, -30px);
+  -webkit-box-shadow: 105px 95px 50px rgba(0, 0, 0, 0.14);
+          box-shadow: 105px 95px 50px rgba(0, 0, 0, 0.14);
+}
+
+#loader-cont .center .box:before {
+  content: '';
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: skew(50deg) translate(-95%, 100px);
+  transform: skew(50deg) translate(-95%, 100px);
+  background: url(../img/wolff.png) #e2ebf3;
+  background-size: 20px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+#loader-cont .center .box:after {
+  content: attr(data-name);
+  width: 100%;
+  height: 48%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-90deg) skew(-40deg) translate(15px, 150%);
+          transform: rotate(-90deg) skew(-40deg) translate(15px, 150%);
+  background: #eaf0f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: perspective(500px) rotate(30deg) skew(-30deg);
+            transform: perspective(500px) rotate(30deg) skew(-30deg);
+    -webkit-box-shadow: 50px 45px 15px rgba(0, 0, 0, 0.14);
+            box-shadow: 50px 45px 15px rgba(0, 0, 0, 0.14);
+  }
+  100% {
+    -webkit-transform: perspective(500px) rotate(30deg) skew(-30deg) translate(-30px, -30px);
+            transform: perspective(500px) rotate(30deg) skew(-30deg) translate(-30px, -30px);
+    -webkit-box-shadow: 105px 95px 50px rgba(0, 0, 0, 0.14);
+            box-shadow: 105px 95px 50px rgba(0, 0, 0, 0.14);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: perspective(500px) rotate(30deg) skew(-30deg);
+            transform: perspective(500px) rotate(30deg) skew(-30deg);
+    -webkit-box-shadow: 50px 45px 15px rgba(0, 0, 0, 0.14);
+            box-shadow: 50px 45px 15px rgba(0, 0, 0, 0.14);
+  }
+  100% {
+    -webkit-transform: perspective(500px) rotate(30deg) skew(-30deg) translate(-30px, -30px);
+            transform: perspective(500px) rotate(30deg) skew(-30deg) translate(-30px, -30px);
+    -webkit-box-shadow: 105px 95px 50px rgba(0, 0, 0, 0.14);
+            box-shadow: 105px 95px 50px rgba(0, 0, 0, 0.14);
+  }
+}
+
 #menu {
   width: 100%;
   position: fixed;

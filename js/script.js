@@ -1,3 +1,49 @@
+var loaderCont = document.querySelector("div#loader-cont"),
+    boxCont = document.querySelector(".loader.center"),
+    effectEl = document.querySelector(".effect-element");
+var tl = anime.timeline({
+    easing: 'easeOutExpo',
+    duration: 650,
+    delay: 500
+});
+
+function displayPage(){
+    tl.add({
+        targets: effectEl,
+        scale: 1,
+        translateX: "-50%",
+        translateY: "-50%",
+    });
+    tl.add({
+        targets: loaderCont,
+        background: 'rgba(255,255,255, 0)'
+    },"-=100");
+    tl.add({
+        targets: effectEl,
+        scale: 0,
+        translateX: "50%",
+        translateY: "-50%",
+        duration: 3050,
+    });
+    tl.add({
+        targets: loaderCont,
+        opacity: 0,
+    },"-=3300");
+    tl.add({
+        targets: loaderCont,
+        begin: function(){
+        loaderCont.style.display = "none";    
+        },
+        delay: 1000  
+    });
+
+
+    // setTimeout(function(){
+    //     loaderCont.style.display = "none";
+    // }, 2000)
+}
+
+//mobile navbar
 var navBtn = document.querySelector(".nav-button-cont"),
     mobileNavBar = document.querySelector(".inner");
 
@@ -8,6 +54,7 @@ function toggleNav(){
     }
 }
 
+//code display functionalities
 var texts = document.querySelectorAll(".codes p"),
     code = [],
     count = texts.length,
@@ -47,7 +94,7 @@ for(var i = 0; i < texts.length; i++){
     setTimeout(type, 100);  
 }());
 
-
+//desktop nav bar functionalities
 var slider = document.querySelector(".slider"),
     slide = document.querySelector(".slide"),
     navBarWidth = document.querySelector("nav").getBoundingClientRect().width,
@@ -75,3 +122,4 @@ function positionSlider(e){
 }
 
 navBtn.addEventListener("click", toggleNav);
+window.addEventListener("load", displayPage);
