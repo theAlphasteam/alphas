@@ -33,9 +33,8 @@ function displayPage(){
         targets: loaderCont,
         begin: function(){
         loaderCont.style.display = "none";    
-        },
-        delay: 1000  
-    });
+        }
+    },"-=2000");
 
 
     // setTimeout(function(){

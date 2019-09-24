@@ -1,3 +1,4 @@
+
 *{
     padding: 0;
     margin: 0;
@@ -51,7 +52,7 @@
             transition: 0.62s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             color: #344052;
-            animation: float 0.5s ease-in-out infinite alternate-reverse;
+            animation: float 0.5s ease infinite alternate-reverse;
 
             &:hover{
                 transform: perspective(500px) rotate(30deg) skew(-30deg) translate(-30px, -30px);
@@ -129,7 +130,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 26px;
-            font-family: "Techna";
+            font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
     }
 
@@ -347,7 +348,7 @@
         .rect{
             width: 250px;
             height: 150px;
-            background: #d1d8e4;
+            background: #e9f3fc;
             position: absolute;
             border-radius: 1em;
             top: 50%;
@@ -429,7 +430,7 @@
         border-radius: 60px;
         top: -10%;
         left: -360px;
-        box-shadow: inset 0 0 102px rgba(0, 0, 0, 0.24);
+        box-shadow: inset 0 0 122px rgba(0, 0, 0, 0.18);
         transform:translate(5%, 0) rotateZ(35deg);
 
     }
@@ -550,6 +551,12 @@
             //     color: #344052;
             //     padding: 8px 12px;
             // }
+        }
+
+        #glare-button{
+            width: 12em;
+            height: 5.2em;
+            border-radius: 12em;
         }
     }
 }

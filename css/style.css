@@ -59,7 +59,7 @@
   transition: 0.62s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #344052;
-  animation: float 0.5s ease-in-out infinite alternate-reverse;
+  animation: float 0.5s ease infinite alternate-reverse;
 }
 
 #loader-cont .center .box:hover {
@@ -158,7 +158,7 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-size: 26px;
-  font-family: "Techna";
+  font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #menu nav {
@@ -367,7 +367,7 @@
 .background .rect-group .rect {
   width: 250px;
   height: 150px;
-  background: #d1d8e4;
+  background: #e9f3fc;
   position: absolute;
   border-radius: 1em;
   top: 50%;
@@ -447,8 +447,8 @@
   border-radius: 60px;
   top: -10%;
   left: -360px;
-  -webkit-box-shadow: inset 0 0 102px rgba(0, 0, 0, 0.24);
-          box-shadow: inset 0 0 102px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: inset 0 0 122px rgba(0, 0, 0, 0.18);
+          box-shadow: inset 0 0 122px rgba(0, 0, 0, 0.18);
   -webkit-transform: translate(5%, 0) rotateZ(35deg);
           transform: translate(5%, 0) rotateZ(35deg);
 }
@@ -589,6 +589,12 @@
   font-size: 2.8em;
   color: #21252b;
   font-weight: 400;
+}
+
+.intro-sect .main .main-header #glare-button {
+  width: 12em;
+  height: 5.2em;
+  border-radius: 12em;
 }
 
 @media screen and (min-width: 700px) {
