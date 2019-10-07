@@ -611,14 +611,14 @@
   }
 }
 
-.sect.services {
+.sect.about {
   position: relative;
   background: #21252b;
   display: table;
   z-index: 3;
 }
 
-.sect.services .sect-divide {
+.sect.about .sect-divide {
   width: 100%;
   height: 300px;
   position: absolute;
@@ -629,7 +629,7 @@
   overflow: hidden;
 }
 
-.sect.services .sect-divide svg {
+.sect.about .sect-divide svg {
   position: absolute;
   width: 200%;
   height: 100%;
@@ -639,7 +639,7 @@
           transform: translateX(0) scaleX(3.5);
 }
 
-.sect.services .sect-divide svg #wave {
+.sect.about .sect-divide svg #wave {
   fill: #21252b;
   stroke: none;
   stroke-width: 0.26458332px;
@@ -648,36 +648,36 @@
   stroke-opacity: 1;
 }
 
-.sect.services .sect-divide svg.waves1 {
+.sect.about .sect-divide svg.waves1 {
   animation: wave-motion 10s ease-in infinite alternate-reverse;
   -webkit-transform: translateX(-500px);
           transform: translateX(-500px);
   opacity: 0.25;
 }
 
-.sect.services .sect-divide svg.waves1 #wave {
+.sect.about .sect-divide svg.waves1 #wave {
   fill: #344052;
 }
 
-.sect.services .sect-divide svg.waves2 {
+.sect.about .sect-divide svg.waves2 {
   animation: wave-motion 14s ease-in infinite alternate-reverse;
   -webkit-transform: translate(-400px);
           transform: translate(-400px);
   opacity: 0.5;
 }
 
-.sect.services .sect-divide svg.waves2 #wave {
+.sect.about .sect-divide svg.waves2 #wave {
   fill: #212a2b;
 }
 
-.sect.services .sect-divide svg.waves3 {
+.sect.about .sect-divide svg.waves3 {
   animation: wave-motion 10s ease-in-out infinite alternate-reverse;
   -webkit-transform: translate(-300px);
           transform: translate(-300px);
   opacity: 1;
 }
 
-.sect.services .section-bg {
+.sect.about .section-bg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -685,7 +685,7 @@
   overflow: hidden;
 }
 
-.sect.services .section-bg svg {
+.sect.about .section-bg svg {
   position: absolute;
   width: 800px;
   height: 800px;
@@ -695,7 +695,7 @@
           transform: translate(-50%, 0%);
 }
 
-.sect.services .section-bg svg path {
+.sect.about .section-bg svg path {
   solid-color: #000000;
   solid-opacity: 1;
   vector-effect: none;
@@ -713,7 +713,7 @@
   color-rendering: auto;
 }
 
-.sect.services .sect-content {
+.sect.about .sect-content {
   position: relative;
   display: table;
   top: 50%;
