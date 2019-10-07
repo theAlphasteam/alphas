@@ -120,5 +120,49 @@ function positionSlider(e){
     }
 }
 
+//smoothScrolls
+
+var links = document.querySelectorAll("#links li a"),
+    linkTarget = [];
+
+
+function smoothScroll(e, dur){
+    var e = document.querySelector(e),
+        ePos = e.getBoundingClientRect().top,
+        startPos = window.pageYOffset,
+        d = ePos - startPos,
+        startTime = null;
+
+        function animation(currentTime){
+            if(startTime === null) startTime = currentTime;
+            console.log(startTime);
+            var elapsed = currentTime - startTime,
+                run = ease(elapsed, startPos, d, dur);
+            console.log(elapsed);
+            window.scrollTo(0, run);
+            if(elapsed < dur) requestAnimationFrame(animation);
+        }
+
+
+        function ease (t, b, c, d) {
+            t /= d;
+            t--;
+            return c*(t*t*t + 1) + b;
+        };
+
+        requestAnimationFrame(animation);
+}
+
+
+// function infoCards(){
+
+// }
+
 navBtn.addEventListener("click", toggleNav);
 window.addEventListener("load", displayPage);
+
+for(i = 0; i < links.length; i++){
+    links[i].addEventListener("click", function(e){
+        smoothScroll(e.target.getAttribute("href"), 1000);
+    });
+ };
