@@ -1,6 +1,7 @@
-![alphas icon](img/8.jpg) # alphas
+![alphas icon](img/alphas.png) 
+# alphas
 the Alphas site
 > Simple portfolio site with **HTML**
----
 [Netlify preview](https://alphasteam.netlify.com)
+---
 Feel free to contribute 
