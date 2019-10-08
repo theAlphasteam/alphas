@@ -95,9 +95,6 @@ for(var i = 0; i < texts.length; i++){
 
 //desktop nav bar functionalities
 var slider = document.querySelector(".slider"),
-    slide = document.querySelector(".slide"),
-    navBarWidth = document.querySelector("nav").getBoundingClientRect().width,
-    navBarLeft = document.querySelector("nav").getBoundingClientRect().left,
     links = document.querySelectorAll("nav ul li");
 
 (function navigate(){
@@ -107,6 +104,13 @@ var slider = document.querySelector(".slider"),
 }());
 
 function positionSlider(e){
+    var slider = document.querySelector(".slider"),
+        slide = document.querySelector(".slide"),
+        navBarWidth = document.querySelector("nav").getBoundingClientRect().width,
+        navBarLeft = document.querySelector("nav").getBoundingClientRect().left
+    ;
+
+
     console.log(e.target);
     slider.style.width = e.target.parentElement.getBoundingClientRect().width + 32 + "px";
     slider.style.left = -32 / 2 + "px";
@@ -130,19 +134,20 @@ function smoothScroll(e, dur){
     var e = document.querySelector(e),
         ePos = e.getBoundingClientRect().top,
         startPos = window.pageYOffset,
-        d = ePos - startPos,
+        d = ePos,
         startTime = null;
+        console.table("ePos = " + ePos, "startPos = " + startPos, "d = " + d);
 
         function animation(currentTime){
             if(startTime === null) startTime = currentTime;
-            console.log(startTime);
+            // console.log("startTime = " + startTime);
+            // console.log("currentTime = " + currentTime);
             var elapsed = currentTime - startTime,
                 run = ease(elapsed, startPos, d, dur);
-            console.log(elapsed);
+            // console.log("elapsed =" + elapsed);
             window.scrollTo(0, run);
             if(elapsed < dur) requestAnimationFrame(animation);
         }
-
 
         function ease (t, b, c, d) {
             t /= d;
@@ -163,6 +168,7 @@ window.addEventListener("load", displayPage);
 
 for(i = 0; i < links.length; i++){
     links[i].addEventListener("click", function(e){
+        e.preventDefault();
         smoothScroll(e.target.getAttribute("href"), 1000);
     });
  };
