@@ -166,7 +166,7 @@ var docStyles = document.documentElement.style,
 
 function update(){
     console.log(contSlider.clientWidth, matesCont.clientWidth);
-    var dur = teamMate.length*2 + "s";
+    var dur = teamMate.length*4 + "s";
     docStyles.setProperty("--tx", `${-(contSlider.clientWidth) + (matesCont.clientWidth)}px`);
     docStyles.setProperty("--dur", dur);
 }

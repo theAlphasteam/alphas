@@ -919,11 +919,6 @@ h1, h2, h3 {
   transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.sect-about .sect-team-mates .mates-cont .cont-slider:hover {
-  -webkit-transform: translateX(var(--tx));
-          transform: translateX(var(--tx));
-}
-
 .sect-about .sect-team-mates .mates-cont .cont-slider .team-mate {
   min-width: 200px;
   padding: 1em;
@@ -1085,6 +1080,14 @@ h1, h2, h3 {
   }
   .sect-about .sect-team-mates .mates-cont {
     overflow: hidden;
+  }
+  .sect-about .sect-team-mates .mates-cont .cont-slider {
+    -webkit-transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .sect-about .sect-team-mates .mates-cont .cont-slider:hover {
+    -webkit-transform: translateX(var(--tx));
+            transform: translateX(var(--tx));
   }
 }
 

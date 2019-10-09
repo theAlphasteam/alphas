@@ -1018,7 +1018,7 @@ h1, h2, h3{
                 transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
                 &:hover{
-                    transform: translateX(var(--tx));
+                    // transform: translateX(var(--tx));
                 }
 
                 .team-mate{
@@ -1206,6 +1206,14 @@ h1, h2, h3{
         .sect-team-mates{
             .mates-cont{
                 overflow: hidden;
+
+                .cont-slider{
+                    transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+                    &:hover{
+                        transform: translateX(var(--tx));
+                    }
+                }
             }
         }
     }
