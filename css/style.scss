@@ -1124,6 +1124,7 @@ h1, h2, h3{
                             &:hover{
                                 box-shadow: 0 0 20px rgba(36, 123, 234, 0.24);
                                 transform: translateY(-10%);
+                                z-index: 2;
                             }
 
                             a{
