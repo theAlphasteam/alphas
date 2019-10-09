@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+h1, h2, h3{
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .blue{
     color: #247bea;
 }
@@ -315,7 +320,7 @@
 
 .sect{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     // display: flex;
     // justify-content: space-evenly;
     // align-items: center;
@@ -586,8 +591,9 @@
 .sect.about{
     position: relative;
     background: #21252b;
-    display: table;
+    // display: table;
     z-index: 3;
+
 
 
     .sect-divide{
@@ -692,10 +698,10 @@
     }
 
     .sect-content{
-        position: relative;
-        display: table;
-        top: 50%;
-        transform: translateY(-50%);
+        // position: relative;
+        // display: table;
+        // top: 50%;
+        // transform: translateY(-50%);
     }
     //     .container{
     //         width: 78%;
@@ -830,6 +836,7 @@
 .sect-about{
     position: relative;
     width: 100%;
+    padding: 30% 0 0 0;
 
     .sect-text{
         padding: 6px 14px;
@@ -839,9 +846,10 @@
         position: absolute;
         display: block;
         overflow: hidden;
-        top: -20px;
+        top: 0px;
+        // top: -20px;
         left: 50%;
-        transform: translate(-50%, -100%);
+        transform: translate(-50%, 50%);
         transition: 0.34s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
         &::after{
@@ -987,99 +995,155 @@
         }
     }
 
-    .sect-teamates{
+    .sect-team-mates{
         width: 78%;
         margin: 1.35em auto 1.35em auto;
         text-align: center;
+        overflow: hidden;
         position: relative;
 
-        .team-mate{
+        .team-mates-heading{
             width: 100%;
-            padding: 1em;
-            background: transparent;
-            border-radius: 8px;
-            overflow: hidden;
-
-            .team-mate-bg{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 130%;
-                height: 130%;
-                transform: translate(-50%, -28%);
-
-                svg#mate-bg{
-                    width: 100%;
-                    height: 100%;
-
-                    path{
-                        fill: #344052;
-                        stroke:#e2ebf3;
-                        stroke-width:1.5;
-                        stroke-linecap:butt;
-                        stroke-linejoin:miter;
-                        stroke-miterlimit:4;
-                        stroke-dasharray:none;
-                        stroke-opacity:1;
-                    }
-                }
-            }
-
-            .profile-cont{
-                width: 90px;
-                height: 90px;
-                border-radius: 50%;
-                position: relative;
-                margin:1.25em auto;
-                transform: translateY(-10%);
-
-                &::after{
-                    content: "";
-                    border: 6px solid #e2ebf3;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 50%;
-                    
-                }
-                
-                img{
-                    width: 100%;
-                    display: none;
-                }
-            }
-
-            .heading-cont{
-                width: 100%;
-                text-align: center;
-                font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                margin: 0.75em 0;
-                position: relative;
-                transform: translateY(20%);
-
-                h1{
-                    // color: #344052;
-                    color: #e2ebf3;
-                }
-            }
-
-            .description-cont{
-                width: 100%;
-                text-align: center;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                position: relative;
-                margin: 0 0 1.25em 0;
-
-                p{
-                    padding: 0 1em 0 1em;
-                    color: #e2ebf3;
-                }
-            }
-
+            margin: 1em 0;
+            color: #e2ebf3;
         }
+
+        .mates-cont{
+            position: relative;
+            overflow-y: hidden;
+
+
+            .cont-slider{
+                display: inline-flex;
+                transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+                &:hover{
+                    // transform: translateX(var(--tx));
+                }
+
+                .team-mate{
+                    min-width:200px;
+                    padding: 1em;
+                    margin: 1em;
+                    background: #e2ebf3;
+                    border-radius: 8px;
+                    overflow: hidden;
+
+        
+                    .team-mate-bg{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 200px;
+                        height: 200px;
+                        transform: translate(-50%, -28%);
+        
+                        svg#mate-bg{
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+        
+                            path{
+                                fill: #344052;
+                                stroke:#e2ebf3;
+                                stroke-width:1.5;
+                                stroke-linecap:butt;
+                                stroke-linejoin:miter;
+                                stroke-miterlimit:4;
+                                stroke-dasharray:none;
+                                stroke-opacity:1;
+                            }
+                        }
+                    }
+        
+                    .profile-cont{
+                        width: 90px;
+                        height: 90px;
+                        border-radius: 50%;
+                        position: relative;
+                        margin:1.25em auto;
+                        // transform: translateY(-10%);
+        
+                        &::after{
+                            content: "";
+                            border: 6px solid #344052;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                            
+                        }
+                        
+                        img{
+                            width: 100%;
+                            display: none;
+                        }
+                    }
+        
+                    .heading-cont{
+                        width: 100%;
+                        text-align: center;
+                        font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        margin: 0.75em 0;
+                        position: relative;
+                        // transform: translateY(20%);
+        
+                        h1{
+                            color: #344052;
+                            // color: #e2ebf3;
+                        }
+                    }
+        
+                    .description-cont{
+                        width: 100%;
+                        text-align: center;
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        position: relative;
+                        margin: 1.25em 0 1.25em 0;
+        
+                        p{
+                            padding: 0 1em 0 1em;
+                            // color: #e2ebf3;
+                            color: #344052;                    
+                        }
+                    }
+
+                    .social-cont{
+                        width: 100%;
+                        text-align: center;
+                        position: relative;
+                        margin: 1.25em 0 1.25em 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .social{
+                            padding: 4px 8px;
+                            background: #e2ebf3;
+                            border-radius: 4px; 
+                            transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+                            &:hover{
+                                box-shadow: 0 0 20px rgba(36, 123, 234, 0.24);
+                                transform: translateY(-10%);
+                                z-index: 2;
+                            }
+
+                            a{
+                                color: #247bea;
+                                font-size: 1.75em;
+                            }
+                        }
+                    }
+        
+                }
+            }
+        }
+
     }
 }
 
@@ -1089,11 +1153,12 @@
         position: relative;
         width: 92%;
         margin: 0 auto;
-    
+        padding: 10% 0 0 0;
+
         .sect-text{
-            top: -20%;
+            top: 0;
             left: calc(0% + 1em);
-            transform: translate(0, -100%);
+            transform: translate(0, -50%);
         }
         .sect-heading{
             width: 50%;
@@ -1136,6 +1201,20 @@
             //         height: 110px;
             //     }
             // }
+        }
+
+        .sect-team-mates{
+            .mates-cont{
+                overflow: hidden;
+
+                .cont-slider{
+                    transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+                    &:hover{
+                        transform: translateX(var(--tx));
+                    }
+                }
+            }
         }
     }
     
