@@ -1009,6 +1009,35 @@ h1, h2, h3 {
   text-align: center;
   position: relative;
   margin: 1.25em 0 1.25em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sect-about .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont .social {
+  padding: 4px 8px;
+  background: #e2ebf3;
+  border-radius: 4px;
+  -webkit-transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sect-about .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont .social:hover {
+  -webkit-box-shadow: 0 0 20px rgba(36, 123, 234, 0.24);
+          box-shadow: 0 0 20px rgba(36, 123, 234, 0.24);
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+}
+
+.sect-about .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont .social a {
+  color: #247bea;
+  font-size: 1.75em;
 }
 
 @media screen and (min-width: 700px) {

@@ -1110,9 +1110,26 @@ h1, h2, h3{
                         text-align: center;
                         position: relative;
                         margin: 1.25em 0 1.25em 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
 
                         .social{
-                            
+                            padding: 4px 8px;
+                            background: #e2ebf3;
+                            border-radius: 4px; 
+                            transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+                            &:hover{
+                                box-shadow: 0 0 20px rgba(36, 123, 234, 0.24);
+                                transform: translateY(-10%);
+                            }
+
+                            a{
+                                color: #247bea;
+                                font-size: 1.75em;
+                            }
                         }
                     }
         
