@@ -1012,8 +1012,14 @@ h1, h2, h3{
             position: relative;
             overflow-y: hidden;
 
+
             .cont-slider{
                 display: inline-flex;
+                transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+                &:hover{
+                    transform: translateX(var(--tx));
+                }
 
                 .team-mate{
                     min-width:200px;

@@ -915,6 +915,13 @@ h1, h2, h3 {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sect-about .sect-team-mates .mates-cont .cont-slider:hover {
+  -webkit-transform: translateX(var(--tx));
+          transform: translateX(var(--tx));
 }
 
 .sect-about .sect-team-mates .mates-cont .cont-slider .team-mate {

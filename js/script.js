@@ -158,6 +158,21 @@ function smoothScroll(e, dur){
         requestAnimationFrame(animation);
 }
 
+//team-mates section scrolls
+var docStyles = document.documentElement.style,
+    matesCont = document.querySelector("#mates-cont"),
+    contSlider = document.querySelector("#cont-slider"),
+    teamMate = document.querySelectorAll(".team-mate");
+
+function update(){
+    console.log(contSlider.clientWidth, matesCont.clientWidth);
+    var dur = teamMate.length*2 + "s";
+    docStyles.setProperty("--tx", `${-(contSlider.clientWidth) + (matesCont.clientWidth)}px`);
+    docStyles.setProperty("--dur", dur);
+}
+
+
+matesCont.addEventListener("mouseover", update);
 
 // function infoCards(){
 
