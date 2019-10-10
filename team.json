@@ -10,8 +10,8 @@
             "bio" : "I'm a Designer, developer, tech lover and code junkie",
             "img" : "./img/IMG_20190108_163639edit.jpg",
             "social" : [
-                "http://twitter.com/miracleio",
-                "http://github.com/miracleonyenma"
+                "https://twitter.com/miracleio",
+                "https://github.com/miracleonyenma"
             ],
             "icons" : [
                 "fa fa-twitter",
@@ -25,8 +25,8 @@
             "bio" : "I'm a Designer, developer, tech lover and code junkie",
             "img" : "./img/2.jpg",
             "social" : [
-                "http://twitter.com/miracleio",
-                "http://github.com/miracleonyenma"
+                "https://twitter.com/miracleio",
+                "https://github.com/miracleonyenma"
             ],
             "icons" : [
                 "fa fa-twitter",
@@ -40,11 +40,43 @@
             "bio" : "I'm a Designer, developer, tech lover and code junkie",
             "img" : "./img/lap.jpg",
             "social" : [
-                "http://twitter.com/miracleio",
-                "http://github.com/miracleonyenma"
+                "https://twitter.com/miracleio",
+                "https://github.com/miracleonyenma"
             ],
             "icons" : [
                 "fa fa-twitter",
+                "fa fa-github"
+            ]
+        },
+        {
+            "name": "Victory Tuduo",
+            "role": "Software Developer",
+            "company" : "Alphas",
+            "bio" : "I'm a Developer(full stack),love coding and stuffs like that ",
+            "img" : "./img/vic.jpg",
+            "social" : [
+                "https://facebook.com/Tuduo Victory",
+                "https://github.com/Victory-ET"
+            ],
+            "icons" : [
+                "fa fa-facebook",
+                "fa fa-github"
+            ]
+        },
+            
+        {
+            "name": "Emmanuel Uche",
+            "role": "Front-End developer and cyber-Security personnel",
+            "company" : "Alphas",
+            "bio" : "I'm a web-developer (front-end) and cyber-security person who loves coding and gets tired easily when coding",
+            "img" : "./img/IMG_20190108_163639edit.jpg",
+            "social" : [
+                
+                "https://facebook.com/Uc Emma",
+                "https://github.com/Uc-Hub"
+            ],
+            "icons" : [
+                "fa fa-facebook",
                 "fa fa-github"
             ]
         }
