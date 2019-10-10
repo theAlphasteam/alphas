@@ -162,7 +162,84 @@ function smoothScroll(e, dur){
 var docStyles = document.documentElement.style,
     matesCont = document.querySelector("#mates-cont"),
     contSlider = document.querySelector("#cont-slider"),
-    teamMate = document.querySelectorAll(".team-mate");
+    teamMate = document.querySelectorAll(".team-mate"),
+    crntSocial = document.querySelectorAll(".social"),
+    requestURL = './team.json',
+    request = new XMLHttpRequest();
+
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function(){
+        var team = request.response;
+        populateHeader(team);
+        showTeam(team);
+    }
+
+function populateHeader(jsonObj) {
+    console.log(jsonObj.teamName);
+};
+
+function showTeam(jsonObj){
+
+    var teamMates = jsonObj.members;
+
+    //set attribute helper function
+    function setAttributes(el, attrs){
+        for(k in attrs){
+            el.setAttribute(k, attrs[k]);
+        }
+    }
+
+
+    for(i = 0; i < teamMates.length; i++){
+
+        for(s = 0; s < crntSocial.length; s++){
+            crntSocial[s].remove();
+        }
+
+        var teamClone = teamMate[0].cloneNode(true);
+        contSlider.appendChild(teamClone);
+        teamMate[0].remove();
+        var newTeamMate = document.querySelectorAll(".team-mate")[i];
+        var image = newTeamMate.querySelector(".profile-cont .profile img");
+
+        setAttributes(image, {"src": teamMates[i].img, "alt" : teamMates[i].name});
+
+        console.log(newTeamMate.querySelector(".heading-cont h1"));
+        newTeamMate.querySelector(".heading-cont h1").textContent = teamMates[i].name;
+        var newDescription = newTeamMate.querySelector(".description-cont");
+        newDescription.querySelector(".title").textContent = teamMates[i].role;
+        newDescription.querySelector(".company").textContent = teamMates[i].company;
+        newDescription.querySelector(".bio").textContent = teamMates[i].bio;
+
+                    
+        var newSocial = newTeamMate.querySelector(".social-cont");
+        var socials = teamMates[i].social;
+        var icons = teamMates[i].icons;
+
+        for(s = 0; s < socials.length; s++){
+            var socialCont = document.createElement("div");
+            var socialLink = document.createElement("a");
+            var socialIcon = document.createElement("span");
+
+            // socialLink.setAttribute("href", socials[i]);
+            console.log(socials[s]);
+            console.log(icons[s]);
+
+            setAttributes(socialCont, {"class": "social"});
+            setAttributes(socialLink, {"href": socials[s], "target": "_blank", })
+            setAttributes(socialIcon, {"class": icons[s]});
+        
+            newSocial.appendChild(socialCont);
+            socialCont.appendChild(socialLink);
+            socialLink.appendChild(socialIcon);
+
+        }
+        
+    }
+}
 
 function update(){
     console.log(contSlider.clientWidth, matesCont.clientWidth);
@@ -173,6 +250,11 @@ function update(){
 
 
 matesCont.addEventListener("mouseover", update);
+
+//team-mates section data
+var heading = document.querySelectorAll(".heading-cont h1"),
+    description = document.querySelectorAll(".description-cont p"),
+    social = document.querySelectorAll(".social-cont .social a span");
 
 // function infoCards(){
 
