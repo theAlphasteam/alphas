@@ -47,6 +47,39 @@
                 "fa fa-twitter",
                 "fa fa-github"
             ]
+        },
+        
+        {
+            "name": "Victory Tuduo",
+            "role": "Software Developer",
+            "company" : "Alphas",
+            "bio" : "I'm a Developer(full stack), ",
+            "img" : "./img/IMG_20190108_163639edit.jpg",
+            "social" : [
+                "http://facebook.com/Tuduo Victory
+                "http://github.com/Victory-ET"
+            ],
+            "icons" : [
+                "fa fa-facebook",
+                "fa fa-github"
+            ]
+        },
+            
+        {
+            "name": "Emmanuel Uche",
+            "role": "Front-End developer and cyber-Security personnel",
+            "company" : "Alphas",
+            "bio" : "I'm a web-developer (front-end) and cyber-security person who loves coding and gets tired easily when coding",
+            "img" : "./img/IMG_20190108_163639edit.jpg",
+            "social" : [
+                
+                "https://facebook.com/Uc Emma",
+                "http://github.com/Uc-Hub"
+            ],
+            "icons" : [
+                "fa fa-facebook",
+                "fa fa-github"
+            ]
         }
     ]
 }
