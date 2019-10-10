@@ -48,7 +48,6 @@
                 "fa fa-github"
             ]
         },
-        
         {
             "name": "Victory Tuduo",
             "role": "Software Developer",
@@ -56,8 +55,8 @@
             "bio" : "I'm a Developer(full stack), ",
             "img" : "./img/IMG_20190108_163639edit.jpg",
             "social" : [
-                "http://facebook.com/Tuduo Victory
-                "http://github.com/Victory-ET"
+                "http://facebook.com/Tuduo Victory",
+                "https://github.com/Victory-ET"
             ],
             "icons" : [
                 "fa fa-facebook",
