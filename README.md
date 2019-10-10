@@ -63,6 +63,7 @@ to add a new member, fill in your details in the format by adding a new block en
       
 > If you're looking for a fontawesome icon for you social media, check out [w3schools fontawesome icons guide](https://www.w3schools.com/icons/fontawesome_icons_brand.asp)
 
+#### Then, submit a PR when you're done!!
 
 [Netlify preview](https://alphasteam.netlify.com)
 ---
