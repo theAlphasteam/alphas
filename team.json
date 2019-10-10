@@ -10,8 +10,8 @@
             "bio" : "I'm a Designer, developer, tech lover and code junkie",
             "img" : "./img/IMG_20190108_163639edit.jpg",
             "social" : [
-                "http://twitter.com/miracleio",
-                "http://github.com/miracleonyenma"
+                "https://twitter.com/miracleio",
+                "https://github.com/miracleonyenma"
             ],
             "icons" : [
                 "fa fa-twitter",
@@ -25,8 +25,8 @@
             "bio" : "I'm a Designer, developer, tech lover and code junkie",
             "img" : "./img/2.jpg",
             "social" : [
-                "http://twitter.com/miracleio",
-                "http://github.com/miracleonyenma"
+                "https://twitter.com/miracleio",
+                "https://github.com/miracleonyenma"
             ],
             "icons" : [
                 "fa fa-twitter",
@@ -40,8 +40,8 @@
             "bio" : "I'm a Designer, developer, tech lover and code junkie",
             "img" : "./img/lap.jpg",
             "social" : [
-                "http://twitter.com/miracleio",
-                "http://github.com/miracleonyenma"
+                "https://twitter.com/miracleio",
+                "https://github.com/miracleonyenma"
             ],
             "icons" : [
                 "fa fa-twitter",
@@ -55,7 +55,7 @@
             "bio" : "I'm a Developer(full stack), ",
             "img" : "./img/IMG_20190108_163639edit.jpg",
             "social" : [
-                "http://facebook.com/Tuduo Victory",
+                "https://facebook.com/Tuduo Victory",
                 "https://github.com/Victory-ET"
             ],
             "icons" : [
@@ -73,7 +73,7 @@
             "social" : [
                 
                 "https://facebook.com/Uc Emma",
-                "http://github.com/Uc-Hub"
+                "https://github.com/Uc-Hub"
             ],
             "icons" : [
                 "fa fa-facebook",
