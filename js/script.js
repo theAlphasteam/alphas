@@ -158,6 +158,34 @@ function smoothScroll(e, dur){
         requestAnimationFrame(animation);
 }
 
+var curve = document.querySelector("#curve"),
+    last_known_scroll_position = 0,
+    defaultCurveValue = 160,
+    curveRate = 2,
+    ticking = false,
+    curveValue;
+
+function scrollEvent(scrollPos){
+    console.log("scrollPos " + scrollPos);
+    if(scrollPos >= 0 && scrollPos < defaultCurveValue * curveRate){
+        curveValue = defaultCurveValue + parseFloat(scrollPos);
+        console.log(curveValue);
+        curve.setAttribute("d", "M 800 300 Q 400 " + curveValue + " 0 300 L 0 0 L 800 0 L 800 300 Z");
+    }
+}
+
+window.addEventListener("scroll", function(e){
+    last_known_scroll_position = window.scrollY;
+    if(!ticking){
+        window.requestAnimationFrame(function(){
+            scrollEvent(last_known_scroll_position);
+            ticking = false;
+        });
+    }
+
+    ticking = true;
+})
+
 //team-mates section scrolls
 var docStyles = document.documentElement.style,
     matesCont = document.querySelector("#mates-cont"),
