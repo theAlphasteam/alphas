@@ -489,6 +489,9 @@ h1, h2, h3 {
 }
 
 @media screen and (min-width: 700px) {
+  #menu {
+    border-radius: 0;
+  }
   #menu .logo-cont {
     width: 30%;
   }
@@ -503,7 +506,7 @@ h1, h2, h3 {
 }
 
 .intro-sect {
-  height: 120vh;
+  height: 100vh;
 }
 
 .background {
@@ -512,6 +515,7 @@ h1, h2, h3 {
   position: absolute;
   overflow: hidden;
   background: linear-gradient(80deg, rgba(36, 123, 234, 0.431), rgba(35, 102, 187, 0.8));
+  padding: 64px 0 0 0;
 }
 
 .background .rect-group {
@@ -738,7 +742,7 @@ h1, h2, h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  top: 30%;
+  top: calc(30% + 64px);
   left: 20%;
   z-index: 2;
   -webkit-transform: translate(-20%, -50%);
@@ -775,7 +779,19 @@ h1, h2, h3 {
 .sect.about {
   position: relative;
   background: #21252b;
-  z-index: 3;
+  z-index: 1;
+}
+
+.sect.about .curve-svg-container {
+  position: absolute;
+  -webkit-transform: translate(0, -100%) rotateX(180deg);
+          transform: translate(0, -100%) rotateX(180deg);
+  width: 100%;
+  top: calc(25vw);
+}
+
+.sect.about .curve-svg-container svg {
+  fill: #21252b;
 }
 
 .sect.about .sect-divide {

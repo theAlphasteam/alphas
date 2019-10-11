@@ -508,6 +508,7 @@ h1, h2, h3{
 
 @media screen and (min-width: 700px){
     #menu{
+        border-radius: 0;
         .logo-cont{
             width: 30%;
         }
@@ -530,7 +531,7 @@ h1, h2, h3{
 }
 
 .intro-sect{
-    height: 120vh;
+    height: 100vh;
 }
 
 .background{
@@ -539,16 +540,7 @@ h1, h2, h3{
     position: absolute;
     overflow: hidden;
     background: linear-gradient(80deg, rgba(36, 123, 234, 0.431), rgba(35, 102, 187, 0.8));
-    // .curve-svg-container{
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-
-    //     svg{
-    //         fill: linear-gradient(80deg, rgba(36, 123, 234, 0.431), rgba(35, 102, 187, 0.8));
-    //     }
-    // }
+    padding: 64px 0 0 0;
 
 
     .rect-group{
@@ -751,7 +743,7 @@ h1, h2, h3{
         position: absolute;
         display: flex;
         align-items: center;
-        top: 30%;
+        top: calc(30% + 64px);
         left: 20%;
         z-index: 2;
         transform: translate(-20%, -50%);
@@ -803,7 +795,18 @@ h1, h2, h3{
     position: relative;
     background: #21252b;
     // display: table;
-    z-index: 3;
+    z-index: 1;
+
+    .curve-svg-container{
+        position: absolute;
+        transform: translate(0, -100%) rotateX(180deg);
+        width: 100%;
+        top: calc(25vw);        
+        
+        svg{
+            fill: #21252b;
+        }
+    }
 
 
 
