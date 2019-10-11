@@ -1121,7 +1121,7 @@ h1, h2, h3 {
 }
 
 .sect-about .sect-item .sect-team-mates {
-  width: 78%;
+  width: %;
   margin: 1.35em auto 1.35em auto;
   text-align: center;
   overflow: hidden;
@@ -1148,7 +1148,7 @@ h1, h2, h3 {
 }
 
 .sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate {
-  min-width: 230px;
+  min-width: 280px;
   padding: 1em;
   margin: 1em;
   background: #e2ebf3;
