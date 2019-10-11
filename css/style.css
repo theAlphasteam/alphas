@@ -789,7 +789,7 @@ h1, h2, h3 {
           align-items: center;
   top: calc(30% + 64px);
   left: 20%;
-  z-index: 2;
+  z-index: 3;
   -webkit-transform: translate(-20%, -50%);
           transform: translate(-20%, -50%);
 }
@@ -1121,7 +1121,7 @@ h1, h2, h3 {
 }
 
 .sect-about .sect-item .sect-team-mates {
-  width: %;
+  width: 80%;
   margin: 1.35em auto 1.35em auto;
   text-align: center;
   overflow: hidden;
