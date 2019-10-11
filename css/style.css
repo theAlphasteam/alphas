@@ -1322,10 +1322,42 @@ h1, h2, h3 {
   .sect-about .sect-item .sect-team-mates .mates-cont .cont-slider {
     -webkit-transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-animation: mke_shft_crsl var(--dur) linear 2s infinite;
+            animation: mke_shft_crsl var(--dur) linear 2s infinite;
   }
   .sect-about .sect-item .sect-team-mates .mates-cont .cont-slider:hover {
-    -webkit-transform: translateX(var(--tx));
-            transform: translateX(var(--tx));
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+}
+
+@-webkit-keyframes mke_shft_crsl {
+  0% {
+    -webkit-transform: translateX(15%);
+            transform: translateX(15%);
+  }
+  50% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateX(15%);
+            transform: translateX(15%);
+  }
+}
+
+@keyframes mke_shft_crsl {
+  0% {
+    -webkit-transform: translateX(15%);
+            transform: translateX(15%);
+  }
+  50% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateX(15%);
+            transform: translateX(15%);
   }
 }
 

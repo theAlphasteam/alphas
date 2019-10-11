@@ -184,9 +184,9 @@ window.addEventListener("scroll", function(e){
     }
 
     ticking = true;
-})
+});
 
-//team-mates section scrolls
+//team-mates section data
 var docStyles = document.documentElement.style,
     matesCont = document.querySelector("#mates-cont"),
     contSlider = document.querySelector("#cont-slider"),
@@ -203,6 +203,7 @@ var docStyles = document.documentElement.style,
         var team = request.response;
         populateHeader(team);
         showTeam(team);
+        update();
     }
 
 function populateHeader(jsonObj) {
@@ -284,20 +285,17 @@ function showTeam(jsonObj){
     }
 }
 
+//team-mates section scrolls
 function update(){
     console.log(contSlider.clientWidth, matesCont.clientWidth);
-    var dur = teamMate.length*4 + "s";
-    docStyles.setProperty("--tx", `${-(contSlider.clientWidth) + (matesCont.clientWidth)}px`);
+    var dur = document.querySelectorAll(".team-mate").length*4 + "s";
+    docStyles.setProperty("--tx", `${((-contSlider.clientWidth) + (matesCont.clientWidth))}px`);
     docStyles.setProperty("--dur", dur);
 }
 
 
-matesCont.addEventListener("mouseover", update);
+// window.addEventListener("load", update);
 
-//team-mates section data
-var heading = document.querySelectorAll(".heading-cont h1"),
-    description = document.querySelectorAll(".description-cont p"),
-    social = document.querySelectorAll(".social-cont .social a span");
 
 // function infoCards(){
 
