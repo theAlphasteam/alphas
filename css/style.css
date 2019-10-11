@@ -363,6 +363,31 @@ h1, h2, h3 {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
+  #menu nav ul .slide {
+    top: 50%;
+    height: 64px;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    -webkit-transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  #menu nav ul .slide .slider {
+    width: 70px;
+    height: 4px;
+    background: #344052;
+    position: absolute;
+    bottom: 0;
+    -webkit-transform: translate(0, 50%);
+            transform: translate(0, 50%);
+    border-radius: 8px;
+    -webkit-transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+  }
   #menu nav ul li {
     display: inline;
     font-size: 16px;

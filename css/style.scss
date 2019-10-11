@@ -320,6 +320,10 @@ h1, h2, h3{
             transform: translateY(-50%);
             margin-bottom: 0;    
 
+            // .slide{
+            //     display: none;
+            // }
+
             li{
                 // display: inline;
                 margin: 12% 7%;
@@ -379,7 +383,29 @@ h1, h2, h3{
                 left: 50%;
                 transform: translate(-50%, -50%);
     
+                .slide{
+                    top: 50%;
+                    height: 64px;
+                    width: 100%;
+                    transform: translateY(-50%);
+                    position: absolute;    
+                    pointer-events: none;
+                    z-index: -1;
+                    transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     
+                    .slider{
+                        width: 70px;
+                        height: 4px;
+                        background: #344052;
+                        position: absolute;
+                        bottom: 0;
+                        transform: translate(0, 50%);
+                        border-radius: 8px;
+                        transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        opacity: 0;
+                    }
+                }
+        
                 li {
                     display: inline;
                     font-size: 16px;
