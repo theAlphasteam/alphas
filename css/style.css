@@ -1297,29 +1297,29 @@ h1, h2, h3 {
 }
 
 @media screen and (min-width: 900px) {
-  .sect-about .sect-images .sub-image:nth-child(1) {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(1) {
     width: 180px;
     height: 180px;
   }
-  .sect-about .sect-images .sub-image:nth-child(2) {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(2) {
     width: 160px;
     height: 160px;
     -webkit-transform: translate(40%, 0);
             transform: translate(40%, 0);
   }
-  .sect-about .sect-images .sub-image:nth-child(2):hover {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(2):hover {
     -webkit-transform: translate(40%, 0) scale(1.2);
             transform: translate(40%, 0) scale(1.2);
   }
-  .sect-about .sect-images .sub-image:nth-child(2):active {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(2):active {
     -webkit-transform: translate(40%, 0) scale(0.82);
             transform: translate(40%, 0) scale(0.82);
   }
-  .sect-about .sect-images .sub-image:nth-child(3) {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(3) {
     width: 240px;
     height: 240px;
   }
-  .sect-about .sect-images .sub-image:nth-child(4) {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(4) {
     width: 110px;
     height: 110px;
   }
