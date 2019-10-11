@@ -232,8 +232,23 @@ function showTeam(jsonObj){
         teamMate[0].remove();
         var newTeamMate = document.querySelectorAll(".team-mate")[i];
         var image = newTeamMate.querySelector(".profile-cont .profile img");
+        var alt = newTeamMate.querySelector(".profile-cont .profile h1");
+        var newAlt = "";
+        // newAlt += teamMates[i].name.split(" ")[n][0];
+        // console.log(alt);
 
-        setAttributes(image, {"src": teamMates[i].img, "alt" : teamMates[i].name});
+        if(teamMates[i].img == ""){
+            for(n = 0; n < teamMates[i].name.split(" ").length; n++){
+                console.log(teamMates[i].name.split(" ")[n][0]);
+                newAlt += teamMates[i].name.split(" ")[n][0];
+                console.log(newAlt)
+            }
+            setAttributes(image, { "alt" : teamMates[i].name});
+            alt.textContent = newAlt;
+        }
+        else{
+            setAttributes(image, {"src": teamMates[i].img, "alt" : teamMates[i].name});
+        }
 
         console.log(newTeamMate.querySelector(".heading-cont h1"));
         newTeamMate.querySelector(".heading-cont h1").textContent = teamMates[i].name;

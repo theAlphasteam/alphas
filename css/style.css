@@ -1167,6 +1167,15 @@ h1, h2, h3 {
           transform: translate(-50%, -50%);
 }
 
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont .profile h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: var(--text);
+}
+
 .sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont .profile img {
   width: 100%;
 }
