@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+*:before, *:after {
+  -webkit-transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
+  transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+
 :root {
   --inverse-bg: #28282f;
   --inverse-text: #28282f;
@@ -312,7 +317,22 @@ h1, h2, h3 {
 
 #menu nav ul li a {
   text-decoration: none;
+  position: relative;
   color: var(--text);
+}
+
+#menu nav ul li a:before {
+  content: attr(data-name);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #247bea;
+  overflow: hidden;
+  width: 0;
+}
+
+#menu nav ul li a:hover::before {
+  width: 100%;
 }
 
 #menu nav ul li.contact-us {
