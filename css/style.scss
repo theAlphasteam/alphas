@@ -202,6 +202,29 @@ h1, h2, h3{
             font-size: 26px;
             font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+            a{
+                color: var(--text);
+                text-decoration: none;
+                transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
+
+                &:before{
+                    content: attr(data-name);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    color: #247bea;
+                    overflow: hidden;
+                    width: 0;
+                }
+                &:hover{
+                    color: #fff;
+                }
+                &:hover::before{
+                    width: 100%;
+                }
+
+            }
+        
         }
 
         .svg-cont{
@@ -339,7 +362,12 @@ h1, h2, h3{
                     text-decoration: none;
                     position: relative;
                     color: var(--text);
-                    
+                    transition:0.64s ease-in-out;
+
+                    &:hover{
+                        color: #fff;
+                    }
+    
 
                     &:before{
                         content: attr(data-name);
