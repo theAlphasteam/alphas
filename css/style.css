@@ -965,13 +965,13 @@ nav ul li.contact-us a {
   color-rendering: auto;
 }
 
-.sect-content {
+.sect-about {
   position: relative;
   width: 100%;
   padding: 30% 0 0 0;
 }
 
-.sect-text {
+.sect-about .sect-text {
   padding: 6px 14px;
   font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #e2ebf3;
@@ -987,7 +987,7 @@ nav ul li.contact-us a {
   transition: 0.34s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.sect-text::after {
+.sect-about .sect-text::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -1001,21 +1001,21 @@ nav ul li.contact-us a {
   transition: 0.34s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.sect-text:hover {
+.sect-about .sect-text:hover {
   color: #344052;
 }
 
-.sect-text:hover::after {
+.sect-about .sect-text:hover::after {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   z-index: -1;
 }
 
-.sect-item {
+.sect-about .sect-item {
   display: block;
 }
 
-.sect-item .sect-heading {
+.sect-about .sect-item .sect-heading {
   font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #eaf0f6;
   width: 78%;
@@ -1024,19 +1024,19 @@ nav ul li.contact-us a {
   position: relative;
 }
 
-.sect-item .sect-heading h1 {
+.sect-about .sect-item .sect-heading h1 {
   margin: 0.25em 0.5em;
   color: #eaf0f6;
 }
 
-.sect-item .sect-heading p {
+.sect-about .sect-item .sect-heading p {
   margin: 0.15em 0.5em;
   font-weight: 100;
   font-size: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.sect-item .sect-heading p span {
+.sect-about .sect-item .sect-heading p span {
   font-family: monospace;
   background: #838a97;
   padding: 1px 3px;
@@ -1044,7 +1044,7 @@ nav ul li.contact-us a {
   font-weight: 100;
 }
 
-.sect-item .sect-images {
+.sect-about .sect-item .sect-images {
   width: 100%;
   height: 200px;
   position: relative;
@@ -1052,7 +1052,7 @@ nav ul li.contact-us a {
   margin: 0 0 5em 0;
 }
 
-.sect-item .sect-images .sub-image {
+.sect-about .sect-item .sect-images .sub-image {
   overflow: hidden;
   position: absolute;
   width: 120px;
@@ -1062,30 +1062,30 @@ nav ul li.contact-us a {
   transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.sect-item .sect-images .sub-image:hover {
+.sect-about .sect-item .sect-images .sub-image:hover {
   z-index: 2;
   -webkit-box-shadow: 0 0 34px rgba(0, 0, 0, 0.48);
           box-shadow: 0 0 34px rgba(0, 0, 0, 0.48);
 }
 
-.sect-item .sect-images .sub-image:nth-child(1) {
+.sect-about .sect-item .sect-images .sub-image:nth-child(1) {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-150%, -60%);
           transform: translate(-150%, -60%);
 }
 
-.sect-item .sect-images .sub-image:nth-child(1):hover {
+.sect-about .sect-item .sect-images .sub-image:nth-child(1):hover {
   -webkit-transform: translate(-150%, -60%) scale(1.2);
           transform: translate(-150%, -60%) scale(1.2);
 }
 
-.sect-item .sect-images .sub-image:nth-child(1):active {
+.sect-about .sect-item .sect-images .sub-image:nth-child(1):active {
   -webkit-transform: translate(-150%, -60%) scale(0.8);
           transform: translate(-150%, -60%) scale(0.8);
 }
 
-.sect-item .sect-images .sub-image:nth-child(2) {
+.sect-about .sect-item .sect-images .sub-image:nth-child(2) {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(100%, 0%);
@@ -1094,17 +1094,17 @@ nav ul li.contact-us a {
   height: 80px;
 }
 
-.sect-item .sect-images .sub-image:nth-child(2):hover {
+.sect-about .sect-item .sect-images .sub-image:nth-child(2):hover {
   -webkit-transform: translate(100%, 0%) scale(1.2);
           transform: translate(100%, 0%) scale(1.2);
 }
 
-.sect-item .sect-images .sub-image:nth-child(2):active {
+.sect-about .sect-item .sect-images .sub-image:nth-child(2):active {
   -webkit-transform: translate(100%, 0%) scale(0.82);
           transform: translate(100%, 0%) scale(0.82);
 }
 
-.sect-item .sect-images .sub-image:nth-child(3) {
+.sect-about .sect-item .sect-images .sub-image:nth-child(3) {
   top: 50%;
   left: 50%;
   width: 180px;
@@ -1113,22 +1113,22 @@ nav ul li.contact-us a {
           transform: translate(-50%, -50%);
 }
 
-.sect-item .sect-images .sub-image:nth-child(3):hover {
+.sect-about .sect-item .sect-images .sub-image:nth-child(3):hover {
   -webkit-transform: translate(-50%, -50%) scale(1.2);
           transform: translate(-50%, -50%) scale(1.2);
 }
 
-.sect-item .sect-images .sub-image:nth-child(3):active {
+.sect-about .sect-item .sect-images .sub-image:nth-child(3):active {
   -webkit-transform: translate(-50%, -50%) scale(0.82);
           transform: translate(-50%, -50%) scale(0.82);
 }
 
-.sect-item .sect-images .sub-image:nth-child(3) img {
+.sect-about .sect-item .sect-images .sub-image:nth-child(3) img {
   width: 100%;
   height: unset;
 }
 
-.sect-item .sect-images .sub-image:nth-child(4) {
+.sect-about .sect-item .sect-images .sub-image:nth-child(4) {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-100%, 60%);
@@ -1137,21 +1137,21 @@ nav ul li.contact-us a {
   height: 90px;
 }
 
-.sect-item .sect-images .sub-image:nth-child(4):hover {
+.sect-about .sect-item .sect-images .sub-image:nth-child(4):hover {
   -webkit-transform: translate(-100%, 60%) scale(1.2);
           transform: translate(-100%, 60%) scale(1.2);
 }
 
-.sect-item .sect-images .sub-image:nth-child(4):active {
+.sect-about .sect-item .sect-images .sub-image:nth-child(4):active {
   -webkit-transform: translate(-100%, 60%) scale(0.82);
           transform: translate(-100%, 60%) scale(0.82);
 }
 
-.sect-item .sect-images .sub-image img {
+.sect-about .sect-item .sect-images .sub-image img {
   height: 100%;
 }
 
-.sect-item .sect-team-mates {
+.sect-about .sect-item .sect-team-mates {
   width: 80%;
   margin: 1.35em auto 1.35em auto;
   text-align: center;
@@ -1159,18 +1159,18 @@ nav ul li.contact-us a {
   position: relative;
 }
 
-.sect-item .sect-team-mates .team-mates-heading {
+.sect-about .sect-item .sect-team-mates .team-mates-heading {
   width: 100%;
   margin: 1em 0;
   color: #e2ebf3;
 }
 
-.sect-item .sect-team-mates .mates-cont {
+.sect-about .sect-item .sect-team-mates .mates-cont {
   position: relative;
   overflow-y: hidden;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1178,7 +1178,7 @@ nav ul li.contact-us a {
   transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate {
   min-width: 280px;
   padding: 1em;
   margin: 1em;
@@ -1191,7 +1191,7 @@ nav ul li.contact-us a {
   position: relative;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .team-mate-bg {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .team-mate-bg {
   position: absolute;
   top: 0;
   left: 50%;
@@ -1202,12 +1202,12 @@ nav ul li.contact-us a {
   background: #247bea;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .team-mate-bg svg#mate-bg {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .team-mate-bg svg#mate-bg {
   width: 100%;
   height: 100%;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .team-mate-bg svg#mate-bg path {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .team-mate-bg svg#mate-bg path {
   fill: #344052;
   fill-opacity: 0.2;
   stroke-width: 1.5;
@@ -1218,7 +1218,7 @@ nav ul li.contact-us a {
   stroke-opacity: 1;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -1226,7 +1226,7 @@ nav ul li.contact-us a {
   margin: 3.5em auto 1.25em auto;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont::after {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont::after {
   content: "";
   border: 6px solid #344052;
   position: absolute;
@@ -1239,7 +1239,7 @@ nav ul li.contact-us a {
   border-radius: 50%;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont .profile {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont .profile {
   overflow: hidden;
   width: 88%;
   height: 88%;
@@ -1251,7 +1251,7 @@ nav ul li.contact-us a {
           transform: translate(-50%, -50%);
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont .profile h1 {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont .profile h1 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1260,11 +1260,11 @@ nav ul li.contact-us a {
   color: var(--text);
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont .profile img {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont .profile img {
   width: 100%;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .heading-cont {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .heading-cont {
   width: 100%;
   text-align: center;
   font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -1272,11 +1272,11 @@ nav ul li.contact-us a {
   position: relative;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .heading-cont h1 {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .heading-cont h1 {
   color: #344052;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .description-cont {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .description-cont {
   width: 100%;
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -1284,18 +1284,18 @@ nav ul li.contact-us a {
   margin: 1.25em 0 1.25em 0;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .description-cont p {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .description-cont p {
   padding: 0 1em 0 1em;
   margin: 0.25em 0;
   color: #344052;
   font-weight: bold;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .description-cont p:nth-last-child(1) {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .description-cont p:nth-last-child(1) {
   font-weight: normal;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont {
   width: 100%;
   text-align: center;
   position: relative;
@@ -1311,7 +1311,7 @@ nav ul li.contact-us a {
           justify-content: center;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont .social {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont .social {
   padding: 4px 8px;
   background: #e2ebf3;
   border-radius: 4px;
@@ -1319,7 +1319,7 @@ nav ul li.contact-us a {
   transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont .social:hover {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont .social:hover {
   -webkit-box-shadow: 0 0 20px rgba(36, 123, 234, 0.24);
           box-shadow: 0 0 20px rgba(36, 123, 234, 0.24);
   -webkit-transform: translateY(-10%);
@@ -1327,143 +1327,25 @@ nav ul li.contact-us a {
   z-index: 2;
 }
 
-.sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont .social a {
+.sect-about .sect-item .sect-team-mates .mates-cont .cont-slider .team-mate .social-cont .social a {
   color: #247bea;
   font-size: 1.75em;
 }
 
-.projects {
-  background: #21252b;
-  z-index: 3;
-  position: relative;
-}
-
-.projects .sect-item .sect-images .mobile-mock-up {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: #fff;
-  height: 100%;
-  width: 100%;
-  border-radius: 1em;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.projects .sect-item .sect-images .mobile-mock-up h1 {
-  font-size: 20px;
-  margin: 2px 0 4px 0;
-  background: linear-gradient(80deg, #247bea, #4f24ea);
-  color: #fff;
-  padding: 1em 0.45em;
-  margin: 0 0.35em;
-  border-radius: 0 0 0.58em 0.58em;
-  position: relative;
-}
-
-.projects .sect-item .sect-images .mobile-mock-up h1:after {
-  content: attr(data-name);
-  position: absolute;
-  padding: 4px 14px;
-  font-size: 50%;
-  top: 100%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: #fff;
-  -webkit-box-shadow: 0 0 20px rgba(35, 102, 187, 0.28);
-          box-shadow: 0 0 20px rgba(35, 102, 187, 0.28);
-  border-radius: 32px;
-  color: var(--text);
-  text-align: center;
-}
-
-.projects .sect-item .sect-images .mobile-mock-up ul {
-  list-style-type: none;
-}
-
-.projects .sect-item .sect-images .mobile-mock-up ul li {
-  font-size: 10px;
-  margin: 0.65em 1.25em;
-  padding: 6px;
-  border-radius: 2px;
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  -webkit-box-shadow: 0 2px 6px rgba(36, 123, 234, 0.24);
-          box-shadow: 0 2px 6px rgba(36, 123, 234, 0.24);
-}
-
-.projects .sect-item .sect-images .sub-image.mobile {
-  overflow: hidden;
-  position: absolute;
-  width: 105px;
-  z-index: 2;
-  height: 208px;
-  border-radius: 1em;
-  -webkit-transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transform: perspective(200px) translate(-150%, -60%) scale(1.2) rotate(-5deg);
-          transform: perspective(200px) translate(-150%, -60%) scale(1.2) rotate(-5deg);
-}
-
-.projects .sect-item .sect-images .sub-image.mobile:hover {
-  -webkit-transform: perspective(150px) translate(-150%, -60%) scale(1.5) rotate(0deg);
-          transform: perspective(150px) translate(-150%, -60%) scale(1.5) rotate(0deg);
-}
-
-.projects .sect-item .sect-images .sub-image.mobile:active {
-  -webkit-transform: perspective(150px) translate(-150%, -60%) scale(1) rotate(0deg);
-          transform: perspective(150px) translate(-150%, -60%) scale(1) rotate(0deg);
-}
-
-.projects .sect-item .sect-heading .project-listings {
-  list-style-type: none;
-  margin: 0 0 0 1em;
-}
-
-.projects .sect-item .sect-heading .project-listings li {
-  margin: 1em 0;
-  font-size: 28px;
-  opacity: 0.52;
-}
-
-.projects .sect-item .sect-heading .project-listings li span {
-  position: relative;
-}
-
-.projects .sect-item .sect-heading .project-listings li span:after {
-  content: "";
-  position: absolute;
-  width: 10%;
-  height: 10%;
-  bottom: 0;
-  z-index: -1;
-  background: var(--contact-bg);
-  left: 0;
-  opacity: 1;
-}
-
-.projects .sect-item .sect-heading .project-listings li span:hover::after {
-  width: 100%;
-  height: 40%;
-}
-
 @media screen and (min-width: 700px) {
-  .sect-content {
+  .sect-about {
     position: relative;
     width: 92%;
     margin: 0 auto;
     padding: 10% 0 0 0;
   }
-  .sect-text {
+  .sect-about .sect-text {
     top: 0;
     left: calc(0% + 1em);
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
   }
-  .sect-item .sect-heading {
+  .sect-about .sect-item .sect-heading {
     width: 50%;
     margin: 0 auto 1.35em auto;
     padding: 0 2em 0 0;
@@ -1473,28 +1355,28 @@ nav ul li.contact-us a {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-  .sect-item .sect-heading h1 {
+  .sect-about .sect-item .sect-heading h1 {
     margin: 0.25em 12px;
   }
-  .sect-item .sect-heading p {
+  .sect-about .sect-item .sect-heading p {
     margin: 0.25em 12px;
   }
-  .sect-item .sect-images {
+  .sect-about .sect-item .sect-images {
     width: 50%;
     float: right;
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-  .sect-item .sect-team-mates .mates-cont {
+  .sect-about .sect-item .sect-team-mates .mates-cont {
     overflow: hidden;
   }
-  .sect-item .sect-team-mates .mates-cont .cont-slider {
+  .sect-about .sect-item .sect-team-mates .mates-cont .cont-slider {
     -webkit-transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
     -webkit-animation: mke_shft_crsl var(--dur) linear 2s infinite;
             animation: mke_shft_crsl var(--dur) linear 2s infinite;
   }
-  .sect-item .sect-team-mates .mates-cont .cont-slider:hover {
+  .sect-about .sect-item .sect-team-mates .mates-cont .cont-slider:hover {
     -webkit-animation-play-state: paused;
             animation-play-state: paused;
   }
@@ -1531,29 +1413,29 @@ nav ul li.contact-us a {
 }
 
 @media screen and (min-width: 900px) {
-  .sect-items .sect-images .sub-image:nth-child(1) {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(1) {
     width: 180px;
     height: 180px;
   }
-  .sect-items .sect-images .sub-image:nth-child(2) {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(2) {
     width: 160px;
     height: 160px;
     -webkit-transform: translate(40%, 0);
             transform: translate(40%, 0);
   }
-  .sect-items .sect-images .sub-image:nth-child(2):hover {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(2):hover {
     -webkit-transform: translate(40%, 0) scale(1.2);
             transform: translate(40%, 0) scale(1.2);
   }
-  .sect-items .sect-images .sub-image:nth-child(2):active {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(2):active {
     -webkit-transform: translate(40%, 0) scale(0.82);
             transform: translate(40%, 0) scale(0.82);
   }
-  .sect-items .sect-images .sub-image:nth-child(3) {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(3) {
     width: 240px;
     height: 240px;
   }
-  .sect-items .sect-images .sub-image:nth-child(4) {
+  .sect-about .sect-items .sect-images .sub-image:nth-child(4) {
     width: 110px;
     height: 110px;
   }
