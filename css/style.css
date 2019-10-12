@@ -1401,7 +1401,7 @@ h1, h2, h3 {
   width: 105px;
   z-index: 2;
   height: 208px;
-  border-radius: 0;
+  border-radius: 1em;
   -webkit-transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -webkit-transform: perspective(200px) translate(-150%, -60%) scale(1.2) rotate(-5deg);
