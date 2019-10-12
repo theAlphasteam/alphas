@@ -1404,18 +1404,18 @@ nav ul li.contact-us a {
   border-radius: 1em;
   -webkit-transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transform: perspective(200px) translate(-150%, -60%) scale(1.2) rotate(-5deg);
-          transform: perspective(200px) translate(-150%, -60%) scale(1.2) rotate(-5deg);
+  -webkit-transform: perspective(200px) translate(-50%, -60%) scale(1.2) rotate(-5deg);
+          transform: perspective(200px) translate(-50%, -60%) scale(1.2) rotate(-5deg);
 }
 
 .projects .sect-item .sect-images .sub-image.mobile:hover {
-  -webkit-transform: perspective(150px) translate(-150%, -60%) scale(1.5) rotate(0deg);
-          transform: perspective(150px) translate(-150%, -60%) scale(1.5) rotate(0deg);
+  -webkit-transform: perspective(150px) translate(-50%, -60%) scale(1.5) rotate(0deg);
+          transform: perspective(150px) translate(-50%, -60%) scale(1.5) rotate(0deg);
 }
 
 .projects .sect-item .sect-images .sub-image.mobile:active {
-  -webkit-transform: perspective(150px) translate(-150%, -60%) scale(1) rotate(0deg);
-          transform: perspective(150px) translate(-150%, -60%) scale(1) rotate(0deg);
+  -webkit-transform: perspective(150px) translate(-50%, -60%) scale(1) rotate(0deg);
+          transform: perspective(150px) translate(-50%, -60%) scale(1) rotate(0deg);
 }
 
 .projects .sect-item .sect-heading .project-listings {
