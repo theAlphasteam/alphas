@@ -177,146 +177,146 @@ h1, h2, h3{
     transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: var(--bg);
     box-shadow: 0 0 32px rgba(35, 102, 187, 0.28);
+}
+.logo-cont{
+    width: 100%;
+    position: relative;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // padding: 1em;
+    float: left;
+    height: 100%;
+    transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    .logo-cont{
-        width: 100%;
-        position: relative;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // padding: 1em;
+    div{
         float: left;
-        height: 100%;
-        transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-        div{
-            float: left;
-        }
-
-        .text-cont{
-            position: absolute;
-            top: 50%;
-            color: var(--text);
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 26px;
-            font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-            a{
-                color: var(--text);
-                text-decoration: none;
-                transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
-
-                &:before{
-                    content: attr(data-name);
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    color: #247bea;
-                    overflow: hidden;
-                    width: 0;
-                }
-                &:hover{
-                    color: #fff;
-                }
-                &:hover::before{
-                    width: 100%;
-                }
-
-            }
-        
-        }
-
-        .svg-cont{
-            position: relative;
-            height: 100%;
-            width: 64px;
-            // top: 50%;
-            // left: 50%;
-            color: var(--text);
-            // transform: translate(-50%, -50%);
-            font-size: 26px;
-            font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-            svg{
-                width: 64px;
-                height: 64px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-
-                // ._1{
-                //     opacity:1;
-                //     fill: var(--logo);
-                //     fill-opacity:1;
-                //     stroke: var(--body-bg);
-                //     stroke-width:10.47638321;
-                //     stroke-linecap:round;
-                //     stroke-linejoin:round;
-                //     stroke-miterlimit:4;
-                //     stroke-dasharray:none;
-                //     stroke-dashoffset:166.29920959;
-                //     stroke-opacity:1;
-                // }
-                // ._2{
-                //     opacity:1;
-                //     fill:var(--logo);
-                //     fill-opacity:1;
-                //     stroke: var(--body-bg);
-                //     stroke-width:0;
-                //     stroke-linecap:round;
-                //     stroke-linejoin:round;
-                //     stroke-miterlimit:4;
-                //     stroke-dasharray:none;
-                //     stroke-dashoffset:166.29920959;
-                //     stroke-opacity:1;
-                // }
-    
-                .a_1{
-                    opacity:1;
-                    fill: var(--logo);
-                    fill-opacity:1;
-                    stroke: var(--body-bg);
-                    stroke-width:2.47638321;
-                    stroke-linecap:round;
-                    stroke-linejoin:round;
-                    stroke-miterlimit:4;
-                    stroke-dasharray:none;
-                    stroke-dashoffset:166.29920959;
-                    stroke-opacity:1;
-                }
-                .a_2{
-                    opacity:1;
-                    fill:var(--logo-shadow);
-                    fill-opacity:1;
-                    stroke: var(--logo);
-                    stroke-width:0;
-                    stroke-linecap:round;
-                    stroke-linejoin:round;
-                    stroke-miterlimit:4;
-                    stroke-dasharray:none;
-                    stroke-dashoffset:166.29920959;
-                    stroke-opacity:1;
-                }
-                .a_3{
-                    opacity:1;
-                    fill:var(--footer-bg);
-                    fill-opacity:1;
-                    stroke: var(--body-bg);
-                    stroke-width:0;
-                    stroke-linecap:round;
-                    stroke-linejoin:round;
-                    stroke-miterlimit:4;
-                    stroke-dasharray:none;
-                    stroke-dashoffset:166.29920959;
-                    stroke-opacity:1;
-                }
-        }
-
-    
-        }
     }
+
+    .text-cont{
+        position: absolute;
+        top: 50%;
+        color: var(--text);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 26px;
+        font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        a{
+            color: var(--text);
+            text-decoration: none;
+            transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
+
+            &:before{
+                content: attr(data-name);
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: #247bea;
+                overflow: hidden;
+                width: 0;
+            }
+            &:hover{
+                color: #fff;
+            }
+            &:hover::before{
+                width: 100%;
+            }
+
+        }
+    
+    }
+}
+
+.svg-cont{
+    position: relative;
+    height: 100%;
+    width: 64px;
+    // top: 50%;
+    // left: 50%;
+    color: var(--text);
+    // transform: translate(-50%, -50%);
+    font-size: 26px;
+    font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    svg{
+        width: 64px;
+        height: 64px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        // ._1{
+        //     opacity:1;
+        //     fill: var(--logo);
+        //     fill-opacity:1;
+        //     stroke: var(--body-bg);
+        //     stroke-width:10.47638321;
+        //     stroke-linecap:round;
+        //     stroke-linejoin:round;
+        //     stroke-miterlimit:4;
+        //     stroke-dasharray:none;
+        //     stroke-dashoffset:166.29920959;
+        //     stroke-opacity:1;
+        // }
+        // ._2{
+        //     opacity:1;
+        //     fill:var(--logo);
+        //     fill-opacity:1;
+        //     stroke: var(--body-bg);
+        //     stroke-width:0;
+        //     stroke-linecap:round;
+        //     stroke-linejoin:round;
+        //     stroke-miterlimit:4;
+        //     stroke-dasharray:none;
+        //     stroke-dashoffset:166.29920959;
+        //     stroke-opacity:1;
+        // }
+
+        .a_1{
+            opacity:1;
+            fill: var(--logo);
+            fill-opacity:1;
+            stroke: var(--body-bg);
+            stroke-width:2.47638321;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-miterlimit:4;
+            stroke-dasharray:none;
+            stroke-dashoffset:166.29920959;
+            stroke-opacity:1;
+        }
+        .a_2{
+            opacity:1;
+            fill:var(--logo-shadow);
+            fill-opacity:1;
+            stroke: var(--logo);
+            stroke-width:0;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-miterlimit:4;
+            stroke-dasharray:none;
+            stroke-dashoffset:166.29920959;
+            stroke-opacity:1;
+        }
+        .a_3{
+            opacity:1;
+            fill:var(--footer-bg);
+            fill-opacity:1;
+            stroke: var(--body-bg);
+            stroke-width:0;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-miterlimit:4;
+            stroke-dasharray:none;
+            stroke-dashoffset:166.29920959;
+            stroke-opacity:1;
+        }
+}
+
+
+}
 
     nav{
         width: 100%;
@@ -540,7 +540,7 @@ h1, h2, h3{
 
     }
 
-}
+
 
 
 .shownav{
