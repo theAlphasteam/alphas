@@ -192,7 +192,7 @@ h1, h2, h3 {
           box-shadow: 0 0 32px rgba(35, 102, 187, 0.28);
 }
 
-#menu .logo-cont {
+.logo-cont {
   width: 100%;
   position: relative;
   float: left;
@@ -201,11 +201,11 @@ h1, h2, h3 {
   transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#menu .logo-cont div {
+.logo-cont div {
   float: left;
 }
 
-#menu .logo-cont .text-cont {
+.logo-cont .text-cont {
   position: absolute;
   top: 50%;
   color: var(--text);
@@ -216,14 +216,14 @@ h1, h2, h3 {
   font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#menu .logo-cont .text-cont a {
+.logo-cont .text-cont a {
   color: var(--text);
   text-decoration: none;
   -webkit-transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
   transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
 }
 
-#menu .logo-cont .text-cont a:before {
+.logo-cont .text-cont a:before {
   content: attr(data-name);
   position: absolute;
   top: 0;
@@ -233,15 +233,15 @@ h1, h2, h3 {
   width: 0;
 }
 
-#menu .logo-cont .text-cont a:hover {
+.logo-cont .text-cont a:hover {
   color: #fff;
 }
 
-#menu .logo-cont .text-cont a:hover::before {
+.logo-cont .text-cont a:hover::before {
   width: 100%;
 }
 
-#menu .logo-cont .svg-cont {
+.svg-cont {
   position: relative;
   height: 100%;
   width: 64px;
@@ -250,7 +250,7 @@ h1, h2, h3 {
   font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#menu .logo-cont .svg-cont svg {
+.svg-cont svg {
   width: 64px;
   height: 64px;
   position: absolute;
@@ -260,7 +260,7 @@ h1, h2, h3 {
           transform: translate(-50%, -50%);
 }
 
-#menu .logo-cont .svg-cont svg .a_1 {
+.svg-cont svg .a_1 {
   opacity: 1;
   fill: var(--logo);
   fill-opacity: 1;
@@ -274,7 +274,7 @@ h1, h2, h3 {
   stroke-opacity: 1;
 }
 
-#menu .logo-cont .svg-cont svg .a_2 {
+.svg-cont svg .a_2 {
   opacity: 1;
   fill: var(--logo-shadow);
   fill-opacity: 1;
@@ -288,7 +288,7 @@ h1, h2, h3 {
   stroke-opacity: 1;
 }
 
-#menu .logo-cont .svg-cont svg .a_3 {
+.svg-cont svg .a_3 {
   opacity: 1;
   fill: var(--footer-bg);
   fill-opacity: 1;
@@ -302,7 +302,7 @@ h1, h2, h3 {
   stroke-opacity: 1;
 }
 
-#menu nav {
+nav {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -311,7 +311,7 @@ h1, h2, h3 {
   pointer-events: none;
 }
 
-#menu nav .inner {
+nav .inner {
   width: 100%;
   height: 100%;
   background: var(--bg);
@@ -322,7 +322,7 @@ h1, h2, h3 {
   transition: 0.86s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#menu nav ul {
+nav ul {
   width: 100%;
   padding: 1em;
   text-align: center;
@@ -333,14 +333,14 @@ h1, h2, h3 {
   margin-bottom: 0;
 }
 
-#menu nav ul li {
+nav ul li {
   margin: 12% 7%;
   color: var(--text);
   font-size: 36px;
   list-style-type: none;
 }
 
-#menu nav ul li a {
+nav ul li a {
   text-decoration: none;
   position: relative;
   color: var(--text);
@@ -348,11 +348,11 @@ h1, h2, h3 {
   transition: 0.64s ease-in-out;
 }
 
-#menu nav ul li a:hover {
+nav ul li a:hover {
   color: #fff;
 }
 
-#menu nav ul li a:before {
+nav ul li a:before {
   content: attr(data-name);
   position: absolute;
   top: 0;
@@ -362,11 +362,11 @@ h1, h2, h3 {
   width: 0;
 }
 
-#menu nav ul li a:hover::before {
+nav ul li a:hover::before {
   width: 100%;
 }
 
-#menu nav ul li.contact-us {
+nav ul li.contact-us {
   background: var(--contact-bg);
   width: 270px;
   padding: 6px 12px;
@@ -376,12 +376,12 @@ h1, h2, h3 {
           box-shadow: var(--contact-shadow);
 }
 
-#menu nav ul li.contact-us a {
+nav ul li.contact-us a {
   color: var(--contact-text);
 }
 
 @media screen and (min-width: 700px) {
-  #menu nav {
+  nav {
     width: 70%;
     position: relative;
     display: -webkit-box;
@@ -397,7 +397,7 @@ h1, h2, h3 {
     float: left;
     pointer-events: all;
   }
-  #menu nav .inner {
+  nav .inner {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -405,7 +405,7 @@ h1, h2, h3 {
             clip-path: circle(100% at 50% 50%);
     pointer-events: all;
   }
-  #menu nav ul {
+  nav ul {
     top: 0;
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -414,7 +414,7 @@ h1, h2, h3 {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
-  #menu nav ul .slide {
+  nav ul .slide {
     top: 50%;
     height: 64px;
     width: 100%;
@@ -426,7 +426,7 @@ h1, h2, h3 {
     -webkit-transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
-  #menu nav ul .slide .slider {
+  nav ul .slide .slider {
     width: 70px;
     height: 4px;
     background: #344052;
@@ -439,17 +439,17 @@ h1, h2, h3 {
     transition: 0.68s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     opacity: 0;
   }
-  #menu nav ul li {
+  nav ul li {
     display: inline;
     font-size: 16px;
     color: var(--text);
   }
-  #menu nav ul li.contact-us {
+  nav ul li.contact-us {
     width: unset;
   }
 }
 
-#menu .nav-button-cont {
+.nav-button-cont {
   position: absolute;
   top: 32px;
   left: 90%;
@@ -461,7 +461,7 @@ h1, h2, h3 {
   z-index: 999;
 }
 
-#menu .nav-button-cont div {
+.nav-button-cont div {
   height: 3.6px;
   margin: 0 0;
   position: absolute;
@@ -472,26 +472,26 @@ h1, h2, h3 {
   background: var(--text);
 }
 
-#menu .nav-button-cont div:nth-of-type(1) {
+.nav-button-cont div:nth-of-type(1) {
   top: 0;
   -webkit-transform: translate(0px, 18px) rotateZ(-45deg);
           transform: translate(0px, 18px) rotateZ(-45deg);
 }
 
-#menu .nav-button-cont div:nth-of-type(2) {
+.nav-button-cont div:nth-of-type(2) {
   top: 50%;
   -webkit-transform: translate(-100%, -50%) rotateZ(0);
           transform: translate(-100%, -50%) rotateZ(0);
   width: 0;
 }
 
-#menu .nav-button-cont div:nth-of-type(3) {
+.nav-button-cont div:nth-of-type(3) {
   bottom: 0;
   -webkit-transform: translate(0px, -18px) rotateZ(45deg);
           transform: translate(0px, -18px) rotateZ(45deg);
 }
 
-#menu .nav-button-cont .animatebars:nth-of-type(1) {
+.nav-button-cont .animatebars:nth-of-type(1) {
   top: 0;
   left: 50%;
   -webkit-transform: translate(-50%, 5px) rotateZ(0deg) !important;
@@ -500,7 +500,7 @@ h1, h2, h3 {
   width: 60%;
 }
 
-#menu .nav-button-cont .animatebars:nth-of-type(2) {
+.nav-button-cont .animatebars:nth-of-type(2) {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%) rotateZ(0deg) !important;
@@ -509,7 +509,7 @@ h1, h2, h3 {
   width: 80%;
 }
 
-#menu .nav-button-cont .animatebars:nth-of-type(3) {
+.nav-button-cont .animatebars:nth-of-type(3) {
   bottom: 0;
   left: 50%;
   -webkit-transform: translate(-50%, -5px) rotateZ(0deg) !important;
@@ -1466,5 +1466,37 @@ h1, h2, h3 {
     -webkit-transform: translateX(-50%) scaleX(2);
             transform: translateX(-50%) scaleX(2);
   }
+}
+
+#footer {
+  width: 100%;
+  background: #28282f;
+}
+
+#footer .brand {
+  width: 38%;
+  margin: 0;
+  padding: 1em;
+}
+
+#footer .brand .logo-cont.svg-cont {
+  width: 100%;
+  height: 64px;
+}
+
+#footer .brand .brand-details {
+  width: 100%;
+  text-align: center;
+  color: var(--contact-text);
+}
+
+#footer .brand .brand-details p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#footer .copyright p {
+  opacity: 0.5;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
