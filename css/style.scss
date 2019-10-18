@@ -8,6 +8,8 @@
         transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
     }
 }
+
+
 :root{
     --inverse-bg: #28282f;
     --inverse-text: #28282f;
@@ -96,7 +98,9 @@ h1, h2, h3{
 
     .center{
         position: absolute;
-        @include transform-center();
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
         .box{
             position: relative;
@@ -319,7 +323,7 @@ h1, h2, h3{
 
     nav{
         width: 100%;
-        height: 100%;
+        height: 100vh;
         position: fixed;
         top: 0;
         right: 0;
@@ -407,6 +411,7 @@ h1, h2, h3{
             width: 70%;
             position: relative;
             display: flex;
+            height: 100%;
             justify-content: center;
             align-items: center;
             background-color: transparent;
@@ -839,7 +844,7 @@ h1, h2, h3{
         align-items: center;
         top: calc(30% + 64px);
         left: 20%;
-        z-index: 3;
+        z-index: 1;
         transform: translate(-20%, -50%);
 
         h1{

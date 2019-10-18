@@ -5,7 +5,7 @@ var loaderCont = document.querySelector("div#loader-cont"),
 var tl = anime.timeline({
     easing: 'easeOutExpo',
     duration: 650,
-    delay: 500
+    delay: 100
 });
 
 function displayPage(){
@@ -44,6 +44,26 @@ function displayPage(){
         loaderCont.style.display = "none";    
         }
     },"-=200");
+    tl.add({
+        targets: "#menu",
+        begin: function(){
+            menu.style.transform = "translateY(-100%)" ;
+        }
+    });
+    tl.add({
+        targets: "#menu",
+        begin: function(){
+            menu.style.transform = "translateY(0)" ;
+        }
+    });
+    tl.add({
+        targets:".main-body-wrapper",
+        opacity: 0
+    }, "-=10000");
+    tl.add({
+        targets:".main-body-wrapper",
+        opacity: "1"
+    }, "-=1000")
 
 }
 
@@ -115,14 +135,9 @@ var slider = document.querySelector(".slider"),
                 translateY: 0,
                 delay: anime.stagger(100)
             });
-        }else{
+        }
+        else if(prevScrollPos < currentScrollPos / 2){
             menu.style.transform = "translateY(-100%)" ;
-            anime({
-                targets: '#menu nav ul li',
-                translateY: "100%",
-                delay: anime.stagger(100)
-            });
-
         }
         prevScrollPos = currentScrollPos;
     }
@@ -357,4 +372,11 @@ for(i = 0; i < links.length; i++){
     });
  };
 window.addEventListener("scroll", MiParallax);
-window.addEventListener("scroll", hideBar);
+window.addEventListener("scroll", function(){
+    if(screen.width < 700){
+        console.log("small");
+    } else{
+        hideBar();
+    // window.addEventListener("scroll", hideBar);
+    }
+});
