@@ -44,9 +44,11 @@ function displayPage(){
 
 //mobile navbar
 var navBtn = document.querySelector(".nav-button-cont"),
+    mainBody = document.querySelector(".main-body-wrapper"),
     mobileNavBar = document.querySelector(".inner");
 
 function toggleNav(){
+    mainBody.classList.toggle("blurbody");
     mobileNavBar.classList.toggle("shownav");
     for(i = 0; i < navBtn.children.length; i++){
         navBtn.children[i].classList.toggle("animatebars");
@@ -293,6 +295,22 @@ function update(){
     docStyles.setProperty("--dur", dur);
 }
 
+function MiParallax(e){
+    var Milax = document.querySelectorAll(".Milax");
+    var rate;
+    for(i = 0; i < Milax.length; i++){
+        var scrolled = window.pageYOffset,
+            elRate = parseFloat(Milax[i].getAttribute("data-rate")),
+            translateY = Milax[i].getAttribute("");
+        if(Milax[i].getAttribute("data-rate") == null){
+           elRate = -2;
+        }
+        rate = scrolled / elRate;
+        console.log(rate);
+        Milax[i].style.transform = 'translate3d(0, '+ rate + 'px, 0px)';    
+    }
+    
+};
 
 // window.addEventListener("load", update);
 
@@ -310,3 +328,4 @@ for(i = 0; i < links.length; i++){
         smoothScroll(e.target.getAttribute("href"), 1000);
     });
  };
+window.addEventListener("scroll", MiParallax);
