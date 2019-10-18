@@ -1,6 +1,7 @@
 var loaderCont = document.querySelector("div#loader-cont"),
     boxCont = document.querySelector(".loader.center"),
     effectEl = document.querySelector(".effect-element");
+
 var tl = anime.timeline({
     easing: 'easeOutExpo',
     duration: 650,
@@ -8,38 +9,42 @@ var tl = anime.timeline({
 });
 
 function displayPage(){
-    tl.add({
-        targets: effectEl,
-        scale: 1,
-        translateX: "-50%",
-        translateY: "-50%",
-    });
+    // tl.add({
+    //     targets: effectEl,
+    //     scale: 1,
+    //     translateX: "-50%",
+    //     translateY: "-50%",
+    // });
     tl.add({
         targets: loaderCont,
         background: 'rgba(255,255,255, 0)'
     },"-=100");
     tl.add({
-        targets: effectEl,
+        targets: loaderCont,
         scale: 0,
-        translateX: "50%",
-        translateY: "-50%",
-        duration: 3050,
+    });
+    // tl.add({
+    //     targets: boxCont,
+    //     scale: 2
+    //     // begin: function(){
+    //     //     boxCont.style.display = "none";
+    //     // }
+    // });
+    tl.add({
+        targets: loaderCont,
+        scale: 1
     });
     tl.add({
         targets: loaderCont,
-        opacity: 0,
-    },"-=3300");
+        opacity: 0
+    }, "-=1000");
     tl.add({
         targets: loaderCont,
         begin: function(){
         loaderCont.style.display = "none";    
         }
-    },"-=2000");
+    },"-=200");
 
-
-    // setTimeout(function(){
-    //     loaderCont.style.display = "none";
-    // }, 2000)
 }
 
 //mobile navbar
