@@ -97,7 +97,30 @@ for(var i = 0; i < texts.length; i++){
 
 //desktop nav bar functionalities
 var slider = document.querySelector(".slider"),
-    links = document.querySelectorAll("nav ul li");
+    links = document.querySelectorAll("nav ul li"),
+    menu = document.querySelector("#menu"),
+    prevScrollPos = window.pageYOffset;
+
+    function hideBar(){
+        var currentScrollPos = window.pageYOffset;
+        if(prevScrollPos > currentScrollPos){
+            menu.style.transform = "translateY(0)" ;
+            anime({
+                targets: '#menu nav ul li',
+                translateY: 0,
+                delay: anime.stagger(100)
+            });
+        }else{
+            menu.style.transform = "translateY(-100%)" ;
+            anime({
+                targets: '#menu nav ul li',
+                translateY: "100%",
+                delay: anime.stagger(100)
+            });
+
+        }
+        prevScrollPos = currentScrollPos;
+    }
 
 (function navigate(){
     for(var i = 0; i < links.length; i++){
@@ -329,3 +352,4 @@ for(i = 0; i < links.length; i++){
     });
  };
 window.addEventListener("scroll", MiParallax);
+window.addEventListener("scroll", hideBar);
