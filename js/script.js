@@ -9,6 +9,16 @@ var tl = anime.timeline({
 });
 
 function displayPage(){
+    tl.add({
+        targets:".main-body-wrapper",
+        opacity: 0
+    });
+    tl.add({
+        targets: "#menu",
+        begin: function(){
+            menu.style.transform = "translateY(-100%)" ;
+        }
+    });
     // tl.add({
     //     targets: effectEl,
     //     scale: 1,
@@ -47,19 +57,9 @@ function displayPage(){
     tl.add({
         targets: "#menu",
         begin: function(){
-            menu.style.transform = "translateY(-100%)" ;
-        }
-    });
-    tl.add({
-        targets: "#menu",
-        begin: function(){
             menu.style.transform = "translateY(0)" ;
         }
     });
-    tl.add({
-        targets:".main-body-wrapper",
-        opacity: 0
-    }, "-=10000");
     tl.add({
         targets:".main-body-wrapper",
         opacity: "1"
