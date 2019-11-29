@@ -35,13 +35,13 @@
         },
         {
             "name": "Koder King",
-            "role": "Software Developer",
+            "role": "Artificial Intelligence",
             "company" : "Alphas",
             "bio" : "I'm a Designer, developer, tech lover and code junkie",
             "img" : "",
             "social" : [
                 "https://twitter.com/miracleio",
-                "https://github.com/miracleonyenma"
+                "https://github.com/johnson-andy"
             ],
             "icons" : [
                 "fa fa-twitter",
