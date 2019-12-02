@@ -1,52 +1,79 @@
 var loaderCont = document.querySelector("div#loader-cont"),
     boxCont = document.querySelector(".loader.center"),
     effectEl = document.querySelector(".effect-element");
+
 var tl = anime.timeline({
     easing: 'easeOutExpo',
     duration: 650,
-    delay: 500
+    delay: 100
 });
 
 function displayPage(){
     tl.add({
-        targets: effectEl,
-        scale: 1,
-        translateX: "-50%",
-        translateY: "-50%",
+        targets:".main-body-wrapper",
+        opacity: 0
     });
+    tl.add({
+        targets: "#menu",
+        begin: function(){
+            menu.style.transform = "translateY(-100%)" ;
+        }
+    });
+    // tl.add({
+    //     targets: effectEl,
+    //     scale: 1,
+    //     translateX: "-50%",
+    //     translateY: "-50%",
+    // });
     tl.add({
         targets: loaderCont,
         background: 'rgba(255,255,255, 0)'
     },"-=100");
     tl.add({
-        targets: effectEl,
+        targets: loaderCont,
         scale: 0,
-        translateX: "50%",
-        translateY: "-50%",
-        duration: 3050,
+    });
+    // tl.add({
+    //     targets: boxCont,
+    //     scale: 2
+    //     // begin: function(){
+    //     //     boxCont.style.display = "none";
+    //     // }
+    // });
+    tl.add({
+        targets: loaderCont,
+        scale: 1
     });
     tl.add({
         targets: loaderCont,
-        opacity: 0,
-    },"-=3300");
+        opacity: 0
+    }, "-=1000");
     tl.add({
         targets: loaderCont,
         begin: function(){
         loaderCont.style.display = "none";    
         }
-    },"-=2000");
+    },"-=200");
+    tl.add({
+        targets: "#menu",
+        begin: function(){
+            menu.style.transform = "translateY(0)" ;
+        }
+    });
+    tl.add({
+        targets:".main-body-wrapper",
+        opacity: "1"
+    }, "-=1000")
 
-
-    // setTimeout(function(){
-    //     loaderCont.style.display = "none";
-    // }, 2000)
 }
 
 //mobile navbar
 var navBtn = document.querySelector(".nav-button-cont"),
+    mainBody = document.querySelector(".main-body-wrapper"),
     mobileNavBar = document.querySelector(".inner");
 
 function toggleNav(){
+    mainBody.classList.toggle("blurbody");
     mobileNavBar.classList.toggle("shownav");
     for(i = 0; i < navBtn.children.length; i++){
         navBtn.children[i].classList.toggle("animatebars");
@@ -95,7 +122,25 @@ for(var i = 0; i < texts.length; i++){
 
 //desktop nav bar functionalities
 var slider = document.querySelector(".slider"),
-    links = document.querySelectorAll("nav ul li");
+    links = document.querySelectorAll("nav ul li"),
+    menu = document.querySelector("#menu"),
+    prevScrollPos = window.pageYOffset;
+
+    function hideBar(){
+        var currentScrollPos = window.pageYOffset;
+        if(prevScrollPos > currentScrollPos){
+            menu.style.transform = "translateY(0)" ;
+            anime({
+                targets: '#menu nav ul li',
+                translateY: 0,
+                delay: anime.stagger(100)
+            });
+        }
+        else if(prevScrollPos < currentScrollPos / 2){
+            menu.style.transform = "translateY(-100%)" ;
+        }
+        prevScrollPos = currentScrollPos;
+    }
 
 (function navigate(){
     for(var i = 0; i < links.length; i++){
@@ -293,6 +338,22 @@ function update(){
     docStyles.setProperty("--dur", dur);
 }
 
+function MiParallax(e){
+    var Milax = document.querySelectorAll(".Milax");
+    var rate;
+    for(i = 0; i < Milax.length; i++){
+        var scrolled = window.pageYOffset,
+            elRate = parseFloat(Milax[i].getAttribute("data-rate")),
+            translateY = Milax[i].getAttribute("");
+        if(Milax[i].getAttribute("data-rate") == null){
+           elRate = -2;
+        }
+        rate = scrolled / elRate;
+        console.log(rate);
+        Milax[i].style.transform = 'translate3d(0, '+ rate + 'px, 0px)';    
+    }
+    
+};
 
 // window.addEventListener("load", update);
 
@@ -310,3 +371,12 @@ for(i = 0; i < links.length; i++){
         smoothScroll(e.target.getAttribute("href"), 1000);
     });
  };
+window.addEventListener("scroll", MiParallax);
+window.addEventListener("scroll", function(){
+    if(screen.width < 700){
+        console.log("small");
+    } else{
+        hideBar();
+    // window.addEventListener("scroll", hideBar);
+    }
+});
