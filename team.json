@@ -37,8 +37,8 @@
             "name": "Koder King",
             "role": "Artificial Intelligence",
             "company" : "Alphas",
-            "bio" : "I'm a Designer, developer, tech lover and code junkie",
-            "img" : "",
+            "bio" : "I love code, Music and Hacking",
+            "img" : "./img/Screenshot_20191129-210929_1575293498941.jpg",
             "social" : [
                 "https://twitter.com/miracleio",
                 "https://github.com/johnson-andy"
