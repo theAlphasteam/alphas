@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+* p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 *:before, *:after {
   -webkit-transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
   transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
@@ -1378,16 +1382,16 @@ nav ul li.contact-us a {
 
 .projects-gallery div.gallery-item {
   width: 100%;
-  height: 150px;
+  min-height: 150px;
   background: var(--body-bg);
   position: relative;
   border-radius: 10px;
 }
 
 .gallery-image {
-  width: 40%;
-  height: 100%;
-  position: absolute;
+  width: 28%;
+  height: 140px;
+  position: relative;
   top: 0;
   left: 50%;
   -webkit-transform: translate(-50%, 15px);
@@ -1479,6 +1483,41 @@ nav ul li.contact-us a {
           box-shadow: 0 2px 6px rgba(36, 123, 234, 0.24);
 }
 
+.gallery-content {
+  width: 70%;
+  margin: 1em 1.18em;
+}
+
+.gallery-content .heading {
+  margin: 0.76em 0;
+}
+
+.gallery-content .heading h1 {
+  color: #21252b;
+}
+
+.gallery-content .text {
+  margin: 0.45em 0;
+}
+
+.gallery-content .text p {
+  letter-spacing: 0.4px;
+}
+
+.gallery-content .gallery-action {
+  position: relative;
+}
+
+.gallery-content .gallery-action button {
+  background: var(--contact-bg);
+  color: var(--contact-text);
+  padding: 0.78em 1.42em;
+  border: none;
+  border-radius: 40px;
+  font-family: "Techna", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 1px;
+}
+
 .sect-heading .project-listings {
   list-style-type: none;
   margin: 0 0 0 1em;
@@ -1525,6 +1564,8 @@ nav ul li.contact-us a {
     top: 0;
     left: unset;
     right: 0;
+    position: absolute;
+    height: 100%;
     -webkit-transform: translate(0%, 15px);
             transform: translate(0%, 15px);
   }
