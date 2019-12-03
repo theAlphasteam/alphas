@@ -1373,15 +1373,56 @@ nav ul li.contact-us a {
 .projects-gallery {
   width: 100%;
   height: 100%;
+  grid-row-gap: 3em;
 }
 
-.projects-gallery > div.gallery-item {
+.projects-gallery div.gallery-item {
   width: 100%;
   height: 150px;
   background: var(--body-bg);
+  position: relative;
+  border-radius: 10px;
 }
 
-.sect-images .mobile-mock-up {
+.gallery-image {
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 15px);
+          transform: translate(-50%, 15px);
+}
+
+.gallery-image .sub-image.mobile {
+  overflow: hidden;
+  position: absolute;
+  width: 105px;
+  z-index: 2;
+  height: 208px;
+  border-radius: 1em;
+  left: 50%;
+  -webkit-transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform: perspective(200px) translate(-50%, -30%) scale(0.8) rotate(5deg);
+          transform: perspective(200px) translate(-50%, -30%) scale(0.8) rotate(5deg);
+}
+
+.gallery-image .sub-image.mobile:hover {
+  -webkit-transform: perspective(150px) translate(-50%, -30%) scale(1) rotate(0deg);
+          transform: perspective(150px) translate(-50%, -30%) scale(1) rotate(0deg);
+}
+
+.gallery-image .sub-image.mobile:active {
+  -webkit-transform: perspective(150px) translate(-50%, -30%) scale(0.6) rotate(0deg);
+          transform: perspective(150px) translate(-50%, -30%) scale(0.6) rotate(0deg);
+}
+
+.gallery-image .sub-image.mobile img {
+  width: 100%;
+}
+
+.gallery-image .mobile-mock-up {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1395,7 +1436,7 @@ nav ul li.contact-us a {
   z-index: -1;
 }
 
-.sect-images .mobile-mock-up h1 {
+.gallery-image .mobile-mock-up h1 {
   font-size: 20px;
   margin: 2px 0 4px 0;
   background: linear-gradient(80deg, #247bea, #4f24ea);
@@ -1406,7 +1447,7 @@ nav ul li.contact-us a {
   position: relative;
 }
 
-.sect-images .mobile-mock-up h1:after {
+.gallery-image .mobile-mock-up h1:after {
   content: attr(data-name);
   position: absolute;
   padding: 4px 14px;
@@ -1423,11 +1464,11 @@ nav ul li.contact-us a {
   text-align: center;
 }
 
-.sect-images .mobile-mock-up ul {
+.gallery-image .mobile-mock-up ul {
   list-style-type: none;
 }
 
-.sect-images .mobile-mock-up ul li {
+.gallery-image .mobile-mock-up ul li {
   font-size: 10px;
   margin: 0.65em 1.25em;
   padding: 6px;
@@ -1436,29 +1477,6 @@ nav ul li.contact-us a {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-box-shadow: 0 2px 6px rgba(36, 123, 234, 0.24);
           box-shadow: 0 2px 6px rgba(36, 123, 234, 0.24);
-}
-
-.sect-images .sub-image.mobile {
-  overflow: hidden;
-  position: absolute;
-  width: 105px;
-  z-index: 2;
-  height: 208px;
-  border-radius: 1em;
-  -webkit-transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transform: perspective(200px) translate(-50%, -60%) scale(1.2) rotate(-5deg);
-          transform: perspective(200px) translate(-50%, -60%) scale(1.2) rotate(-5deg);
-}
-
-.sect-images .sub-image.mobile:hover {
-  -webkit-transform: perspective(150px) translate(-50%, -60%) scale(1.5) rotate(0deg);
-          transform: perspective(150px) translate(-50%, -60%) scale(1.5) rotate(0deg);
-}
-
-.sect-images .sub-image.mobile:active {
-  -webkit-transform: perspective(150px) translate(-50%, -60%) scale(1) rotate(0deg);
-          transform: perspective(150px) translate(-50%, -60%) scale(1) rotate(0deg);
 }
 
 .sect-heading .project-listings {
@@ -1498,10 +1516,17 @@ nav ul li.contact-us a {
     width: 100%;
   }
   .projects-gallery {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     grid-column-gap: 2.5em;
     grid-row-gap: 3em;
+  }
+  .projects-gallery div.gallery-item .gallery-image {
+    top: 0;
+    left: unset;
+    right: 0;
+    -webkit-transform: translate(0%, 15px);
+            transform: translate(0%, 15px);
   }
 }
 
