@@ -585,6 +585,7 @@ nav ul li.contact-us a {
 .main-body-wrapper {
   -webkit-transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
 }
 
 .blurbody {
@@ -1386,6 +1387,9 @@ nav ul li.contact-us a {
   background: var(--body-bg);
   position: relative;
   border-radius: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .gallery-image {
@@ -1398,32 +1402,40 @@ nav ul li.contact-us a {
           transform: translate(-50%, 15px);
 }
 
-.gallery-image .sub-image.mobile {
+.gallery-image .sub-image {
   overflow: hidden;
   position: absolute;
+  width: 365px;
+  z-index: 2;
+  height: 315px;
+  border-radius: 1em;
+  left: 50%;
+  -webkit-transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform: perspective(200px) translate(-50%, -40%) scale(0.65) rotate(5deg);
+          transform: perspective(200px) translate(-50%, -40%) scale(0.65) rotate(5deg);
+}
+
+.gallery-image .sub-image:hover {
+  -webkit-transform: perspective(150px) translate(-50%, -40%) scale(1) rotate(0deg);
+          transform: perspective(150px) translate(-50%, -40%) scale(1) rotate(0deg);
+}
+
+.gallery-image .sub-image:active {
+  -webkit-transform: perspective(150px) translate(-50%, -40%) scale(0.6) rotate(0deg);
+          transform: perspective(150px) translate(-50%, -40%) scale(0.6) rotate(0deg);
+}
+
+.gallery-image .sub-image img {
+  width: 100%;
+}
+
+.gallery-image .sub-image.mobile {
   width: 105px;
   z-index: 2;
   height: 208px;
   border-radius: 1em;
   left: 50%;
-  -webkit-transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transform: perspective(200px) translate(-50%, -30%) scale(0.8) rotate(5deg);
-          transform: perspective(200px) translate(-50%, -30%) scale(0.8) rotate(5deg);
-}
-
-.gallery-image .sub-image.mobile:hover {
-  -webkit-transform: perspective(150px) translate(-50%, -30%) scale(1) rotate(0deg);
-          transform: perspective(150px) translate(-50%, -30%) scale(1) rotate(0deg);
-}
-
-.gallery-image .sub-image.mobile:active {
-  -webkit-transform: perspective(150px) translate(-50%, -30%) scale(0.6) rotate(0deg);
-          transform: perspective(150px) translate(-50%, -30%) scale(0.6) rotate(0deg);
-}
-
-.gallery-image .sub-image.mobile img {
-  width: 100%;
 }
 
 .gallery-image .mobile-mock-up {
@@ -1638,6 +1650,9 @@ nav ul li.contact-us a {
 }
 
 @media screen and (min-width: 700px) {
+  #projects .sect-item {
+    width: 94%;
+  }
   .projects-gallery {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -1652,6 +1667,21 @@ nav ul li.contact-us a {
     height: 100%;
     -webkit-transform: translate(0%, 15px);
             transform: translate(0%, 15px);
+  }
+  .projects-gallery div.gallery-item .gallery-image .sub-image {
+    -webkit-transform: perspective(200px) translate(-50%, -28%) scale(0.65) rotate(0deg);
+            transform: perspective(200px) translate(-50%, -28%) scale(0.65) rotate(0deg);
+  }
+  .projects-gallery div.gallery-item .gallery-image .sub-image:hover {
+    -webkit-transform: perspective(150px) translate(-50%, -28%) scale(1) rotate(5deg);
+            transform: perspective(150px) translate(-50%, -28%) scale(1) rotate(5deg);
+  }
+  .projects-gallery div.gallery-item .gallery-image .sub-image:active {
+    -webkit-transform: perspective(150px) translate(-50%, -28%) scale(0.6) rotate(5deg);
+            transform: perspective(150px) translate(-50%, -28%) scale(0.6) rotate(5deg);
+  }
+  .projects-gallery div.gallery-item .gallery-image .sub-image img {
+    width: 100%;
   }
   .projects-gallery div.gallery-item .gallery-content {
     width: 70%;

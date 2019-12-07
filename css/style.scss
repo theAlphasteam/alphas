@@ -607,6 +607,7 @@ h1, h2, h3{
 //main body content
 .main-body-wrapper{
     transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
 }
 
 .blurbody{
@@ -1541,7 +1542,7 @@ h1, h2, h3{
         background: var(--body-bg);
         position: relative;
         border-radius: 10px;
-
+        height: fit-content;
     }
 }
 
@@ -1553,26 +1554,35 @@ h1, h2, h3{
     left: 50%;
     transform: translate(-50%, 15px);
 
-    .sub-image.mobile{
+    .sub-image{
         overflow: hidden;
         position: absolute;
+        width: 365px;
+        z-index: 2;
+        height: 315px;
+        border-radius: 1em;
+        left: 50%;
+        transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform: perspective(200px) translate(-50%, -40%) scale(0.65) rotate(5deg);
+
+        &:hover{
+            transform: perspective(150px) translate(-50%, -40%) scale(1) rotate(0deg);
+        }
+        &:active{
+            transform: perspective(150px) translate(-50%, -40%) scale(0.6) rotate(0deg);
+        }
+
+        img{ width: 100%;}
+
+
+    }
+
+    .sub-image.mobile{
         width: 105px;
         z-index: 2;
         height: 208px;
         border-radius: 1em;
         left: 50%;
-        transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        transform: perspective(200px) translate(-50%, -30%) scale(0.8) rotate(5deg);
-
-        &:hover{
-            transform: perspective(150px) translate(-50%, -30%) scale(1) rotate(0deg);
-        }
-        &:active{
-            transform: perspective(150px) translate(-50%, -30%) scale(0.6) rotate(0deg);
-        }
-
-        img{ width: 100%;}
-
     }
 
 
@@ -1653,6 +1663,7 @@ h1, h2, h3{
 
     }
 
+    
 
 
     .laptop-mock-up{
@@ -1790,14 +1801,12 @@ h1, h2, h3{
 
 
 @media screen and (min-width: 700px){
-    #projects{    
-        .sect-inner-wrapper{
-            .sect-content{
-                // width: 100%;
-            }
+    #projects{
+        .sect-item{
+            width: 94%;
         }
     }
-    
+        
     .projects-gallery{
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 2.5em;
@@ -1813,10 +1822,21 @@ h1, h2, h3{
                 height: 100%;
                 transform: translate(0%, 15px);
             
-                .sub-image.mobile{
-                    
+                .sub-image{
+                    transform: perspective(200px) translate(-50%, -28%) scale(0.65) rotate(0deg);
+            
+                    &:hover{
+                        transform: perspective(150px) translate(-50%, -28%) scale(1) rotate(5deg);
+                    }
+                    &:active{
+                        transform: perspective(150px) translate(-50%, -28%) scale(0.6) rotate(5deg);
+                    }
+            
+                    img{ width: 100%;}
+            
+            
                 }
-            }
+                        }
 
             .gallery-content{
                 width: 70%;
