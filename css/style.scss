@@ -1534,7 +1534,10 @@ h1, h2, h3{
 .projects-gallery{
     width: 100%;
     height: 100%;
-    grid-row-gap: 3em;
+
+    .gallery-column{
+        position: relative;
+    }
 
     div.gallery-item{
         width: 100%;
@@ -1543,16 +1546,18 @@ h1, h2, h3{
         position: relative;
         border-radius: 10px;
         height: fit-content;
+        padding: 1em 0;
+        margin: 2em 0;
     }
 }
 
 .gallery-image{
-    width: 28%;
+    width: 100%;
     height: 140px;
     position: relative;
     top: 0;
     left: 50%;
-    transform: translate(-50%, 15px);
+    transform: translate(-50%, 0);
 
     .sub-image{
         overflow: hidden;
@@ -1583,6 +1588,8 @@ h1, h2, h3{
         height: 208px;
         border-radius: 1em;
         left: 50%;
+
+        
     }
 
 
@@ -1722,6 +1729,11 @@ h1, h2, h3{
         }
     }
 
+    .sub-image.cs{
+        img{
+            // filter: drop-shadow(-3px 4px 13px rgba(10, 10, 10, 0.158));
+        }
+    }
 
 }
 
@@ -1807,20 +1819,39 @@ h1, h2, h3{
         }
     }
         
+    .sect-heading{
+        width: 50%;
+        margin: 0 auto 1.55em auto;
+        padding: 0 2em 0 0;
+        text-align: left;
+        float: left;
+        position: relative;
+        transform: translateY(0);
+
+        h1{
+            margin: 0.25em 12px;
+        }
+        p{
+            margin: 0.25em 12px;
+        }
+    }
+    
+
     .projects-gallery{
         grid-template-columns: 1fr 1fr;
-        grid-column-gap: 2.5em;
+        grid-column-gap: 2em;
         grid-row-gap: 3em;
 
         div.gallery-item{
             
             .gallery-image{
+                width: 28%;
                 top: 0;
                 left: unset;
                 right: 0;
                 position: absolute;
                 height: 100%;
-                transform: translate(0%, 15px);
+                transform: translate(0%,0);
             
                 .sub-image{
                     transform: perspective(200px) translate(-50%, -28%) scale(0.65) rotate(0deg);
@@ -1836,7 +1867,22 @@ h1, h2, h3{
             
             
                 }
-                        }
+
+                .sub-image.mobile{
+                    transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    transform: perspective(200px) translate(-50%, 5%) scale(0.65) rotate(5deg);
+            
+                    &:hover{
+                        transform: perspective(150px) translate(-50%, 5%) scale(1) rotate(0deg);
+                    }
+                    &:active{
+                        transform: perspective(150px) translate(-50%, 5%) scale(0.6) rotate(0deg);
+                    }
+            
+                    img{ width: 100%;}
+            
+                }
+            }
 
             .gallery-content{
                 width: 70%;
@@ -1866,25 +1912,8 @@ h1, h2, h3{
     .sect-text{
         top: 0;
         left: calc(0% + 1em);
-        transform: translate(0, -50%);
+        transform: translate(0, 50%);
     }
-    .sect-heading{
-        width: 50%;
-        margin: 0 auto 1.35em auto;
-        padding: 0 2em 0 0;
-        text-align: left;
-        float: right;
-        position: relative;
-        transform: translateY(0);
-
-        h1{
-            margin: 0.25em 12px;
-        }
-        p{
-            margin: 0.25em 12px;
-        }
-    }
-    
     .sect-images{
         width: 50%;
         float: right;

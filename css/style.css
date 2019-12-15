@@ -1378,7 +1378,10 @@ nav ul li.contact-us a {
 .projects-gallery {
   width: 100%;
   height: 100%;
-  grid-row-gap: 3em;
+}
+
+.projects-gallery .gallery-column {
+  position: relative;
 }
 
 .projects-gallery div.gallery-item {
@@ -1390,16 +1393,18 @@ nav ul li.contact-us a {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  padding: 1em 0;
+  margin: 2em 0;
 }
 
 .gallery-image {
-  width: 28%;
+  width: 100%;
   height: 140px;
   position: relative;
   top: 0;
   left: 50%;
-  -webkit-transform: translate(-50%, 15px);
-          transform: translate(-50%, 15px);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 .gallery-image .sub-image {
@@ -1653,20 +1658,37 @@ nav ul li.contact-us a {
   #projects .sect-item {
     width: 94%;
   }
+  .sect-heading {
+    width: 50%;
+    margin: 0 auto 1.55em auto;
+    padding: 0 2em 0 0;
+    text-align: left;
+    float: left;
+    position: relative;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .sect-heading h1 {
+    margin: 0.25em 12px;
+  }
+  .sect-heading p {
+    margin: 0.25em 12px;
+  }
   .projects-gallery {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-    grid-column-gap: 2.5em;
+    grid-column-gap: 2em;
     grid-row-gap: 3em;
   }
   .projects-gallery div.gallery-item .gallery-image {
+    width: 28%;
     top: 0;
     left: unset;
     right: 0;
     position: absolute;
     height: 100%;
-    -webkit-transform: translate(0%, 15px);
-            transform: translate(0%, 15px);
+    -webkit-transform: translate(0%, 0);
+            transform: translate(0%, 0);
   }
   .projects-gallery div.gallery-item .gallery-image .sub-image {
     -webkit-transform: perspective(200px) translate(-50%, -28%) scale(0.65) rotate(0deg);
@@ -1681,6 +1703,23 @@ nav ul li.contact-us a {
             transform: perspective(150px) translate(-50%, -28%) scale(0.6) rotate(5deg);
   }
   .projects-gallery div.gallery-item .gallery-image .sub-image img {
+    width: 100%;
+  }
+  .projects-gallery div.gallery-item .gallery-image .sub-image.mobile {
+    -webkit-transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform: perspective(200px) translate(-50%, 5%) scale(0.65) rotate(5deg);
+            transform: perspective(200px) translate(-50%, 5%) scale(0.65) rotate(5deg);
+  }
+  .projects-gallery div.gallery-item .gallery-image .sub-image.mobile:hover {
+    -webkit-transform: perspective(150px) translate(-50%, 5%) scale(1) rotate(0deg);
+            transform: perspective(150px) translate(-50%, 5%) scale(1) rotate(0deg);
+  }
+  .projects-gallery div.gallery-item .gallery-image .sub-image.mobile:active {
+    -webkit-transform: perspective(150px) translate(-50%, 5%) scale(0.6) rotate(0deg);
+            transform: perspective(150px) translate(-50%, 5%) scale(0.6) rotate(0deg);
+  }
+  .projects-gallery div.gallery-item .gallery-image .sub-image.mobile img {
     width: 100%;
   }
   .projects-gallery div.gallery-item .gallery-content {
@@ -1703,24 +1742,8 @@ nav ul li.contact-us a {
   .sect-text {
     top: 0;
     left: calc(0% + 1em);
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
-  }
-  .sect-heading {
-    width: 50%;
-    margin: 0 auto 1.35em auto;
-    padding: 0 2em 0 0;
-    text-align: left;
-    float: right;
-    position: relative;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  .sect-heading h1 {
-    margin: 0.25em 12px;
-  }
-  .sect-heading p {
-    margin: 0.25em 12px;
+    -webkit-transform: translate(0, 50%);
+            transform: translate(0, 50%);
   }
   .sect-images {
     width: 50%;
