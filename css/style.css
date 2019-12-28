@@ -34,7 +34,6 @@
   --inverse-text: #f5f8fa;
   --footer-bg: #ffff;
   --body-bg: #f5f8fa;
-  --logo: #28282f;
   --logo-shadow: #d1dae0;
   --contact-bg: #1da1f2;
   --contact-shadow: 8px 6px 32px rgba(29, 160, 242, 0.349);
@@ -43,6 +42,24 @@
   --link-color-hover: #91b1ee;
   --text: #5e697b;
   --menu-shadow: 0 0 32px rgba(40, 40, 47, 0.37);
+}
+
+.large-label:before, .sect.about:before, #projects:before {
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  font-size: 14em;
+  z-index: 1;
+  -webkit-transform: translate(-100%, -10%);
+          transform: translate(-100%, -10%);
+  color: var(--contact-text);
+  opacity: 0.15;
+}
+
+@media screen and (min-width: 768px) {
+  .sect.about::before {
+    content: attr(data-sect);
+  }
 }
 
 h1, h2, h3 {
@@ -384,7 +401,7 @@ nav ul li.contact-us a {
   color: var(--contact-text);
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
   nav {
     width: 70%;
     position: relative;
@@ -529,7 +546,7 @@ nav ul li.contact-us a {
   background: rgba(255, 255, 255, 0.801) !important;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
   .nav-button-cont {
     display: none;
   }
@@ -570,7 +587,7 @@ nav ul li.contact-us a {
   pointer-events: all !important;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
   #menu {
     border-radius: 0;
   }
@@ -607,7 +624,7 @@ nav ul li.contact-us a {
   height: 120%;
   position: absolute;
   overflow: hidden;
-  background: linear-gradient(80deg, rgba(36, 123, 234, 0.431), rgba(35, 102, 187, 0.8));
+  background: linear-gradient(80deg, #6babff, #1560c2);
   padding: 64px 0 0 0;
 }
 
@@ -667,7 +684,7 @@ nav ul li.contact-us a {
   color: #838a97;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
   .background .rect-group {
     left: 70%;
   }
@@ -864,7 +881,7 @@ nav ul li.contact-us a {
   border-radius: 12em;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
   .intro-sect .main .main-header {
     width: 40%;
     -webkit-transform: translate(-20%, -50%);
@@ -995,6 +1012,7 @@ nav ul li.contact-us a {
   position: relative;
   width: 100%;
   padding: 30% 0 0 0;
+  z-index: 1;
 }
 
 .sect-text {
@@ -1362,6 +1380,8 @@ nav ul li.contact-us a {
   background: #21252b;
   z-index: 3;
   position: relative;
+  padding-bottom: 1em;
+  margin-bottom: var(--footer-height);
 }
 
 #projects .sect-item {
@@ -1530,6 +1550,31 @@ nav ul li.contact-us a {
           filter: drop-shadow(-3px 4px 13px rgba(10, 10, 10, 0.158));
 }
 
+.gallery-image .sub-image.alphas-project-img {
+  overflow: hidden;
+  position: absolute;
+  width: 86%;
+  z-index: 2;
+  background: var(--inverse-bg);
+  height: 100%;
+  border-radius: 0.65em;
+  left: 50%;
+  -webkit-transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.54s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform: perspective(200px) translate(calc(-50% - 5px), -5px) scale(1) rotate(0);
+          transform: perspective(200px) translate(calc(-50% - 5px), -5px) scale(1) rotate(0);
+  border: 3px solid var(--inverse-bg);
+  -webkit-box-shadow: 5px 5px 0 var(--inverse-bg);
+          box-shadow: 5px 5px 0 var(--inverse-bg);
+}
+
+.gallery-image .sub-image.alphas-project-img:hover, .gallery-image .sub-image.alphas-project-img:focus {
+  -webkit-transform: perspective(200px) translate(-50%, 0) scale(1) rotate(0);
+          transform: perspective(200px) translate(-50%, 0) scale(1) rotate(0);
+  -webkit-box-shadow: 0px 0px 0 var(--inverse-bg);
+          box-shadow: 0px 0px 0 var(--inverse-bg);
+}
+
 .gallery-image .laptop-mock-up {
   position: absolute;
   top: 0%;
@@ -1654,7 +1699,10 @@ nav ul li.contact-us a {
   height: 40%;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
+  #projects::before {
+    content: attr(data-sect);
+  }
   #projects .sect-item {
     width: 94%;
   }
@@ -1730,9 +1778,42 @@ nav ul li.contact-us a {
     text-align: left;
     margin: 0.76em 0;
   }
+  .projects-gallery .gallery-item.alphas-projects .gallery-image {
+    width: 100%;
+    height: 140px;
+    position: relative;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  .projects-gallery .gallery-item.alphas-projects .gallery-image .sub-image.alphas-project-img {
+    -webkit-transform: perspective(200px) translate(calc(-50% - 5px), -5px) scale(1) rotate(0);
+            transform: perspective(200px) translate(calc(-50% - 5px), -5px) scale(1) rotate(0);
+  }
+  .projects-gallery .gallery-item.alphas-projects .gallery-image .sub-image.alphas-project-img:hover, .projects-gallery .gallery-item.alphas-projects .gallery-image .sub-image.alphas-project-img:focus {
+    -webkit-transform: perspective(200px) translate(-50%, 0) scale(1) rotate(0);
+            transform: perspective(200px) translate(-50%, 0) scale(1) rotate(0);
+    -webkit-box-shadow: 0px 0px 0 var(--inverse-bg);
+            box-shadow: 0px 0px 0 var(--inverse-bg);
+  }
+  .projects-gallery .gallery-item.alphas-projects .gallery-content {
+    width: 78%;
+    margin: 1.2em auto;
+  }
+  .projects-gallery .gallery-item.alphas-projects .gallery-content div {
+    text-align: center;
+    margin: 0.76em 0;
+  }
+  .alphas-projects-grid {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    display: -ms-grid;
+    display: grid;
+  }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
   .sect-content {
     position: relative;
     width: 92%;
@@ -1854,13 +1935,17 @@ nav ul li.contact-us a {
 
 #footer {
   width: 100%;
-  background: #28282f;
+  background: var(--contact-bg);
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
 }
 
 #footer .brand {
   width: 38%;
   margin: 0;
   padding: 1em;
+  float: left;
 }
 
 #footer .brand .logo-cont.svg-cont {
@@ -1876,6 +1961,24 @@ nav ul li.contact-us a {
 
 #footer .brand .brand-details p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#footer .footer-details {
+  float: left;
+  width: 62%;
+  height: 100%;
+  margin: 0;
+  padding: 1em;
+}
+
+#footer .footer-details .caption-cont {
+  color: var(--inverse-text);
+  width: 100%;
+  text-align: center;
+}
+
+#footer .footer-details .contacts-cont {
+  width: 100%;
 }
 
 #footer .copyright p {

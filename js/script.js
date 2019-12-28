@@ -2,6 +2,9 @@ var loaderCont = document.querySelector("div#loader-cont"),
     boxCont = document.querySelector(".loader.center"),
     effectEl = document.querySelector(".effect-element");
 
+var footer = document.querySelector("#footer"),
+    footerHeight;
+
 var tl = anime.timeline({
     easing: 'easeOutExpo',
     duration: 650,
@@ -126,21 +129,21 @@ var slider = document.querySelector(".slider"),
     menu = document.querySelector("#menu"),
     prevScrollPos = window.pageYOffset;
 
-    function hideBar(){
-        var currentScrollPos = window.pageYOffset;
-        if(prevScrollPos > currentScrollPos){
-            menu.style.transform = "translateY(0)" ;
-            anime({
-                targets: '#menu nav ul li',
-                translateY: 0,
-                delay: anime.stagger(100)
-            });
-        }
-        else if(prevScrollPos < currentScrollPos / 2){
-            menu.style.transform = "translateY(-100%)" ;
-        }
-        prevScrollPos = currentScrollPos;
+function hideBar(){
+    var currentScrollPos = window.pageYOffset;
+    if(prevScrollPos > currentScrollPos){
+        menu.style.transform = "translateY(0)" ;
+        anime({
+            targets: '#menu nav ul li',
+            translateY: 0,
+            delay: anime.stagger(100)
+        });
     }
+    else if(prevScrollPos < currentScrollPos / 2){
+        menu.style.transform = "translateY(-100%)" ;
+    }
+    prevScrollPos = currentScrollPos;
+}
 
 (function navigate(){
     for(var i = 0; i < links.length; i++){
@@ -211,7 +214,7 @@ var curve = document.querySelector("#curve"),
     curveValue;
 
 function scrollEvent(scrollPos){
-    console.log("scrollPos " + scrollPos);
+    // console.log("scrollPos " + scrollPos);
     if(scrollPos >= 0 && scrollPos < defaultCurveValue * curveRate){
         curveValue = defaultCurveValue + parseFloat(scrollPos);
         console.log(curveValue);
@@ -349,7 +352,7 @@ function MiParallax(e){
            elRate = -2;
         }
         rate = scrolled / elRate;
-        console.log(rate);
+        // console.log(rate);
         Milax[i].style.transform = 'translate3d(0, '+ rate + 'px, 0px)';    
     }
     
@@ -379,4 +382,7 @@ window.addEventListener("scroll", function(){
         hideBar();
     // window.addEventListener("scroll", hideBar);
     }
+    footerHeight= footer.clientHeight;
+
+    docStyles.setProperty("--footer-height", `${footerHeight}px`);
 });
