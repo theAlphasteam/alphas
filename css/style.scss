@@ -17,7 +17,7 @@
     --inverse-bg: #28282f;
     --inverse-text: #28282f;
     --body-bg: #232329;
-    --logo: #1da1f2;
+    --logo: #313742;
     --logo-shadow: #232329;
     --footer-bg: #3b3b43;
     --bg: #28282f;
@@ -307,9 +307,9 @@ h1, h2, h3{
 
         .a_1{
             opacity:1;
-            fill: var(--logo);
+            fill: var(--contact-bg);
             fill-opacity:1;
-            stroke: var(--body-bg);
+            stroke: var(--logo);
             stroke-width:2.47638321;
             stroke-linecap:round;
             stroke-linejoin:round;
@@ -320,7 +320,7 @@ h1, h2, h3{
         }
         .a_2{
             opacity:1;
-            fill:var(--logo-shadow);
+            fill:var(--inverse-bg);
             fill-opacity:1;
             stroke: var(--logo);
             stroke-width:0;
@@ -333,7 +333,7 @@ h1, h2, h3{
         }
         .a_3{
             opacity:1;
-            fill:var(--footer-bg);
+            fill:var(--logo);
             fill-opacity:1;
             stroke: var(--body-bg);
             stroke-width:0;
@@ -1550,8 +1550,8 @@ nav{
 }
 
 
-.grid{
-    display: grid;
+.columns{
+    display: block;
 }
 
 .projects-gallery{
@@ -1568,9 +1568,10 @@ nav{
         background: var(--body-bg);
         position: relative;
         border-radius: 10px;
-        height: fit-content;
+        height: auto;
         padding: 1em 0;
-        margin: 2em 0;
+        margin: 0 0 2em;
+
     }
 }
 
@@ -1879,13 +1880,15 @@ nav{
     }
     
 
+    .columns{
+        column-count: 2;
+        column-gap: 2em;
+    }
+    
     .projects-gallery{
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 2em;
-        grid-row-gap: 3em;
 
         div.gallery-item{
-            
+
             .gallery-image{
                 width: 28%;
                 top: 0;
@@ -1941,6 +1944,11 @@ nav{
 
             //projects we've worked on section
         .gallery-item.alphas-projects{
+            display: inline-block;
+            margin: 0 0 1.5em;
+            width: 100%;
+            height: auto;
+
             .gallery-image{
                 width: 100%;
                 height: 140px;
@@ -1972,9 +1980,21 @@ nav{
 
     }
 
-    .alphas-projects-grid{
-        grid-template-columns: 1fr 1fr 1fr;
-        display: grid;
+    .alphas-projects-columns{
+        // display: grid;
+        // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        // grid-auto-rows: 250px;
+        display: block;
+        column-count: 2;
+        column-gap: 1.5em;
+    }
+
+
+}
+
+@media screen and (min-width: 1024px){
+    .alphas-projects-columns{
+        column-count: 3;
     }
 
 

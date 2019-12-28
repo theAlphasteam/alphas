@@ -18,7 +18,7 @@
   --inverse-bg: #28282f;
   --inverse-text: #28282f;
   --body-bg: #232329;
-  --logo: #1da1f2;
+  --logo: #313742;
   --logo-shadow: #232329;
   --footer-bg: #3b3b43;
   --bg: #28282f;
@@ -283,9 +283,9 @@ h1, h2, h3 {
 
 .svg-cont svg .a_1 {
   opacity: 1;
-  fill: var(--logo);
+  fill: var(--contact-bg);
   fill-opacity: 1;
-  stroke: var(--body-bg);
+  stroke: var(--logo);
   stroke-width: 2.47638321;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -297,7 +297,7 @@ h1, h2, h3 {
 
 .svg-cont svg .a_2 {
   opacity: 1;
-  fill: var(--logo-shadow);
+  fill: var(--inverse-bg);
   fill-opacity: 1;
   stroke: var(--logo);
   stroke-width: 0;
@@ -311,7 +311,7 @@ h1, h2, h3 {
 
 .svg-cont svg .a_3 {
   opacity: 1;
-  fill: var(--footer-bg);
+  fill: var(--logo);
   fill-opacity: 1;
   stroke: var(--body-bg);
   stroke-width: 0;
@@ -1390,9 +1390,8 @@ nav ul li.contact-us a {
   margin: auto;
 }
 
-.grid {
-  display: -ms-grid;
-  display: grid;
+.columns {
+  display: block;
 }
 
 .projects-gallery {
@@ -1410,11 +1409,9 @@ nav ul li.contact-us a {
   background: var(--body-bg);
   position: relative;
   border-radius: 10px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: auto;
   padding: 1em 0;
-  margin: 2em 0;
+  margin: 0 0 2em;
 }
 
 .gallery-image {
@@ -1722,11 +1719,11 @@ nav ul li.contact-us a {
   .sect-heading p {
     margin: 0.25em 12px;
   }
-  .projects-gallery {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    grid-column-gap: 2em;
-    grid-row-gap: 3em;
+  .columns {
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 2em;
+            column-gap: 2em;
   }
   .projects-gallery div.gallery-item .gallery-image {
     width: 28%;
@@ -1778,6 +1775,12 @@ nav ul li.contact-us a {
     text-align: left;
     margin: 0.76em 0;
   }
+  .projects-gallery .gallery-item.alphas-projects {
+    display: inline-block;
+    margin: 0 0 1.5em;
+    width: 100%;
+    height: auto;
+  }
   .projects-gallery .gallery-item.alphas-projects .gallery-image {
     width: 100%;
     height: 140px;
@@ -1805,11 +1808,19 @@ nav ul li.contact-us a {
     text-align: center;
     margin: 0.76em 0;
   }
-  .alphas-projects-grid {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-    display: -ms-grid;
-    display: grid;
+  .alphas-projects-columns {
+    display: block;
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 1.5em;
+            column-gap: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .alphas-projects-columns {
+    -webkit-column-count: 3;
+            column-count: 3;
   }
 }
 
