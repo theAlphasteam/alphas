@@ -1,12 +1,14 @@
-
+$font :  "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$font-text :  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     
-    p{
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    p, li{
+        font-family: $font-text;
     }
+    
     &:before, &:after{
         transition: 0.64s cubic-bezier(0.175, 0.885, 0.32, 1);
     }
@@ -19,6 +21,7 @@
     --body-bg: #232329;
     --logo: #313742;
     --logo-shadow: #232329;
+    --logo-stroke: hsla(204, 33%, 97%, 0.253);
     --footer-bg: #3b3b43;
     --bg: #28282f;
     --contact-bg: #1da1f2;
@@ -36,6 +39,8 @@
     --bg: #fff;
     --inverse-bg: #28282f;
     --inverse-text: #f5f8fa;
+    --logo-light: #f5f8fa;
+    --logo-shadow-light: #d9dbdd;
     --footer-bg: #ffff;
     --body-bg: #f5f8fa;
     // --logo: #28282f;
@@ -58,7 +63,6 @@
 
 }
 
-$font :  "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 
 @mixin border($radius: 0.30rem, $color: rgba(0, 0, 0, 0.125)) {
@@ -309,7 +313,7 @@ h1, h2, h3{
             opacity:1;
             fill: var(--contact-bg);
             fill-opacity:1;
-            stroke: var(--logo);
+            stroke: var(--logo-stroke);
             stroke-width:2.47638321;
             stroke-linecap:round;
             stroke-linejoin:round;
@@ -649,7 +653,10 @@ nav{
 
 .intro-sect{
     height: 100vh;
-}
+
+    //prevent the footer from display at the top of the page
+    z-index: 1;
+    position: relative;}
 
 .background{
     width: 100%;
@@ -1557,6 +1564,7 @@ nav{
 .projects-gallery{
     width: 100%;
     height: 100%;
+    margin: 0 0 70px;
 
     .gallery-column{
         position: relative;
@@ -1785,13 +1793,39 @@ nav{
     margin: 1.2em auto;
 
     div{
-        text-align: center;
+        text-align: left;
         margin: 0.76em 0;
     }
 
     .heading{
         h1{
             color: #21252b;
+        }
+    }
+    // .about-text{
+    //     p{
+
+    //     }
+    // }
+    .code-tech{
+        h1, h2, h3, h4{
+            @extend h1,h2,h3 ;
+            margin: 0 0 0.8em;
+            color: var(--text);
+        }
+        hr{
+            border: none;
+            background: var(--logo);
+            height: 1px;
+            border-radius: 10px;
+        }
+        ul{
+            list-style-type: circle;
+            list-style-position: inside;
+            
+            li{
+                margin: 0.5em 0;
+            }
         }
     }
     .text{
@@ -1945,7 +1979,7 @@ nav{
             //projects we've worked on section
         .gallery-item.alphas-projects{
             display: inline-block;
-            margin: 0 0 1.5em;
+            margin: 0 0 3em;
             width: 100%;
             height: auto;
 
@@ -1972,7 +2006,7 @@ nav{
                 margin: 1.2em auto;
             
                 div{
-                    text-align: center;
+                    text-align: left;
                     margin: 0.76em 0;
                 }
             }
@@ -1986,7 +2020,7 @@ nav{
         // grid-auto-rows: 250px;
         display: block;
         column-count: 2;
-        column-gap: 1.5em;
+        column-gap: 3em;
     }
 
 
@@ -2006,7 +2040,7 @@ nav{
 
     .sect-content{
         position: relative;
-        width: 92%;
+        width: 97%;
         margin: 0 auto;
         padding: 10% 0 0 0;
     }
@@ -2130,23 +2164,40 @@ nav{
     background: var(--contact-bg);
     position: fixed;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
     
     .brand{
-        width: 38%;
         margin: 0;
         padding: 1em;
-        float: left;
 
         .logo-cont.svg-cont{
             width: 100%;
             height: 64px;
+            margin: 0 0 0.65em;
+
+            svg{
+                left: 0;
+                transform: translate(0, -50%);
+
+                .a_1{
+                    fill: none;
+                    stroke: var(--logo-light);
+                }
+                .a_2{
+                    fill: var(--logo-shadow-light);
+                }
+                .a_3{
+                    fill: var(--logo-light);
+                }
+            }
         }
 
         .brand-details{
             width: 100%;
-            text-align: center;
-            color: var(--contact-text);
+            text-align: left;
+            color: var(--inverse-text);
 
             h1{
                 
@@ -2158,12 +2209,18 @@ nav{
         
     }
     .footer-details{
-        float: left;
-        width: 62%;
         height: 100%;
         margin: 0;
         padding: 1em;
+        
+        .connect-container{
+            display: grid;
+            grid-template-columns: repeat( auto-fill, minmax(170px, 1fr));
+        }
 
+        div{
+            margin: 0.35em 0;
+        }
 
         .caption-cont{
             color: var(--inverse-text);
@@ -2172,13 +2229,73 @@ nav{
         }
         .contacts-cont{
             width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 1em 0;
+            justify-content: center;
+
+
+            .conversation{
+                // margin: 0 1em 0 0;
+                font-family: "Techna";
+                color: var(--body-bg);
+                position: relative;
+                
+            }
+
+            .sites{
+                margin: auto;
+                display: inherit;
+                border-radius: 2em;
+                padding: 0 1em;
+                background: var(--logo-stroke);
+
+                a{
+                    position: relative;
+
+                    button{
+                        padding:0.2em 0em;
+                        border-radius: 10em;
+                        border: none;
+                        background: transparent;
+                        color: var(--body-bg);
+                        margin: 0.3em;
+                        font-size: 18px;
+
+                        &:hover, &:focus{
+                            transform: translate(0, -5px);
+                        }
+    
+                    }
+
+                }
+            }
         }
     }
     .copyright{
         p{
             opacity: 0.5;
-            color: #fff;
+            color: var(--inverse-text);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    }
+}
+.footer-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.polka{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(20%, -70%) scale(0.8);
+
+    svg{
+        circle{
+            fill: var(--logo-stroke);
+            // fill-opacity: 0.6;
         }
     }
 }
