@@ -73,10 +73,11 @@ function displayPage(){
 //mobile navbar
 var navBtn = document.querySelector(".nav-button-cont"),
     mainBody = document.querySelector(".main-body-wrapper"),
+    mobileNavBarCont = document.querySelector("#menu nav");
     mobileNavBar = document.querySelector(".inner");
 
 function toggleNav(){
-    mainBody.classList.toggle("blurbody");
+    mobileNavBarCont.classList.toggle("blurbody");
     mobileNavBar.classList.toggle("shownav");
     for(i = 0; i < navBtn.children.length; i++){
         navBtn.children[i].classList.toggle("animatebars");
@@ -333,12 +334,90 @@ function showTeam(jsonObj){
     }
 }
 
+var leftBtn = document.querySelector(".direction-btn.left");
+var rightBtn = document.querySelector(".direction-btn.right");
+var teamMateCount;
+var teamMatewidth;
+var teamMatesVisible;
+
+function updateValues(){
+    teamMateCount = contSlider.children.length;
+    teamMatewidth = contSlider.getBoundingClientRect().width / teamMateCount;
+    teamMatesVisible = matesCont.getBoundingClientRect().width / teamMatewidth;  
+
+    //set the value that will determine how many times the right button can be clicked
+    directionCount = teamMateCount;
+
+    docStyles.setProperty("--twidth", `${teamMatewidth}px`);
+
+}
+//set the slide to be moved by 0 amount
+let teamCount = 0;
+
+//initialize the value that will determine how many times the right button can be clicked, 
+//value updated in updateValues()
+let directionCount;
+
+// let limit = teamMatewidth;
+
+function moveSlide(e, direction, limit){
+    
+//determine the direction btn's action, "+" for left, "-" for right
+
+    if (direction === "+"){
+
+        //if the number of times the slide has moved to show more elements
+        //(number of times the rightBtn has been clicked),
+        //is == 0, that means we're on the first elements,
+        //disabled the left bottom from taking the slide backwards
+        if(teamCount >= 0){
+            leftBtn.disabled = true;
+            //reset the value that will determine how many times the right button can be clicked
+            directionCount = teamMateCount;
+        }
+
+        //re-enable the right button
+        rightBtn.disabled = false;
+
+        //increase the amount of units that will multiply the width to translate(move) the slide back
+        teamCount ++;
+        
+        docStyles.setProperty("--teamCount", teamCount);
+
+    } 
+
+
+    if (direction === "-"){ 
+        //disable the right button for the slide when the amount moved is equal to the ampunt movable(number of elements)
+        //dealing with negative values is tricky
+
+        if(teamCount <= -(directionCount - teamMatesVisible)){
+            rightBtn.disabled = true;
+        }
+
+        //re-enable the left button
+        leftBtn.disabled = false;
+
+        //reduce the amount of units that will multiply the width to translate(move) the slide back
+        teamCount --;
+        //as long as the amount movable is less than amount of items, increase the amount movable
+        if (directionCount < teamMateCount) directionCount++;
+
+        docStyles.setProperty("--teamCount", teamCount);
+    }
+    console.log({"directionCount" : directionCount, "teamCount": teamCount, "limit": limit})
+}
+
+
 //team-mates section scrolls
 function update(){
+
     console.log(contSlider.clientWidth, matesCont.clientWidth);
     var dur = document.querySelectorAll(".team-mate").length*4 + "s";
     docStyles.setProperty("--tx", `${((-contSlider.clientWidth) + (matesCont.clientWidth))}px`);
     docStyles.setProperty("--dur", dur);
+
+    updateValues();
 }
 
 function MiParallax(e){
@@ -368,6 +447,15 @@ function MiParallax(e){
 navBtn.addEventListener("click", toggleNav);
 window.addEventListener("load", displayPage);
 
+leftBtn.addEventListener("click", function(e){
+    console.log("some");
+    moveSlide(e, "+", teamMateCount);
+});
+rightBtn.addEventListener("click", function(e){
+    console.log("some");
+    moveSlide(e, "-", teamMateCount);
+});
+
 for(i = 0; i < links.length; i++){
     links[i].addEventListener("click", function(e){
         e.preventDefault();
@@ -386,3 +474,4 @@ window.addEventListener("scroll", function(){
 
     docStyles.setProperty("--footer-height", `${footerHeight}px`);
 });
+window.addEventListener("resize", updateValues);

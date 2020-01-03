@@ -1,5 +1,6 @@
 $font :  "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 $font-text :  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 *{
     padding: 0;
     margin: 0;
@@ -634,7 +635,7 @@ nav{
 }
 
 .blurbody{
-    filter: blur(5px);
+    backdrop-filter: blur(7px);
 }
 
 
@@ -871,18 +872,18 @@ nav{
     position: relative;
 
     .main-header{
-        width: 70%;
+        width: 75%;
         height: 50%;
         position: absolute;
         display: flex;
         align-items: center;
-        top: calc(30% + 64px);
+        top: calc(25% + 64px);
         left: 20%;
         z-index: 1;
         transform: translate(-20%, -50%);
 
         h1{
-            font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: $font;
             font-size: 2.8em;
             color: #21252b;     
             font-weight: 400;
@@ -895,10 +896,74 @@ nav{
             // }
         }
 
-        #glare-button{
-            width: 12em;
-            height: 5.2em;
-            border-radius: 12em;
+        .main-header-action-cont{
+            width: 100%;
+            position: absolute;
+            top: 85%;
+            left: 0;
+
+            button{
+                box-shadow: 0 0 12px rgba(21, 141, 197, 0.22);
+                color: #fff;
+                border-radius: 12em;
+                border: none;
+                font-size: 1em;
+                font-weight: 100;
+                position: absolute;
+                font-family: $font;
+                transform: translate(0%, -50%);
+                background: var(--contact-bg);
+                padding: 1.2em 1.4em;
+                outline: none;
+                transition: 0.32s;
+                letter-spacing: 1px;
+                box-shadow: 0 0 12px rgba(21, 141, 197, 0.42);
+
+
+                &:hover{
+                    box-shadow: 0 0 22px rgba(21, 141, 197, 0.42);
+                    transform: translate(0%, calc(-50% - 4px));
+                  
+                }
+                
+                
+                &::after{
+                    content: "";
+                    box-shadow: 0 0 12px rgba(21, 141, 197, 0.12);    
+                    color: #fff;
+                    border-radius: 12em;
+                    border: 2px solid #209ad3;
+                    font-size: 1em;
+                    font-weight: 100;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0);
+                    background: transparent;
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    transition: 0.32s;
+                
+                }
+                
+                &:hover::after{
+                    transform: translate(-50%, -50%) scale(1.1);
+                    outline: none;
+                    opacity: 0.6;
+                    width: 100%;
+                    height: calc(1.1 * 100%);
+                }
+                &:active::after{
+                    transform: translate(-50%, -50%) scale(1.16);
+                    backdrop-filter: blur(10px);
+                    outline: none;
+                    opacity: 0.6;
+                    width: 100%;
+                    height: calc(1.16 * 100%);
+                }
+            }
+            
         }
     }
 }
@@ -1228,6 +1293,12 @@ nav{
     display: block;
 }
 
+.sect-about-intro{
+    width: 100%;
+    display: table;
+    position: relative;
+}
+
 .sect-heading{
     font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #eaf0f6;
@@ -1359,12 +1430,12 @@ nav{
 }
 
 .sect-team-mates{
-    width: 80%;
+    width: 100%;
     margin: 1.35em auto 1.35em auto;
     text-align: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
-
+    
     .team-mates-heading{
         width: 100%;
         margin: 1em 0;
@@ -1373,13 +1444,14 @@ nav{
 
     .mates-cont{
         position: relative;
+        margin: auto;
         overflow-y: hidden;
-
+        width: 80%;
 
         .cont-slider{
             display: inline-flex;
             transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
+            
             &:hover{
                 // transform: translateX(var(--tx));
             }
@@ -1537,7 +1609,93 @@ nav{
         }
     }
 
+    .direction-btn{
+        display: none;
+    }
+
 }
+
+@media screen and (min-width: 768px){
+
+    .sect-team-mates{
+        .mates-cont{
+            overflow: hidden;
+
+            .cont-slider{
+                transition: 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                transform: translate(calc(var(--twidth) * var(--teamCount)));
+                // animation: mke_shft_crsl var(--dur) linear 2s infinite;
+                // transform: translateX(var(--tx));
+
+                &:hover{
+                    animation-play-state: paused;
+                }
+            }
+        }
+        .direction-btn{
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, -50%);
+            background: var(--logo-light);
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            transition: 0.32s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+            &:hover{
+                background: var(--contact-bg);
+            }
+            &:hover::after{
+                border-color: var(--contact-text);
+            }
+            
+            &:after{
+                content: "";
+                position: absolute;
+                width: 35%;
+                height: 35%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                border: 4px solid var(--logo);
+    
+            }
+    
+            &.left{
+                left: 0;
+                transform: translate(50%, -50%);
+    
+                &:active{
+                    transform: translate(50%, calc(-50% + 12px));
+                }
+        
+                &:after{
+                    border-top: none;
+                    border-right: none;
+                }
+            }
+    
+            &.right{
+                left: 100%;
+                transform: translate(-150%, -50%);
+    
+                &:active{
+                    transform: translate(-150%, calc(-50% + 12px));
+                }
+        
+                &:after{
+                    border-left: none;
+                    border-bottom: none;
+                }
+            }
+        }
+    
+    }
+
+}
+
 
 // Projects section
 
@@ -2073,22 +2231,6 @@ nav{
         //         height: 110px;
         //     }
         // }
-    }
-
-    .sect-team-mates{
-        .mates-cont{
-            overflow: hidden;
-
-            .cont-slider{
-                transition: var(--dur) cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                animation: mke_shft_crsl var(--dur) linear 2s infinite;
-                // transform: translateX(var(--tx));
-
-                &:hover{
-                    animation-play-state: paused;
-                }
-            }
-        }
     }
 
         
