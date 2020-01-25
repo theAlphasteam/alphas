@@ -29,9 +29,9 @@ $font-text :  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubu
     --contact-bg: #1da1f2;
     --contact-shadow: 8px 6px 32px rgba(29, 160, 242, 0.349);
     --contact-text: #f9fafb;
+    --text: #5e697b;
     --link-color: #1da1f2;
     --link-color-hover: #91b1ee;
-    --text: #f5f8fa;
     --menu-shadow: 0 0 32px rgba(35, 102, 187, 0.28);
 
 
@@ -50,7 +50,6 @@ $font-text :  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubu
     // --light-body-bg: #f9fafb;
     // --light-bg: #fff;
 
-    --text: #5e697b;
     // --text: #5e697b;
     // --light-text: #f9fafb;
     --menu-shadow: 0 0 32px rgba(40, 40, 47, 0.37);
@@ -2221,6 +2220,84 @@ nav{
     position: relative;
     @extend .large-label;
     padding-bottom: 1em;
+
+    .sect-item{
+        height: 100vh;
+    }
+
+}
+
+#contact{
+    z-index: 3;
+    position: relative;
+    @extend .large-label;
+    padding-bottom: 1em;
+
+    .sect-inner-wrapper{
+        .sect-content{
+            .sect-item{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            
+            }
+        }
+    }
+
+    .contact-gallery{
+        // transform: translate(-50%, -50%);
+        // position: absolute;
+        width: 100%;
+        // top: 50%;
+        // left: 50%;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 2em;
+        display: grid;
+        padding: 2em;
+
+        & > a{
+            display: none;
+        }
+
+        & > div{
+            background: var(--bg);
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            transition: all 0.32s ease-out;
+            
+            &:hover, &:focus{
+                transform: translateY(-10px);
+            }
+            
+            .icon{
+                display: flex;
+                justify-content: center;
+                padding: 1em;
+
+                & > i{
+                    font-size: 60px;
+                }
+            }
+
+            .title{
+                text-align: center;
+                background: var(--contact-bg);
+                padding: 1em;
+                width: 100%;
+                border: none;
+
+                &:active{
+                    box-shadow: inset 5px 5px 12px rgba(0, 0, 0, 0.125);
+                }
+
+                span{
+                    font: $font-text;
+                    color: var(--contact-text);
+                }
+            }
+        }
+    }
 
 }
 
