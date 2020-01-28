@@ -1344,7 +1344,7 @@ nav ul li.contact-us a {
 
 .sect-team-mates {
   width: 100%;
-  margin: 1.35em auto 1.35em auto;
+  margin: 1.35em auto 0 auto;
   text-align: center;
   /* overflow: hidden; */
   position: relative;
