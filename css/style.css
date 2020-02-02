@@ -25,7 +25,7 @@
   --logo-stroke: hsla(204, 33%, 97%, 0.253);
   --footer-bg: #3b3b43;
   --contact-bg: #1da1f2;
-  --contact-shadow: 8px 6px 32px rgba(29, 160, 242, 0.349);
+  --contact-shadow: 6px 6px 24px rgba(29, 160, 242, 0.349);
   --contact-text: #f9fafb;
   --text: #5e697b;
   --link-color: #1da1f2;
@@ -136,6 +136,32 @@ h1, .gallery-content .code-tech h1, .gallery-content .code-tech h2, .gallery-con
 
 .grey {
   color: #838a97;
+}
+
+.action-btn {
+  background: var(--contact-bg);
+  color: var(--contact-text);
+  padding: 0.78em 1.42em;
+  border: none;
+  border-radius: 40px;
+  font-family: "Techna", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 1px;
+  -webkit-box-shadow: var(--contact-shadow);
+          box-shadow: var(--contact-shadow);
+  position: relative;
+  -webkit-transition: 0.12s ease-in;
+  transition: 0.12s ease-in;
+}
+
+.action-btn:hover, .action-btn:focus {
+  -webkit-box-shadow: 0 0 12px var(--contact-bg);
+          box-shadow: 0 0 12px var(--contact-bg);
+  -webkit-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
+}
+
+.action-btn:active {
+  background: var(--inverse-bg);
 }
 
 #loader-cont {
@@ -1048,6 +1074,7 @@ nav ul li.contact-us a {
           transform: translate(0, -100%) rotateX(180deg);
   width: 100%;
   top: calc(25vw);
+  pointer-events: none;
 }
 
 .sect.about .curve-svg-container svg {
@@ -1154,6 +1181,7 @@ nav ul li.contact-us a {
   width: 100%;
   padding: 30% 0 0 0;
   z-index: 1;
+  overflow: hidden;
 }
 
 .sect-text {
@@ -1622,6 +1650,8 @@ nav ul li.contact-us a {
   width: 100%;
   height: 100%;
   margin: 0 0 70px;
+  overflow: hidden;
+  padding: 0 0.5em;
 }
 
 .projects-gallery .gallery-column {
@@ -1797,6 +1827,10 @@ nav ul li.contact-us a {
           box-shadow: 0px 0px 0 var(--inverse-bg);
 }
 
+.gallery-image .sub-image.alphas-project-img > img {
+  pointer-events: none;
+}
+
 .gallery-image .laptop-mock-up {
   position: absolute;
   top: 0%;
@@ -1850,7 +1884,7 @@ nav ul li.contact-us a {
   padding: 6px;
   border-radius: 2px;
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-box-shadow: 0 2px 6px rgba(36, 123, 234, 0.24);
           box-shadow: 0 2px 6px rgba(36, 123, 234, 0.24);
   float: left;
@@ -1900,14 +1934,8 @@ nav ul li.contact-us a {
   position: relative;
 }
 
-.gallery-content .gallery-action button {
-  background: var(--contact-bg);
-  color: var(--contact-text);
-  padding: 0.78em 1.42em;
-  border: none;
-  border-radius: 40px;
-  font-family: "Techna", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  letter-spacing: 1px;
+.gallery-content .project-stat {
+  display: none;
 }
 
 .sect-heading .project-listings {
@@ -2054,6 +2082,29 @@ nav ul li.contact-us a {
     text-align: left;
     margin: 0.76em 0;
   }
+  .projects-gallery .gallery-item.alphas-projects .gallery-content::before {
+    content: attr(data-stat);
+    position: absolute;
+    bottom: 0.75em;
+    right: -0.45em;
+    z-index: -1;
+    padding: 0.5em 1.5em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    border-radius: 36px 10px 0 36px;
+    background: var(--text);
+  }
+  .projects-gallery .gallery-item.alphas-projects .gallery-content::after {
+    content: attr(data-stat);
+    position: absolute;
+    bottom: 0.45em;
+    right: -0.45em;
+    padding: 0.5em 1.5em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: var(--contact-text);
+    border-radius: 36px 0 10px 36px;
+    background: var(--contact-bg);
+    text-transform: capitalize;
+  }
   .alphas-projects-columns {
     display: block;
     -webkit-column-count: 2;
@@ -2193,7 +2244,7 @@ nav ul li.contact-us a {
   padding-bottom: 1em;
 }
 
-#contact .sect-inner-wrapper .sect-content .sect-item {
+#contact .sect-inner-wrapper .sect-content .sect-item > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2263,6 +2314,38 @@ nav ul li.contact-us a {
 #contact .contact-gallery > div .title span {
   font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: var(--contact-text);
+}
+
+#contact .main-contacts > div {
+  width: 100%;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2em;
+  display: -ms-grid;
+  display: grid;
+  padding: 2em;
+}
+
+#contact .main-contacts > div div {
+  text-align: center;
+  position: relative;
+  -webkit-transition: all 0.32s ease;
+  transition: all 0.32s ease;
+}
+
+#contact .main-contacts > div div:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+#contact .main-contacts > div div a {
+  color: var(--link-color-hover);
+  font-family: "Techna", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 32px;
+}
+
+#contact .main-contacts > div div a:hover {
+  color: #fff;
 }
 
 #footer {

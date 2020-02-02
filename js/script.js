@@ -140,7 +140,7 @@ function hideBar(){
             delay: anime.stagger(100)
         });
     }
-    else if(prevScrollPos < currentScrollPos / 2){
+    else if(prevScrollPos < currentScrollPos){
         menu.style.transform = "translateY(-100%)" ;
     }
     prevScrollPos = currentScrollPos;

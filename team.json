@@ -22,11 +22,11 @@
             "name": "Primidac",
             "role": "Cryptographer",
             "company" : "Hiroutes Digital",
-            "bio" : "I'm a Designer, developer, tech lover and code junkie",
+            "bio" : "I build fast and secure applications ",
             "img" : "./img/primidac.png",
             "social" : [
-                "https://twitter.com/miracleio",
-                "https://github.com/miracleonyenma"
+                "https://twitter.com/theprimidac",
+                "https://github.com/primidac"
             ],
             "icons" : [
                 "fa fa-twitter",
