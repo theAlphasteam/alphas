@@ -356,7 +356,13 @@ h1, .gallery-content .code-tech h1, .gallery-content .code-tech h2, .gallery-con
   width: 64px;
   color: var(--text);
   font-size: 26px;
-  font-family: "Techna", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Techna", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.svg-cont a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 .svg-cont svg {
@@ -2256,6 +2262,18 @@ nav ul li.contact-us a {
           align-items: center;
 }
 
+#contact .contact-text {
+  width: 100%;
+  margin-top: 0.5em;
+  color: var(--inverse-text);
+}
+
+#contact .contact-text p {
+  padding: 0 2em;
+  /* line-height: 38px; */
+  font-size: 18px;
+}
+
 #contact .contact-gallery {
   width: 100%;
   -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
@@ -2296,6 +2314,7 @@ nav ul li.contact-us a {
 
 #contact .contact-gallery > div .icon > i {
   font-size: 60px;
+  color: var(--logo);
 }
 
 #contact .contact-gallery > div .title {
@@ -2346,6 +2365,17 @@ nav ul li.contact-us a {
 
 #contact .main-contacts > div div a:hover {
   color: #fff;
+}
+
+@media screen and (min-width: 700px) {
+  #contact .contact-text {
+    width: 70%;
+    margin-top: 2em;
+  }
+  #contact .contact-text p {
+    font-size: 20px;
+    padding: 0 0 0 2em;
+  }
 }
 
 #footer {

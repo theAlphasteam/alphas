@@ -175,7 +175,7 @@ function positionSlider(e){
 
 //smoothScrolls
 
-var links = document.querySelectorAll("#links li a"),
+var links = document.querySelectorAll("#links li a, #joinBtn, .logo-cont a "),
     linkTarget = [];
 
 
@@ -437,6 +437,17 @@ function MiParallax(e){
     
 };
 
+//copyright year
+var copyrightYear = document.getElementById("year");
+
+function getYear(){
+    var date = new Date(),
+        year = date.getFullYear();
+    copyrightYear.textContent = year;
+    console.log(year);
+}
+
+getYear();
 // window.addEventListener("load", update);
 
 
