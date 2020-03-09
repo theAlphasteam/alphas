@@ -20,9 +20,9 @@
         },
         {
             "name": "Primidac",
-            "role": "Cryptographer",
-            "company" : "Hiroutes Digital",
-            "bio" : "I build fast and secure applications ",
+            "role": "Security Architect & Cryptographer",
+            "company" : "Cyber Xaviours",
+            "bio" : "I build fasT security applications and cryptographic tools ",
             "img" : "./img/primidac.png",
             "social" : [
                 "https://twitter.com/theprimidac",
@@ -49,10 +49,10 @@
             ]
         },
         {
-            "name": "Victory Tuduo",
+            "name": "Victory T.",
             "role": "Software Developer",
             "company" : "Alphas",
-            "bio" : "I'm a Developer(full stack),love coding and stuffs like that ",
+            "bio" :"Software Developer main stack(full stack web dev and app dev).",
             "img" : "./img/vic.jpg",
             "social" : [
                 "https://facebook.com/Tuduo Victory",
@@ -64,6 +64,22 @@
             ]
         },
             
+        {
+            "name": "Divo Fred",
+            "role": "Front End and Artificial Intelligence Personnel",
+            "company" : "Alphas",
+            "bio" : "I'm a web-developer (front-end) and Artificial personnel Who is an Aspiring Programmer",
+            "img" : "",
+            "social" : [
+                
+                "https://facebook.com/computeralphas",
+                "https://github.com/Divo-fred"
+            ],
+            "icons" : [
+                "fa fa-facebook",
+                "fa fa-github"
+            ]
+        },
         {
             "name": "Emmanuel Uche",
             "role": "Front-End developer and cyber-Security personnel",
