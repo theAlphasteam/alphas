@@ -1460,6 +1460,7 @@ nav ul li.contact-us a {
   border-radius: 50%;
   position: relative;
   margin: 3.5em auto 1.25em auto;
+  font-size: xx-large;
 }
 
 .sect-team-mates .mates-cont .cont-slider .team-mate .profile-cont::after {
