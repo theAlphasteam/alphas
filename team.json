@@ -8,7 +8,7 @@
             "role": "Web Developer",
             "company" : "Alphas",
             "bio" : "I'm a Designer, developer, tech lover and code junkie",
-            "img" : "./img/laptopcode.jpg",
+            "img" : "./assets/img/laptopcode.jpg",
             "social" : [
                 "https://twitter.com/miracleio",
                 "https://github.com/miracleonyenma"
@@ -23,7 +23,7 @@
             "role": "Security Architect & Cryptographer",
             "company" : "Cyber Xaviours",
             "bio" : "I build fasT security applications and cryptographic tools ",
-            "img" : "./img/primidac.png",
+            "img" : "./assets/img/primidac.png",
             "social" : [
                 "https://twitter.com/theprimidac",
                 "https://github.com/primidac"
@@ -38,7 +38,7 @@
             "role": "Artificial Intelligence",
             "company" : "Alphas",
             "bio" : "I love code, Music and Hacking",
-            "img" : "./img/Screenshot_20191129-210929_1575293498941.jpg",
+            "img" : "./assets/img/Screenshot_20191129-210929_1575293498941.jpg",
             "social" : [
                 "https://twitter.com/miracleio",
                 "https://github.com/johnson-andy"
@@ -53,7 +53,7 @@
             "role": "Software Developer",
             "company" : "Alphas",
             "bio" :"Software Developer main stack(full stack web dev and app dev).",
-            "img" : "./img/vic.jpg",
+            "img" : "./assets/img/vic.jpg",
             "social" : [
                 "https://facebook.com/Tuduo Victory",
                 "https://github.com/Victory-ET"
