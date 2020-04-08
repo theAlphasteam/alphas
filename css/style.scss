@@ -57,6 +57,9 @@ $font-text :  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubu
 
 }
 
+body{
+    background: #21252b;
+}
 
 @mixin border($radius: 0.30rem, $color: rgba(0, 0, 0, 0.125)) {
     border: 2px solid;

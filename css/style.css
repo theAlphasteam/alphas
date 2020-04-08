@@ -42,6 +42,10 @@
   --menu-shadow: 0 0 32px rgba(40, 40, 47, 0.37);
 }
 
+body {
+  background: #21252b;
+}
+
 .large-label:before, .sect.about:before, #projects:before, #blogs:before, #contact:before {
   position: absolute;
   top: 0%;
