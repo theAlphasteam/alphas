@@ -734,10 +734,7 @@ nav{
 
 .intro-sect{
     height: 100vh;
-
-    //prevent the footer from display at the top of the page
-    z-index: 1;
-    position: relative;}
+}
 
 .background{
     width: 100%;
@@ -754,7 +751,7 @@ nav{
         position: absolute;
         top: 50%;
         left: 40%;
-        z-index: 3;
+        z-index: 2;
         transform: translate(0, -10%) rotate(0deg);
 
 
@@ -844,6 +841,12 @@ nav{
         width: 950px;
         height: 850px;
         background: #fff;
+        background-image: url(../img/2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(255, 255, 255, 0.94);
+        opacity: 1;
+        background-blend-mode: lighten;
         opacity: 1;
         position: absolute;
         border-radius: 60px;
@@ -858,7 +861,7 @@ nav{
         position: absolute;
         width: 58%;
         height: 80%;
-        z-index: 2;
+        z-index: 1;
         right: 0;
 
         .circle{
@@ -2439,7 +2442,7 @@ nav{
     background: var(--contact-bg);
     position: fixed;
     bottom: 0;
-    z-index: 0;
+    z-index: -1;
     display: grid;
     grid-template-columns: 1fr 2.5fr;
     

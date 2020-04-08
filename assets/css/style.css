@@ -716,6 +716,8 @@ nav ul li.contact-us a {
 
 .intro-sect {
   height: 100vh;
+  z-index: 1;
+  position: relative;
 }
 
 .background {
@@ -733,7 +735,7 @@ nav ul li.contact-us a {
   position: absolute;
   top: 50%;
   left: 40%;
-  z-index: 2;
+  z-index: 9999;
   -webkit-transform: translate(0, -10%) rotate(0deg);
           transform: translate(0, -10%) rotate(0deg);
 }
@@ -822,12 +824,6 @@ nav ul li.contact-us a {
   width: 950px;
   height: 850px;
   background: #fff;
-  background-image: url(../img/2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: rgba(255, 255, 255, 0.94);
-  opacity: 1;
-  background-blend-mode: lighten;
   opacity: 1;
   position: absolute;
   border-radius: 60px;
