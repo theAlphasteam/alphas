@@ -446,7 +446,8 @@ window.addEventListener("scroll", function(){
     footerHeight= footer.clientHeight;
 
     docStyles.setProperty("--footer-height", `${footerHeight}px`);
-    if(window.scrollY >= (window.innerHeight - footerHeight)){
+    console.log(`${window.scrollY} >= ${document.body.scrollHeight} - ${footerHeight}`)
+    if(window.scrollY >= (document.body.scrollHeight - (footerHeight + 800))){
          footer.style.zIndex = 0;
         } else{
             footer.style.zIndex = -1;            
