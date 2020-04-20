@@ -446,5 +446,10 @@ window.addEventListener("scroll", function(){
     footerHeight= footer.clientHeight;
 
     docStyles.setProperty("--footer-height", `${footerHeight}px`);
+    if(window.scrollY >= (window.innerHeight - footerHeight)){
+         footer.style.zIndex = 0;
+        } else{
+            footer.style.zIndex = -1;            
+    }
 });
 window.addEventListener("resize", updateValues);
