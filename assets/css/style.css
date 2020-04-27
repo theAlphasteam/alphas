@@ -1427,6 +1427,11 @@ nav ul li.contact-us a {
   position: relative;
 }
 
+.sect-team-mates .mates-cont .cont-slider .team-mate.birthday {
+  background-image: url(../img/confetti.png);
+  background-size: contain;
+}
+
 .sect-team-mates .mates-cont .cont-slider .team-mate .team-mate-bg {
   position: absolute;
   top: 0;
@@ -2531,6 +2536,179 @@ nav ul li.contact-us a {
 
 .polka svg circle {
   fill: var(--logo-stroke);
+}
+
+#bday_card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  z-index: 4;
+}
+
+#bday_card.remove {
+  -webkit-transition: opacity 0.32s ease-in;
+  transition: opacity 0.32s ease-in;
+  opacity: 0;
+}
+
+#bday_card .content {
+  padding: 2em;
+  position: relative;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: min-content;
+      grid-template-rows: -webkit-min-content;
+      grid-template-rows: min-content;
+}
+
+#bday_card .content header {
+  margin: 1em 0;
+}
+
+#bday_card .content header h1, #bday_card .content header .gallery-content .code-tech h2, .gallery-content .code-tech #bday_card .content header h2, #bday_card .content header .gallery-content .code-tech h3, .gallery-content .code-tech #bday_card .content header h3, #bday_card .content header .gallery-content .code-tech h4, .gallery-content .code-tech #bday_card .content header h4 {
+  font-size: 2em;
+}
+
+#bday_card .content div {
+  height: 100%;
+  position: relative;
+}
+
+#bday_card .content div ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+#bday_card .content div ul::before {
+  content: attr(data-bday);
+  font-family: "Techna", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 4em;
+  position: absolute;
+  opacity: 0.09;
+  font-weight: 900;
+}
+
+#bday_card .content div ul li {
+  display: block;
+  margin: 2em;
+}
+
+#bday_card .content div ul li:nth-of-type(odd) {
+  -webkit-animation: floating 2s ease-in 1s infinite alternate;
+          animation: floating 2s ease-in 1s infinite alternate;
+}
+
+#bday_card .content div ul li:nth-of-type(even) {
+  -webkit-animation: floating 2s ease-in 2s infinite alternate;
+          animation: floating 2s ease-in 2s infinite alternate;
+}
+
+#bday_card .content div ul li div {
+  position: relative;
+}
+
+#bday_card .content div ul li div img {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  -webkit-box-shadow: 1em 1em 40px 1em rgba(0, 0, 0, 0.1);
+          box-shadow: 1em 1em 40px 1em rgba(0, 0, 0, 0.1);
+}
+
+#bday_card .content div ul li div h1, #bday_card .content div ul li div .gallery-content .code-tech h2, .gallery-content .code-tech #bday_card .content div ul li div h2, #bday_card .content div ul li div .gallery-content .code-tech h3, .gallery-content .code-tech #bday_card .content div ul li div h3, #bday_card .content div ul li div .gallery-content .code-tech h4, .gallery-content .code-tech #bday_card .content div ul li div h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: var(--logo);
+}
+
+#bday_card .content a {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1em;
+}
+
+#bday_card .content a button {
+  padding: 1em 1.25em;
+  border: none;
+  font-weight: 700;
+  border-radius: 4em;
+  color: #fff;
+  background: var(--contact-bg);
+}
+
+@media screen and (min-width: 768px) {
+  #bday_card .content header h1, #bday_card .content header .gallery-content .code-tech h2, .gallery-content .code-tech #bday_card .content header h2, #bday_card .content header .gallery-content .code-tech h3, .gallery-content .code-tech #bday_card .content header h3, #bday_card .content header .gallery-content .code-tech h4, .gallery-content .code-tech #bday_card .content header h4 {
+    font-size: 4em;
+  }
+  #bday_card .content div ul li div img {
+    width: 8em;
+    height: 8em;
+    border-radius: 8em;
+  }
+}
+
+@-webkit-keyframes remove {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes remove {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@keyframes floating {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
 }
 
 .Milax {

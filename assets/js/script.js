@@ -1,6 +1,8 @@
 var loaderCont = document.querySelector("div#loader-cont"),
+    loaderBox = document.getElementById("loader-box"),
     boxCont = document.querySelector(".loader.center"),
-    effectEl = document.querySelector(".effect-element");
+    effectEl = document.querySelector(".effect-element"),
+    defaultBgURL = "./assets/img/alphabg.png";
 
 var footer = document.querySelector("#footer"),
     footerHeight;
@@ -227,9 +229,27 @@ function populateHeader(jsonObj) {
     console.log(jsonObj.teamName);
 };
 
-function showTeam(jsonObj){
+function AltImg(object, targetImg, targetAlt){
+    var newAlt = "";
+    console.log( object)
+    if(object.img == ""){
+        for(n = 0; n < object.name.split(" ").length; n++){
+            console.log(object.name.split(" ")[n][0]);
+            newAlt += object.name.split(" ")[n][0];
+            console.log(newAlt)
+        }
+        setAttributes(targetImg, {src:defaultBgURL, "alt" : object.name});
+        targetAlt.textContent = newAlt;
+    }
+    else{
+        setAttributes(targetImg, {"src": object.img, "alt" : object.name});
+    }
 
-    var teamMates = jsonObj.members;
+    // console.log(newTeamMate.querySelector(".heading-cont h1"));
+    // newTeamMate.querySelector(".heading-cont h1").textContent = object.name;
+    console.log(object.name)
+    return object.name;
+}
 
     //set attribute helper function
     function setAttributes(el, attrs){
@@ -238,13 +258,20 @@ function showTeam(jsonObj){
         }
     }
 
+function showTeam(jsonObj){
+
+    var teamMates = jsonObj.members;
 
     for(i = 0; i < teamMates.length; i++){
+        if(i == teamMates.length - 1){
+            if(getBdays(teamMates[i], newTeamMate) < 1){
+                bday_card.remove();
+            }
 
+        }
         for(s = 0; s < crntSocial.length; s++){
             crntSocial[s].remove();
         }
-
         var teamClone = teamMate[0].cloneNode(true);
         contSlider.appendChild(teamClone);
         teamMate[0].remove();
@@ -255,21 +282,11 @@ function showTeam(jsonObj){
         // newAlt += teamMates[i].name.split(" ")[n][0];
         // console.log(alt);
 
-        if(teamMates[i].img == ""){
-            for(n = 0; n < teamMates[i].name.split(" ").length; n++){
-                console.log(teamMates[i].name.split(" ")[n][0]);
-                newAlt += teamMates[i].name.split(" ")[n][0];
-                console.log(newAlt)
-            }
-            setAttributes(image, { "alt" : teamMates[i].name});
-            alt.textContent = newAlt;
-        }
-        else{
-            setAttributes(image, {"src": teamMates[i].img, "alt" : teamMates[i].name});
-        }
+        getBdays(teamMates[i], newTeamMate);
+        
 
-        console.log(newTeamMate.querySelector(".heading-cont h1"));
-        newTeamMate.querySelector(".heading-cont h1").textContent = teamMates[i].name;
+        setAttributes(newTeamMate, {id: teamMates[i].name})
+        newTeamMate.querySelector(".heading-cont h1").textContent = AltImg(teamMates[i], image, alt);
         var newDescription = newTeamMate.querySelector(".description-cont");
         newDescription.querySelector(".title").textContent = teamMates[i].role;
         newDescription.querySelector(".company").textContent = teamMates[i].company;
@@ -300,6 +317,7 @@ function showTeam(jsonObj){
         }
         
     }
+
 }
 
 var leftBtn = document.querySelector(".direction-btn.left");
@@ -416,6 +434,52 @@ function getYear(){
 }
 
 getYear();
+
+//get current day and month of the year
+var noOfBdays = 0;
+var bday_card = document.getElementById("bday_card");
+function getBdays(data, element){
+    console.log(element);
+    var dayofMonth = new Date().getDate();
+    var month = new Date().getMonth();
+    var ul = bday_card.querySelector("ul");
+    var bday_link = bday_card.querySelector("#bday-link");
+    if(data.bday.day == dayofMonth && data.bday.month == month){
+        noOfBdays = noOfBdays + 1;
+        loaderBox.setAttribute("data-name", "🎉 " + noOfBdays);
+        setAttributes(bday_link, {href: "#"+data.name});
+        if(noOfBdays <= 1){
+            console.log(ul.children.length)
+            while (ul.firstChild){
+                ul.removeChild(ul.firstChild);
+            }
+        }
+        var newDiv = document.createElement("div");
+        var newh1 = document.createElement("h1");
+        var newLi = document.createElement("li");
+        var newImg = document.createElement("img");
+        newh1.textContent = "";
+        setAttributes(newImg, {src: data.img, alt: data.name});
+        setAttributes(newDiv, {"data-name": data.name});
+        newDiv.appendChild(newImg);
+        newDiv.appendChild(newh1);
+        newLi.appendChild(newDiv);
+        ul.appendChild(newLi);
+        console.log(data)
+        AltImg(data, newImg, newh1);
+        element.classList.add("birthday")
+    }
+
+    return noOfBdays
+}
+
+function closeCard(){
+    bday_card.classList.add("remove");
+    setTimeout(function(){
+        bday_card.style.display = "none";
+    }, 1000);
+}
+
 // window.addEventListener("load", update);
 
 
@@ -446,7 +510,7 @@ window.addEventListener("scroll", function(){
     footerHeight= footer.clientHeight;
 
     docStyles.setProperty("--footer-height", `${footerHeight}px`);
-    console.log(`${window.scrollY} >= ${document.body.scrollHeight} - ${footerHeight}`)
+    // console.log(`${window.scrollY} >= ${document.body.scrollHeight} - ${footerHeight}`)
     if(window.scrollY >= (document.body.scrollHeight - (footerHeight + 800))){
          footer.style.zIndex = 0;
         } else{

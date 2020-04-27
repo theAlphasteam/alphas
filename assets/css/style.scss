@@ -1417,6 +1417,11 @@ nav{
                 overflow: hidden;
                 position: relative;
 
+                &.birthday{
+                    background-image: url(../img/confetti.png);
+                    background-size: contain;
+                }
+
     
                 .team-mate-bg{
                     position: absolute;
@@ -2579,6 +2584,156 @@ nav{
             fill: var(--logo-stroke);
             // fill-opacity: 0.6;
         }
+    }
+}
+
+#bday_card{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    z-index: 4;
+
+    &.remove{
+        transition: opacity 0.32s ease-in;
+        opacity: 0;
+        // display: none;
+    }
+
+    .content{
+        padding: 2em;
+        position: relative;
+        height: 100%;
+        display: grid;
+        grid-template-rows: min-content;
+
+        header{
+            margin: 1em 0;
+            h1{
+                font-size: 2em;
+            }
+        }
+        div{
+            height: 100%;
+            position: relative;
+
+            ul{
+                list-style-type: none;
+                display: flex;
+                justify-content: space-around;
+                flex-flow: wrap;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+
+                &::before{
+                    content: attr(data-bday);
+                    font-family: $font;
+                    font-size: 4em;
+                    position: absolute;
+                    opacity: 0.09;
+                    font-weight: 900;
+                }
+    
+                li{
+                    display: block;
+                    margin: 2em;
+    
+                    &:nth-of-type(odd){
+                        animation: floating 2s ease-in 1s infinite alternate;
+                    }
+                    &:nth-of-type(even){
+                        animation: floating 2s ease-in 2s infinite alternate;
+                    }
+                    // &:nth-of-type(){
+                    //     animation: floating 2s ease-in 0s infinite alternate;
+                    // }
+    
+                    div{
+                        position: relative;
+                        img{
+                            width: 70px;
+                            height: 70px;
+                            border-radius: 70px;
+                            box-shadow: 1em 1em 40px 1em rgba(0, 0, 0, 0.1);
+                        }
+                        h1{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: var(--logo);
+                        }
+                    }
+                }
+            }
+        }
+
+        a{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            margin: 1em;
+            
+            button{
+                padding: 1em 1.25em;
+                border: none;
+                font-weight: 700;
+                border-radius: 4em;
+                color: #fff;
+                background: var(--contact-bg);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    #bday_card{
+        .content{
+            header{
+                h1{
+                    font-size: 4em;
+                }
+            }
+            div{
+                ul{
+                    li{
+                        div{
+                            img{
+                                width: 8em;
+                                height: 8em;
+                                border-radius: 8em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes remove{
+    0%{
+        opacity: 1;
+        // display: block;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes floating{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(20px);
     }
 }
 

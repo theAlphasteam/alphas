@@ -14,24 +14,32 @@
                 "https://github.com/miracleonyenma"
             ],
             "icons" : [
-                "fa fa-twitter",
-                "fa fa-github"
-            ]
+                "fab fa-twitter",
+                "fab fa-github"
+            ],
+            "bday" : {
+                "day": 8,
+                "month": 5
+            }
         },
         {
             "name": "Primidac",
             "role": "Security Architect & Cryptographer",
             "company" : "Cyber Xaviours",
-            "bio" : "I build fasT security applications and cryptographic tools ",
+            "bio" : "I build fast security applications and cryptographic tools ",
             "img" : "./assets/img/primidac.png",
             "social" : [
                 "https://twitter.com/theprimidac",
                 "https://github.com/primidac"
             ],
             "icons" : [
-                "fa fa-twitter",
-                "fa fa-github"
-            ]
+                "fab fa-twitter",
+                "fab fa-github"
+            ],
+            "bday" : {
+                "day": 27,
+                "month": 3
+            }
         },
         {
             "name": "Koder King",
@@ -44,9 +52,13 @@
                 "https://github.com/johnson-andy"
             ],
             "icons" : [
-                "fa fa-twitter",
-                "fa fa-github"
-            ]
+                "fab fa-twitter",
+                "fab fa-github"
+            ],
+            "bday" : {
+                "day": 21,
+                "month": 3
+            }
         },
         {
             "name": "Victory T.",
@@ -59,9 +71,13 @@
                 "https://github.com/Victory-ET"
             ],
             "icons" : [
-                "fa fa-facebook",
-                "fa fa-github"
-            ]
+                "fab fa-facebook",
+                "fab fa-github"
+            ],
+            "bday" : {
+                "day": 20,
+                "month": 10
+            }
         },
             
         {
@@ -76,9 +92,13 @@
                 "https://github.com/Divo-fred"
             ],
             "icons" : [
-                "fa fa-facebook",
-                "fa fa-github"
-            ]
+                "fab fa-facebook",
+                "fab fa-github"
+            ],
+            "bday" : {
+                "day": 28,
+                "month": 3
+            }
         },
         {
             "name": "Emmanuel Uche",
@@ -92,9 +112,13 @@
                 "https://github.com/Uc-Hub"
             ],
             "icons" : [
-                "fa fa-facebook",
-                "fa fa-github"
-            ]
+                "fab fa-facebook",
+                "fab fa-github"
+            ],
+            "bday" : {
+                "day": 2,
+                "month": 3
+            }
         }
     ]
 }
