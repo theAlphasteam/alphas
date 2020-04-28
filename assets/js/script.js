@@ -438,6 +438,7 @@ getYear();
 //get current day and month of the year
 var noOfBdays = 0;
 var bday_card = document.getElementById("bday_card");
+var placeholder = document.getElementById("placeholder")
 function getBdays(data, element){
     console.log(element);
     var dayofMonth = new Date().getDate();
@@ -461,6 +462,7 @@ function getBdays(data, element){
         newh1.textContent = "";
         setAttributes(newImg, {src: data.img, alt: data.name});
         setAttributes(newDiv, {"data-name": data.name});
+        placeholder.textContent = placeholder.textContent + data.name + ", ";
         newDiv.appendChild(newImg);
         newDiv.appendChild(newh1);
         newLi.appendChild(newDiv);

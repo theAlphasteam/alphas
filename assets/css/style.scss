@@ -2690,6 +2690,34 @@ nav{
             }
         }
     }
+
+    #Layer_1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        animation: floatOut 8s ease-in 4s;
+
+        path{
+            transform: translateY(-100%);
+
+            &:nth-of-type(odd){
+                animation: floatOut 6s ease-out 2s infinite;
+            }
+            &:nth-of-type(even){
+                animation: floatOut 4s ease-in-out 2.5s infinite;
+            }
+        }
+    }
+}
+
+@keyframes floatOut{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
 }
 
 @media screen and (min-width: 768px){

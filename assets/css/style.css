@@ -2658,6 +2658,53 @@ nav ul li.contact-us a {
   background: var(--contact-bg);
 }
 
+#bday_card #Layer_1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-animation: floatOut 8s ease-in 4s;
+          animation: floatOut 8s ease-in 4s;
+}
+
+#bday_card #Layer_1 path {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+#bday_card #Layer_1 path:nth-of-type(odd) {
+  -webkit-animation: floatOut 6s ease-out 2s infinite;
+          animation: floatOut 6s ease-out 2s infinite;
+}
+
+#bday_card #Layer_1 path:nth-of-type(even) {
+  -webkit-animation: floatOut 4s ease-in-out 2.5s infinite;
+          animation: floatOut 4s ease-in-out 2.5s infinite;
+}
+
+@-webkit-keyframes floatOut {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes floatOut {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
 @media screen and (min-width: 768px) {
   #bday_card .content header h1, #bday_card .content header .gallery-content .code-tech h2, .gallery-content .code-tech #bday_card .content header h2, #bday_card .content header .gallery-content .code-tech h3, .gallery-content .code-tech #bday_card .content header h3, #bday_card .content header .gallery-content .code-tech h4, .gallery-content .code-tech #bday_card .content header h4 {
     font-size: 4em;
