@@ -216,7 +216,7 @@ nav#site-nav ul li.action-btn {
             clip-path: circle(1000px at 90% -10%);
     text-align: right;
     float: right;
-    width: calc(90% - 200px);
+    width: calc(100% - 200px);
   }
   nav#site-nav ul {
     width: 100%;
