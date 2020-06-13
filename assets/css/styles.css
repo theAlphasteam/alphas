@@ -16,11 +16,11 @@
 .action-btn {
   padding: 12px 24px;
   border: none;
-  -webkit-box-shadow: 6px 12px 32px var(--main-transparent);
-          box-shadow: 6px 12px 32px var(--main-transparent);
   border-radius: 32px;
   background: var(--main);
   color: #fff;
+  -webkit-box-shadow: 6px 12px 32px var(--main-transparent);
+          box-shadow: 6px 12px 32px var(--main-transparent);
 }
 
 header#site-header {
@@ -277,7 +277,7 @@ main {
 section#site-hero {
   width: 100%;
   display: block;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 }
 
 section#site-hero header.text-section h1 {
@@ -319,6 +319,113 @@ section#site-hero header.text-section button {
   }
   section#site-hero header.text-section h1 {
     font-size: 36px;
+  }
+}
+
+section#site-services {
+  min-height: 100vh;
+  margin-top: 64px;
+}
+
+section#site-services header {
+  margin: 0 0 24px 0;
+}
+
+section#site-services header :nth-child(n+1) {
+  margin-bottom: 12px;
+}
+
+section#site-services .site-gallery {
+  width: 100%;
+  margin: 12px 0 12px 0;
+}
+
+section#site-services .site-gallery .gallery-item {
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  border: 2px solid var(--text-v1);
+  margin-top: 24px;
+}
+
+section#site-services .site-gallery .gallery-item :nth-child(n+1) {
+  margin-bottom: 16px;
+}
+
+section#site-services .site-gallery .gallery-item .cover-section {
+  background: var(--main);
+  height: 120px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+@media screen and (min-width: 768px) {
+  section#site-services {
+    width: 100%;
+    position: relative;
+  }
+  section#site-services header {
+    width: 40%;
+    float: left;
+    padding-right: 12px;
+  }
+  section#site-services .site-gallery {
+    width: 60%;
+    float: left;
+    padding-left: 12px;
+    margin-top: 0;
+  }
+  section#site-services .site-gallery section.gallery-item {
+    width: 46%;
+    margin: 0 2%;
+    float: left;
+    position: relative;
+  }
+  section#site-services .site-gallery section.gallery-item:nth-of-type(even) {
+    margin-top: 32px;
+  }
+  @supports (display: grid) {
+    section#site-services {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 3.5fr 2fr;
+          grid-template-columns: 3.5fr 2fr;
+      gap: 32px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      width: 100%;
+    }
+    section#site-services header {
+      -ms-grid-column: 2;
+      grid-column: 2;
+      width: 100%;
+      padding: 0;
+    }
+    section#site-services .site-gallery {
+      -ms-grid-column: 1;
+      grid-column: 1;
+      -ms-grid-row: 1;
+      grid-row: 1;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr;
+      -webkit-column-gap: 24px;
+              column-gap: 24px;
+      width: 100%;
+    }
+    section#site-services .site-gallery section.gallery-item {
+      width: 100%;
+      margin: 0;
+      float: none;
+    }
+    section#site-services .site-gallery section.gallery-item:nth-of-type(odd) {
+      margin-bottom: 24px;
+    }
+    section#site-services .site-gallery section.gallery-item:nth-of-type(even) {
+      margin-top: 24px;
+    }
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -12,13 +12,17 @@
     --text-v2: #2d333d;
 }
 
+@mixin shadow($color : var(--main-transparent)) {
+    box-shadow: 6px 12px 32px $color;
+}
+
 .action-btn{
     padding: 12px 24px;
     border: none;
-    box-shadow: 6px 12px 32px var(--main-transparent);
     border-radius: 32px;
     background: var(--main);
     color: #fff;
+    @include shadow()
 }
 
 //--- SITE HEADER ---//
@@ -240,6 +244,8 @@ nav#site-nav{
 }
 // ---END SITE HEADER --//
 
+
+
 // --- MAIN ---//
 main{
     margin-top: 60px;
@@ -256,10 +262,12 @@ main{
     }
 }
 
+    // --- SITE HERO SECTION --- //
+
 section#site-hero{
     width: 100%;
     display: block;
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
 
     header.text-section{
         h1{
@@ -298,5 +306,117 @@ section#site-hero{
             }
         }
     
+    }
+}
+
+    // -- END SITE HERO SECTION --- //
+
+    // --- SITE SERVICES SECTION --- //
+
+section#site-services{
+    min-height: 100vh;
+    margin-top: 64px;
+    
+    header{
+        margin: 0 0 24px 0;
+        :nth-child(n+1){
+            margin-bottom: 12px;
+        }
+    }
+    
+    .site-gallery{
+        width: 100%;
+        margin: 12px 0 12px 0;
+        
+        .gallery-item{
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            // @include shadow();
+            border: 2px solid var(--text-v1);
+            margin-top: 24px;
+
+            :nth-child(n+1){
+                margin-bottom: 16px;
+            }
+
+            .cover-section{
+                background: var(--main);
+                height: 120px;
+                width: 100%;
+                border-radius: 6px;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px){
+
+    section#site-services{
+        width: 100%;
+        position: relative;
+
+        header{
+           width: 40%;
+           float: left;
+           padding-right: 12px;
+        }
+        .site-gallery{
+            width: 60%;
+            float: left;
+            padding-left: 12px;
+            margin-top: 0;
+
+            section.gallery-item{
+                width: 46%;
+                margin: 0 2%;
+                float: left;
+                position: relative;
+                
+                &:nth-of-type(even){
+                    margin-top: 32px;
+                }
+
+            }
+        }
+    }    
+
+    
+    @supports(display: grid){
+        section#site-services{
+            display: grid;
+            grid-template-columns: 3.5fr 2fr;
+            gap: 32px;
+            align-items: center;
+            width: 100%;
+
+            header{
+                grid-column: 2;
+                width: 100%;
+                padding: 0;
+            }
+            .site-gallery{
+                grid-column: 1;
+                grid-row: 1;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 24px;
+                width: 100%;
+
+                section.gallery-item{
+                    width: 100%;
+                    margin: 0; 
+                    float: none; 
+
+                    &:nth-of-type(odd){
+                        margin-bottom: 24px;
+                    }
+                    &:nth-of-type(even){
+                        margin-top: 24px;
+                    }
+                }
+            }
+        }    
     }
 }
