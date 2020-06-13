@@ -256,4 +256,69 @@ nav#site-nav ul li.action-btn {
     }
   }
 }
+
+main {
+  margin-top: 60px;
+  padding: 0 28px;
+}
+
+@supports (display: flex) {
+  main {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    padding: 0 72px;
+  }
+}
+
+section#site-hero {
+  width: 100%;
+  display: block;
+  height: calc(100vh - 70px);
+}
+
+section#site-hero header.text-section h1 {
+  font-size: 36px;
+  margin: 0 0 16px 0;
+  color: var(--text-v2);
+}
+
+section#site-hero header.text-section p {
+  font-size: 18px;
+  margin: 0 0 16px 0;
+  color: var(--text-v1);
+}
+
+section#site-hero header.text-section button {
+  font-size: 18px;
+}
+
+@supports (display: flex) {
+  section#site-hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section#site-hero {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section#site-hero header.text-section h1 {
+    font-size: 36px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
