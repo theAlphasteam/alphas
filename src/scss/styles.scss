@@ -20,6 +20,14 @@ h1{
 @mixin shadow($color : var(--main-transparent)) {
     box-shadow: 6px 12px 32px $color;
 }
+@mixin h1andp($h1: var(--text-v2), $p: var(--text-v1)){
+    h1{
+        color: $h1;
+    }
+    p{
+        color: $p;
+    }
+}
 
 .action-btn{
     padding: 12px 24px;
@@ -28,6 +36,10 @@ h1{
     background: var(--main);
     color: #fff;
     @include shadow()
+}
+
+body{
+    overflow-x: hidden;
 }
 
 //--- SITE HEADER ---//
@@ -171,6 +183,8 @@ nav#site-nav{
 @supports(display: flex) or (clip-path: circle(100px at 90% -15%)) or (position: sticky){
     header#site-header{
         position: sticky;
+        display: flex;
+        align-items: center;
 
         #site-logo{
             display: flex;
@@ -236,6 +250,7 @@ nav#site-nav{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
 
             #site-logo{
                 justify-content: flex-end;
@@ -255,6 +270,7 @@ nav#site-nav{
 main{
     margin-top: 60px;
     padding: 0 28px;
+    overflow: hidden;
 }
 @supports(display: flex){
     main{
@@ -273,17 +289,17 @@ section#site-hero{
     width: 100%;
     display: block;
     min-height: calc(100vh - 70px);
-
+    
     header.text-section{
+        @include h1andp();
+
         h1{
             font-size: 36px;
             margin: 0 0 16px 0;
-            color: var(--text-v2);
         }
         p{
             font-size: 18px;
             margin: 0 0 16px 0;
-            color: var(--text-v1);
         }
         button{
             font-size: 18px;
@@ -303,7 +319,32 @@ section#site-hero{
     section#site-hero{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        align-items: center;
+
+        &::before{
+            content: '';
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            background: var(--main);
+            border-radius: 50%;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(10%, -30%);
+        }
+        &::after{
+            content: '';
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: var(--main-transparent);
+            backdrop-filter: blur(16px);
+            border-radius: 50%;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(20%, -80%);
+        }    
 
         header.text-section{
             h1{
@@ -345,6 +386,8 @@ section#site-services{
 
     header{
         margin: 0 0 24px 0;
+        @include h1andp( );
+
         :nth-child(n+1){
             margin-bottom: 12px;
         }
@@ -361,6 +404,7 @@ section#site-services{
             // @include shadow();
             border: 2px solid var(--text-v1);
             margin-top: 24px;
+            @include h1andp();
 
             :nth-child(n+1){
                 margin-bottom: 16px;
