@@ -19,12 +19,43 @@ h1 {
 
 .action-btn {
   padding: 12px 24px;
-  border: none;
+  border: 2px solid var(--main);
   border-radius: 32px;
+  background: transparent;
+  color: var(--main) !important;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.action-btn, .action-btn *, .action-btn::before, .action-btn::after {
+  -webkit-transition: all 0.32s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.32s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.action-btn::before {
+  content: '';
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
   background: var(--main);
-  color: #fff;
+  z-index: -1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.action-btn:hover {
   -webkit-box-shadow: 6px 12px 32px var(--main-transparent);
           box-shadow: 6px 12px 32px var(--main-transparent);
+  color: #fff !important;
+}
+
+.action-btn:hover::before {
+  right: auto;
+  left: 0;
+  width: 100%;
 }
 
 body {
@@ -68,6 +99,18 @@ header#site-header #site-logo .logo-svg-cont {
   left: 0;
   -webkit-transform: translate(12px, -50%);
           transform: translate(12px, -50%);
+}
+
+header#site-header #site-logo .logo-svg-cont svg path.cls-1 {
+  fill: #2087ea;
+}
+
+header#site-header #site-logo .logo-svg-cont svg .pathcls-2 {
+  fill: #262b2c;
+}
+
+header#site-header #site-logo .logo-svg-cont svg path.cls-3 {
+  fill: #383f48;
 }
 
 header#site-header #site-logo h1 {
@@ -115,7 +158,6 @@ nav#site-nav ul li a {
 
 nav#site-nav ul li.action-btn {
   padding: 6px 24px;
-  color: #fff;
 }
 
 #site-nav-btn {
@@ -237,6 +279,9 @@ nav#site-nav ul li.action-btn {
   }
   nav#site-nav ul li {
     display: inline-block;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     font-size: initial;
     padding: 0 4% 0 0;
     font-size: large;
@@ -408,6 +453,10 @@ section#site-services header h1 {
 
 section#site-services header p {
   color: var(--text-v1);
+}
+
+section#site-services header h1 {
+  font-size: 36px;
 }
 
 section#site-services header :nth-child(n+1) {

@@ -30,12 +30,41 @@ h1{
 }
 
 .action-btn{
+    &, *, &::before, &::after{
+        transition: all 0.32s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+    }
     padding: 12px 24px;
-    border: none;
+    border: 2px solid var(--main);
     border-radius: 32px;
-    background: var(--main);
-    color: #fff;
-    @include shadow()
+    background: transparent;
+    color: var(--main)!important;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    
+
+    &::before{
+        content: '';
+        width: 0%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: var(--main);
+        z-index: -1;
+        transform: translate(0,0);
+    }
+    
+    &:hover{
+        @include shadow();
+        color: #fff!important;
+        
+        &::before{
+            right: auto;
+            left: 0;
+            width: 100%;
+        }
+    }
 }
 
 body{
@@ -74,6 +103,20 @@ header#site-header{
             top: 50%;
             left: 0;
             transform: translate(12px, -50%);
+
+            svg{
+                path.cls-1 {
+                    fill: #2087ea;
+                }
+    
+                .pathcls-2 {
+                    fill: #262b2c;
+                }
+    
+                path.cls-3 {
+                    fill: #383f48;
+                }
+            }
         }
 
         h1{
@@ -123,7 +166,6 @@ nav#site-nav{
 
             &.action-btn{
                 padding: 6px 24px;
-                color: #fff;
             }
         }
     }
@@ -232,8 +274,11 @@ nav#site-nav{
 
         ul{
             width: 100%;
+
             li{
                 display: inline-block;
+                //this wiil be applied only on browsers with support
+                display: inline-flex;
                 font-size: initial;
                 padding: 0 4% 0 0;
                 font-size: large;
@@ -387,6 +432,9 @@ section#site-services{
     header{
         margin: 0 0 24px 0;
         @include h1andp( );
+        h1{
+            font-size: 36px;
+        }
 
         :nth-child(n+1){
             margin-bottom: 12px;
